@@ -1610,8 +1610,8 @@ GameObject:
   - component: {fileID: 400704756}
   - component: {fileID: 400704755}
   - component: {fileID: 400704759}
-  - component: {fileID: 400704760}
   - component: {fileID: 400704761}
+  - component: {fileID: 400704762}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1740,25 +1740,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &400704760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400704754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42c3428331c4f400ea12833f6895ed76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharController
-  moveSpeed: 10
-  jumpHeight: 1.5
-  gravity: -20
-  cameraTransform: {fileID: 1040291438}
-  mouseSensitivity: 100
-  verticalLookMin: -80
-  verticalLookMax: 80
 --- !u!114 &400704761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1773,6 +1754,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RayCastDetector
   playerCamera: {fileID: 1040291437}
   raycastDistance: 15
+--- !u!114 &400704762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400704754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 754f034de28154975b69f7f175642bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  moveSpeed: 5
+  jumpHeight: 1.5
+  gravity: -20
+  moveAction: {fileID: 1023093255536640849, guid: 7dd1fe7874c964c44b251789a8784b64, type: 3}
+  jumpAction: {fileID: -7074873916007050727, guid: 7dd1fe7874c964c44b251789a8784b64, type: 3}
+  lookAction: {fileID: 8140962240730533564, guid: 7dd1fe7874c964c44b251789a8784b64, type: 3}
+  cameraTransform: {fileID: 0}
+  mouseSensitivity: 0.1
+  verticalLookMin: -80
+  verticalLookMax: 80
 --- !u!1 &402462704
 GameObject:
   m_ObjectHideFlags: 0
