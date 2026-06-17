@@ -1772,7 +1772,7 @@ MonoBehaviour:
   moveAction: {fileID: 1023093255536640849, guid: 7dd1fe7874c964c44b251789a8784b64, type: 3}
   jumpAction: {fileID: -7074873916007050727, guid: 7dd1fe7874c964c44b251789a8784b64, type: 3}
   lookAction: {fileID: 8140962240730533564, guid: 7dd1fe7874c964c44b251789a8784b64, type: 3}
-  cameraTransform: {fileID: 0}
+  cameraTransform: {fileID: 1040291438}
   mouseSensitivity: 0.1
   verticalLookMin: -80
   verticalLookMax: 80
