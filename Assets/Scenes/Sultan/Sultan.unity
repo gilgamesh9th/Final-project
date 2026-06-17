@@ -2060,7 +2060,7 @@ GameObject:
   - component: {fileID: 400704759}
   - component: {fileID: 400704761}
   - component: {fileID: 400704762}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2156,7 +2156,7 @@ Transform:
   m_GameObject: {fileID: 400704754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.85, y: 1.25, z: -16.1254}
+  m_LocalPosition: {x: 120.98, y: 1.25, z: 47.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5746,6 +5746,7 @@ GameObject:
   - component: {fileID: 1040291437}
   - component: {fileID: 1040291436}
   - component: {fileID: 1040291439}
+  - component: {fileID: 1040291440}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5871,6 +5872,25 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1040291440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040291435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2051e718b07ba4bef942d5e5d18fef26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MalletController
+  pickupRange: 3
+  holdPos: {x: 0.35, y: -0.25, z: 0.5}
+  holdRot: {x: 0, y: 0, z: -45}
+  strikeAngle: 45
+  downTime: 0.08
+  upTime: 0.12
+  strikeRange: 2.5
 --- !u!1 &1042193358
 GameObject:
   m_ObjectHideFlags: 0
