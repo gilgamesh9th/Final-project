@@ -9,6 +9,7 @@ public class ZoneNarrator : MonoBehaviour
 
     private int _index;
     private bool _playerInside;
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +19,24 @@ public class ZoneNarrator : MonoBehaviour
             return;
         if (_playerInside)
             return;
+
+        if (NarratorManager.Instance == null)
+            return;
+        
+        _playerInside = true;
+
+        if (TryGetComponent<ConditionalNarrator>(out var conditional))
+        {
+            string line = conditional.Evaluate();
+            if (string.IsNullOrEmpty(line)) return;
+
+            if (immediate)
+                NarratorManager.Instance.SayImmediate(line);
+            else
+                NarratorManager.Instance.Say(line);
+            return;
+        }
+
 
         _playerInside = true;
 
