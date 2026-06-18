@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class MalletTip : MonoBehaviour
 {
-    [HideInInspector] public bool canDetect = false;
+    public bool canDetect = false;
+    private ColorPuzzleManager manager;
+
+    void Start()
+    {
+        manager = FindObjectOfType<ColorPuzzleManager>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -12,7 +18,7 @@ public class MalletTip : MonoBehaviour
         XylophoneBar bar = other.GetComponent<XylophoneBar>();
         if (bar != null)
         {
-            Debug.Log("Struck color: " + bar.barColor);
+            manager.CheckColor(bar.barColor);
             canDetect = false;
         }
     }
