@@ -1,0 +1,54 @@
+using UnityEngine;
+
+[System.Serializable]
+public class PuzzleLevel
+{
+    public string levelName;
+    public PuzzleColor[] sequence;
+    [HideInInspector] public bool isComplete = false;
+}
+
+public class ColorPuzzleManager : MonoBehaviour
+{
+    public PuzzleLevel[] levels;
+
+    private int currentLevel = 0;
+    private int currentStep = 0;
+
+    public bool Level1Done => levels.Length > 0 && levels[0].isComplete;
+    public bool Level2Done => levels.Length > 1 && levels[1].isComplete;
+    public bool Level3Done => levels.Length > 2 && levels[2].isComplete;
+
+    public void CheckColor(PuzzleColor color)
+    {
+        if (currentLevel >= levels.Length)
+            return;
+
+        PuzzleLevel level = levels[currentLevel];
+
+        if (color == level.sequence[currentStep])
+        {
+            currentStep++;
+            Debug.Log("Correct! " + color + " (" 
+                      + currentStep + "/" + level.sequence.Length + ")");
+
+            if (currentStep >= level.sequence.Length)
+            {
+                level.isComplete = true;
+                currentLevel++;
+                currentStep = 0;
+                Debug.Log("=== " + level.levelName + " COMPLETE ===");
+
+                if (currentLevel >= levels.Length)
+                    Debug.Log("ALL LEVELS COMPLETE - PUZZLE SOLVED");
+            }
+        }
+        else
+        {
+            currentStep = 0;
+            Debug.Log("WRONG! Hit " + color 
+                      + ", expected " + level.sequence[currentStep] 
+                      + ". Resetting " + level.levelName);
+        }
+    }
+}
