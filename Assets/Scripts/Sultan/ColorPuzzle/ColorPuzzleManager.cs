@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class PuzzleLevel
 {
     public string levelName;
     public PuzzleColor[] sequence;
-    [HideInInspector] public bool isComplete = false;
+    public bool isComplete = false;
 }
 
 public class ColorPuzzleManager : MonoBehaviour
 {
     public PuzzleLevel[] levels;
+    public UnityEvent onPuzzleSolved;
 
     private int currentLevel = 0;
     private int currentStep = 0;
@@ -29,8 +31,7 @@ public class ColorPuzzleManager : MonoBehaviour
         if (color == level.sequence[currentStep])
         {
             currentStep++;
-            Debug.Log("Correct! " + color + " (" 
-                      + currentStep + "/" + level.sequence.Length + ")");
+            Debug.Log("Correct! " + color + " (" + currentStep + "/" + level.sequence.Length + ")");
 
             if (currentStep >= level.sequence.Length)
             {
@@ -40,15 +41,25 @@ public class ColorPuzzleManager : MonoBehaviour
                 Debug.Log("=== " + level.levelName + " COMPLETE ===");
 
                 if (currentLevel >= levels.Length)
-                    Debug.Log("ALL LEVELS COMPLETE - PUZZLE SOLVED");
+                {
+                    Debug.Log("ALL LEVELS COMPLETE. PUZZLE SOLVED");
+                    onPuzzleSolved?.Invoke();
+                }
             }
         }
         else
         {
             currentStep = 0;
-            Debug.Log("WRONG! Hit " + color 
-                      + ", expected " + level.sequence[currentStep] 
-                      + ". Resetting " + level.levelName);
+            Debug.Log("WRONG! Hit " + color + ", expected " + level.sequence[currentStep] + ". Resetting " + level.levelName);
         }
     }
+
+    public PuzzleColor[] GetCurrentSequence()
+    {
+        if (currentLevel >= levels.Length)
+            return null;
+
+        return levels[currentLevel].sequence;
+    }
+
 }
