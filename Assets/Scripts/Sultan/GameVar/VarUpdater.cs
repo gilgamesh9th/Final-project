@@ -17,11 +17,14 @@ public class VarUpdater : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player")) return;
-        if (_playerInside) return;
-        if (GameVarStore.Instance == null) return;
-        _playerInside = true;
-
+        if (!other.CompareTag("Player"))
+            return;
+        if (_playerInside)
+            return;
+        if (GameVarStore.Instance == null)
+            return;
+       _playerInside = true;
+       
         foreach (var u in updates)
         {
             if (u.mode == UpdateMode.Increment)
@@ -33,7 +36,8 @@ public class VarUpdater : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player"))
+            return;
         _playerInside = false;
     }
 }
