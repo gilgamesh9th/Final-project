@@ -8,23 +8,54 @@ public class NarrationRule
     public string variableKey;
     public Comparison comparison;
     public int value;
-    [TextArea] public string narration;
+    [TextArea] public string[] narrations;
 }
 
 public class ConditionalNarrator : MonoBehaviour
 {
     [SerializeField] private NarrationRule[] rules;
-    [TextArea]
-    [SerializeField] private string fallbackNarration;
 
-    private string _lastSpoken;
+    [TextArea]
+    [SerializeField] private string[] fallbackNarrations;
+
+    [SerializeField] private bool immediate = false;
+
+    private int[] _ruleIndices;
+    private int _fallbackIndex;
+    private bool _playerInside;
+
+    private void Awake()
+    {
+        _ruleIndices = new int[rules.Length];
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        if (_playerInside) return;
+        if (NarratorManager.Instance == null) return;
+        _playerInside = true;
+
+        string line = Evaluate();
+        if (string.IsNullOrEmpty(line)) return;
+
+        if (immediate)
+            NarratorManager.Instance.SayImmediate(line);
+        else
+            NarratorManager.Instance.Say(line);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        _playerInside = false;
+    }
 
     public string Evaluate()
     {
-        string result = fallbackNarration;
-
-        foreach (var rule in rules)
+        for (int i = 0; i < rules.Length; i++)
         {
+            var rule = rules[i];
             int actual = GameVarStore.Instance.Get(rule.variableKey);
             bool match = rule.comparison switch
             {
@@ -33,14 +64,17 @@ public class ConditionalNarrator : MonoBehaviour
                 Comparison.LessThan    => actual < rule.value,
                 _ => false
             };
-            if (match) { result = rule.narration; break; }
+
+            if (match)
+            {
+                if (_ruleIndices[i] >= rule.narrations.Length)
+                    return null;
+                return rule.narrations[_ruleIndices[i]++];
+            }
         }
 
-        if (result == _lastSpoken)
+        if (_fallbackIndex >= fallbackNarrations.Length)
             return null;
-
-        _lastSpoken = result;
-
-        return result;
+        return fallbackNarrations[_fallbackIndex++];
     }
 }
