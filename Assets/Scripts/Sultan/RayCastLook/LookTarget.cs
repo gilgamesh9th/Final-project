@@ -12,6 +12,18 @@ public class LookTarget : MonoBehaviour
 
     public void OnLooked()
     {
+        if (TryGetComponent<ConditionalNarrator>(out var conditional))
+        {
+            string line = conditional.Evaluate();
+
+            if (string.IsNullOrEmpty(line))
+                return;
+
+            NarratorManager.Instance.SayImmediate(line);
+            _lastTriggerTime = Time.time;
+
+            return;
+        }
         if (_lookIndex >= lookNarrations.Length)
             return;
 
