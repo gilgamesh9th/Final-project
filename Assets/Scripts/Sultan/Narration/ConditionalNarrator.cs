@@ -1,13 +1,19 @@
 using UnityEngine;
 
-public enum Comparison { Equals, GreaterThan, LessThan }
+public enum Comparison { Equals, GreaterThan, LessThan, GreaterThanOrEqual, LessThanOrEqual, Even, Odd }
 
 [System.Serializable]
-public class NarrationRule
+public class Condition
 {
     public string variableKey;
     public Comparison comparison;
     public int value;
+}
+
+[System.Serializable]
+public class NarrationRule
+{
+    public Condition[] conditions;
     [TextArea] public string[] narrations;
 }
 
@@ -55,21 +61,11 @@ public class ConditionalNarrator : MonoBehaviour
     {
         for (int i = 0; i < rules.Length; i++)
         {
-            var rule = rules[i];
-            int actual = GameVarStore.Instance.Get(rule.variableKey);
-            bool match = rule.comparison switch
+            if (AllConditionsMet(rules[i]))
             {
-                Comparison.Equals      => actual == rule.value,
-                Comparison.GreaterThan => actual > rule.value,
-                Comparison.LessThan    => actual < rule.value,
-                _ => false
-            };
-
-            if (match)
-            {
-                if (_ruleIndices[i] >= rule.narrations.Length)
+                if (_ruleIndices[i] >= rules[i].narrations.Length)
                     return null;
-                return rule.narrations[_ruleIndices[i]++];
+                return rules[i].narrations[_ruleIndices[i]++];
             }
         }
 
@@ -77,4 +73,28 @@ public class ConditionalNarrator : MonoBehaviour
             return null;
         return fallbackNarrations[_fallbackIndex++];
     }
+
+    private bool AllConditionsMet(NarrationRule rule)
+    {
+        foreach (var c in rule.conditions)
+        {
+            int actual = GameVarStore.Instance.Get(c.variableKey);
+            bool pass = c.comparison switch
+            {
+                Comparison.Equals             => actual == c.value,
+                Comparison.GreaterThan        => actual > c.value,
+                Comparison.LessThan           => actual < c.value,
+                Comparison.GreaterThanOrEqual => actual >= c.value,
+                Comparison.LessThanOrEqual    => actual <= c.value,
+                Comparison.Even               => actual % 2 == 0,
+                Comparison.Odd                => actual % 2 != 0,
+                _ => false
+            };
+
+            if (!pass) return false;
+        }
+        return true;
+    }
+
+
 }
