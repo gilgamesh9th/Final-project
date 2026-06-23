@@ -1,46 +1,100 @@
 using UnityEngine;
 
-public enum Comparison { Equals, GreaterThan, LessThan }
+public enum Comparison { Equals, GreaterThan, LessThan, GreaterThanOrEqual, LessThanOrEqual, Even, Odd }
 
 [System.Serializable]
-public class NarrationRule
+public class Condition
 {
     public string variableKey;
     public Comparison comparison;
     public int value;
-    [TextArea] public string narration;
+}
+
+[System.Serializable]
+public class NarrationRule
+{
+    public Condition[] conditions;
+    [TextArea] public string[] narrations;
 }
 
 public class ConditionalNarrator : MonoBehaviour
 {
     [SerializeField] private NarrationRule[] rules;
-    [TextArea]
-    [SerializeField] private string fallbackNarration;
 
-    private string _lastSpoken;
+    [TextArea]
+    [SerializeField] private string[] fallbackNarrations;
+
+    [SerializeField] private bool immediate = false;
+
+    private int[] _ruleIndices;
+    private int _fallbackIndex;
+    private bool _playerInside;
+
+    private void Awake()
+    {
+        _ruleIndices = new int[rules.Length];
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        if (_playerInside) return;
+        if (NarratorManager.Instance == null) return;
+        _playerInside = true;
+
+        string line = Evaluate();
+        if (string.IsNullOrEmpty(line)) return;
+
+        if (immediate)
+            NarratorManager.Instance.SayImmediate(line);
+        else
+            NarratorManager.Instance.Say(line);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        _playerInside = false;
+    }
 
     public string Evaluate()
     {
-        string result = fallbackNarration;
-
-        foreach (var rule in rules)
+        for (int i = 0; i < rules.Length; i++)
         {
-            int actual = GameVarStore.Instance.Get(rule.variableKey);
-            bool match = rule.comparison switch
+            if (AllConditionsMet(rules[i]))
             {
-                Comparison.Equals      => actual == rule.value,
-                Comparison.GreaterThan => actual > rule.value,
-                Comparison.LessThan    => actual < rule.value,
-                _ => false
-            };
-            if (match) { result = rule.narration; break; }
+                if (_ruleIndices[i] >= rules[i].narrations.Length)
+                    return null;
+                return rules[i].narrations[_ruleIndices[i]++];
+            }
         }
 
-        if (result == _lastSpoken)
+        if (_fallbackIndex >= fallbackNarrations.Length)
             return null;
-
-        _lastSpoken = result;
-
-        return result;
+        return fallbackNarrations[_fallbackIndex++];
     }
+
+    private bool AllConditionsMet(NarrationRule rule)
+    {
+        foreach (var c in rule.conditions)
+        {
+            int actual = GameVarStore.Instance.Get(c.variableKey);
+            bool pass = c.comparison switch
+            {
+                Comparison.Equals             => actual == c.value,
+                Comparison.GreaterThan        => actual > c.value,
+                Comparison.LessThan           => actual < c.value,
+                Comparison.GreaterThanOrEqual => actual >= c.value,
+                Comparison.LessThanOrEqual    => actual <= c.value,
+                Comparison.Even               => actual % 2 == 0,
+                Comparison.Odd                => actual % 2 != 0,
+                _ => false
+            };
+
+            if (!pass) return false;
+        }
+        return true;
+    }
+
+
 }

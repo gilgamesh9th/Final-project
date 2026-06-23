@@ -10,6 +10,7 @@ public class Mallet : MonoBehaviour
     public float upTime = 0.12f;
     public Collider pickupZoneCol;
     public MalletTip tip;
+    public Material outlineMaterial;
     public bool playerInRange = false;
 
     private bool isHeld = false;
@@ -18,6 +19,7 @@ public class Mallet : MonoBehaviour
     private Vector3 originalScale;
     private Rigidbody rb;
     private Collider mainCol;
+    private Highlightable highlightedBar;
 
     void Start()
     {
@@ -38,18 +40,22 @@ public class Mallet : MonoBehaviour
 
         if (isHeld && !isStriking && Input.GetMouseButtonDown(0))
             StartCoroutine(Strike());
+
+        if (isHeld && !isStriking)
+            UpdateBarHighlight();
+        else
+            ClearBarHighlight();
     }
 
     void Pickup()
     {
         isHeld = true;
+        Highlightable h = GetComponent<Highlightable>();
+        if (h != null) h.Unhighlight();
 
-        if (rb)
-            rb.isKinematic = true;
-        if (mainCol)
-            mainCol.enabled = false;
-        if (pickupZoneCol)
-            pickupZoneCol.enabled = false;
+        if (rb) rb.isKinematic = true;
+        if (mainCol) mainCol.enabled = false;
+        if (pickupZoneCol) pickupZoneCol.enabled = false;
 
         originalScale = transform.localScale;
         transform.SetParent(cam);
@@ -60,14 +66,13 @@ public class Mallet : MonoBehaviour
 
     void Drop()
     {
+        ClearBarHighlight();
+
         transform.SetParent(null);
 
-        if (rb)
-            rb.isKinematic = false;
-        if (mainCol)
-            mainCol.enabled = true;
-        if (pickupZoneCol)
-            pickupZoneCol.enabled = true;
+        if (rb) rb.isKinematic = false;
+        if (mainCol) mainCol.enabled = true;
+        if (pickupZoneCol) pickupZoneCol.enabled = true;
 
         isHeld = false;
         playerInRange = false;
@@ -76,6 +81,7 @@ public class Mallet : MonoBehaviour
     IEnumerator Strike()
     {
         isStriking = true;
+        ClearBarHighlight();
         tip.canDetect = true;
 
         Quaternion startRot = transform.localRotation;
@@ -99,5 +105,46 @@ public class Mallet : MonoBehaviour
 
         tip.canDetect = false;
         isStriking = false;
+    }
+
+    void UpdateBarHighlight()
+    {
+        Vector3 tipStart = tip.transform.position;
+        Quaternion strikeRot = transform.localRotation * Quaternion.Euler(strikeAngle, 0f, 0f);
+        Vector3 tipInCamSpace = transform.localPosition + strikeRot * tip.transform.localPosition;
+        Vector3 tipEnd = cam.TransformPoint(tipInCamSpace);
+
+        Vector3 direction = tipEnd - tipStart;
+        float distance = direction.magnitude;
+        float tipRadius = tip.GetComponent<SphereCollider>().radius;
+        int ignoreSelf = ~LayerMask.GetMask("Player");
+        Debug.DrawLine(tipStart, tipEnd, Color.yellow);
+
+        Highlightable newTarget = null;
+
+        if (distance > 0.001f && Physics.SphereCast(
+            tipStart, tipRadius, direction.normalized,
+            out RaycastHit hit, distance, ignoreSelf,
+            QueryTriggerInteraction.Ignore))
+        {
+            if (hit.collider.GetComponent<XylophoneBar>() != null)
+                newTarget = hit.collider.GetComponent<Highlightable>();
+        }
+
+        if (newTarget != highlightedBar)
+        {
+            if (highlightedBar != null) highlightedBar.Unhighlight();
+            if (newTarget != null) newTarget.Highlight(outlineMaterial);
+            highlightedBar = newTarget;
+        }
+    }
+
+    void ClearBarHighlight()
+    {
+        if (highlightedBar != null)
+        {
+            highlightedBar.Unhighlight();
+            highlightedBar = null;
+        }
     }
 }
