@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    private PuzzleItem currentItem;
     private PuzzleButton currentButton;
     private RedRecordButton currentRecordButton;
 
@@ -20,11 +19,6 @@ public class PlayerInteraction : MonoBehaviour
             {
                 currentButton.Interact();
                 return;
-            }
-
-            if (currentItem != null)
-            {
-                currentItem.Interact();
             }
         }
     }
@@ -44,12 +38,6 @@ public class PlayerInteraction : MonoBehaviour
             currentButton = button;
             return;
         }
-
-        PuzzleItem item = other.GetComponent<PuzzleItem>();
-        if (item != null)
-        {
-            currentItem = item;
-        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -65,13 +53,6 @@ public class PlayerInteraction : MonoBehaviour
         if (button != null && button == currentButton)
         {
             currentButton = null;
-            return;
-        }
-
-        PuzzleItem item = other.GetComponent<PuzzleItem>();
-        if (item != null && item == currentItem)
-        {
-            currentItem = null;
         }
     }
 }

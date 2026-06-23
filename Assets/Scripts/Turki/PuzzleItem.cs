@@ -6,9 +6,6 @@ public class PuzzleItem : MonoBehaviour
     [Header("Item Number")]
     public int itemNumber;
 
-    [Header("Puzzle Manager")]
-    public PuzzleManager puzzleManager;
-
     [Header("Movement")]
     public Transform forwardPoint;
     public float moveSpeed = 2f;
@@ -21,14 +18,12 @@ public class PuzzleItem : MonoBehaviour
         startPosition = transform.position;
     }
 
-    public void Interact()
-    {
-        puzzleManager.SelectItem(this);
-    }
-
     public void MoveForward()
     {
-        MoveToPosition(forwardPoint.position);
+        if (forwardPoint != null)
+        {
+            MoveToPosition(forwardPoint.position);
+        }
     }
 
     public void MoveBack()
