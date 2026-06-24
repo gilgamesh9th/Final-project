@@ -44,6 +44,7 @@ public class NarratorManager : MonoBehaviour
 
     public void SayImmediate(string text)
     {
+        // Debug.Log("INTERRUPTING WITH: " + text);
         StopAllCoroutines();
         _queue.Clear();
         _isDisplaying = false;
