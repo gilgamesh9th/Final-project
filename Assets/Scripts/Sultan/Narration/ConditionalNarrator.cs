@@ -19,6 +19,9 @@ public class NarrationRule
 
 public class ConditionalNarrator : MonoBehaviour
 {
+    [SerializeField] private int priority = 4;
+    [SerializeField] private bool disableWhenDone = false;
+
     [SerializeField] private NarrationRule[] rules;
 
     [TextArea]
@@ -29,6 +32,7 @@ public class ConditionalNarrator : MonoBehaviour
     private int[] _ruleIndices;
     private int _fallbackIndex;
     private bool _playerInside;
+    private bool _exhausted;
 
     private void Awake()
     {
@@ -39,6 +43,7 @@ public class ConditionalNarrator : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         if (_playerInside) return;
+        if (_exhausted) return;
         if (NarratorManager.Instance == null) return;
         _playerInside = true;
 
@@ -46,9 +51,9 @@ public class ConditionalNarrator : MonoBehaviour
         if (string.IsNullOrEmpty(line)) return;
 
         if (immediate)
-            NarratorManager.Instance.SayImmediate(line);
+            NarratorManager.Instance.SayImmediate(line, priority, this);
         else
-            NarratorManager.Instance.Say(line);
+            NarratorManager.Instance.Say(line, priority, this);
     }
 
     private void OnTriggerExit(Collider other)
@@ -59,18 +64,26 @@ public class ConditionalNarrator : MonoBehaviour
 
     public string Evaluate()
     {
+        if (_exhausted) return null;
+
         for (int i = 0; i < rules.Length; i++)
         {
             if (AllConditionsMet(rules[i]))
             {
                 if (_ruleIndices[i] >= rules[i].narrations.Length)
+                {
+                    if (disableWhenDone) _exhausted = true;
                     return null;
+                }
                 return rules[i].narrations[_ruleIndices[i]++];
             }
         }
 
         if (_fallbackIndex >= fallbackNarrations.Length)
+        {
+            if (disableWhenDone) _exhausted = true;
             return null;
+        }
         return fallbackNarrations[_fallbackIndex++];
     }
 
@@ -90,11 +103,8 @@ public class ConditionalNarrator : MonoBehaviour
                 Comparison.Odd                => actual % 2 != 0,
                 _ => false
             };
-
             if (!pass) return false;
         }
         return true;
     }
-
-
 }

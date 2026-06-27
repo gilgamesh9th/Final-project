@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ZoneNarrator : MonoBehaviour
 {
+    [SerializeField] private int priority = 3;
+
     [TextArea]
     [SerializeField] private string[] narrations = { " " };
 
@@ -9,20 +11,13 @@ public class ZoneNarrator : MonoBehaviour
 
     private int _index;
     private bool _playerInside;
-    
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"))
-            return;
-        if (_index >= narrations.Length)
-            return;
-        if (_playerInside)
-            return;
+        if (!other.CompareTag("Player")) return;
+        if (_playerInside) return;
+        if (NarratorManager.Instance == null) return;
 
-        if (NarratorManager.Instance == null)
-            return;
-        
         _playerInside = true;
 
         if (TryGetComponent<ConditionalNarrator>(out var conditional))
@@ -31,27 +26,25 @@ public class ZoneNarrator : MonoBehaviour
             if (string.IsNullOrEmpty(line)) return;
 
             if (immediate)
-                NarratorManager.Instance.SayImmediate(line);
+                NarratorManager.Instance.SayImmediate(line, priority, this);
             else
-                NarratorManager.Instance.Say(line);
+                NarratorManager.Instance.Say(line, priority, this);
             return;
         }
 
-
-        _playerInside = true;
+        if (_index >= narrations.Length) return;
 
         if (immediate)
-            NarratorManager.Instance.SayImmediate(narrations[_index]);
+            NarratorManager.Instance.SayImmediate(narrations[_index], priority, this);
         else
-            NarratorManager.Instance.Say(narrations[_index]);
+            NarratorManager.Instance.Say(narrations[_index], priority, this);
 
         _index++;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Player"))
-            return;
+        if (!other.CompareTag("Player")) return;
         _playerInside = false;
     }
 }
