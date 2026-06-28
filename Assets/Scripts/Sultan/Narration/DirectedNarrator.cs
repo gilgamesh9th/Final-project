@@ -6,6 +6,7 @@ using UnityEngine;
 public class NarrationLine
 {
     [TextArea] public string text;
+    public AudioClip clip;
     public bool isImportant;
     public string destinationIfUnsaid;
     [System.NonSerialized] public bool moved;
@@ -18,9 +19,10 @@ public class NarrationChannel
     public int priority = 2;
     public Condition[] conditions;
     public NarrationLine[] narrations;
-    [TextArea] public string[] returnTransitions;
+    public VoicedLine[] returnTransitions;
     public int returnLinesCount = 0;
 
+    // Runtime
     [System.NonSerialized] public List<NarrationLine> queue;
     [System.NonSerialized] public int index;
     [System.NonSerialized] public int returnIndex;
@@ -31,7 +33,7 @@ public class ChannelTransition
 {
     public string fromChannel;
     public string toChannel;
-    [TextArea] public string[] narrations;
+    public VoicedLine[] narrations;
     public int linesPerSwitch = 1;
 
     [System.NonSerialized] public int index;
@@ -41,8 +43,7 @@ public class DirectedNarrator : MonoBehaviour
 {
     [SerializeField] private NarrationChannel[] channels;
     [SerializeField] private ChannelTransition[] transitions;
-    [TextArea]
-    [SerializeField] private string[] idleNarrations;
+    [SerializeField] private VoicedLine[] idleNarrations;
     [SerializeField] private float lineDuration = 4f;
     [SerializeField] private float lineGap = 0.5f;
     [SerializeField] private int idlePriority = 1;
@@ -54,7 +55,6 @@ public class DirectedNarrator : MonoBehaviour
     private Coroutine _sequenceCoroutine;
     private Coroutine _idleCoroutine;
     private Dictionary<string, NarrationChannel> _channelLookup;
-
     private bool _paused;
     private bool _isIdle;
     private bool _inTransition;
@@ -246,10 +246,11 @@ public class DirectedNarrator : MonoBehaviour
             if (_activeChannel != channel) { _inTransition = false; yield break; }
             if (transition.index >= transition.narrations.Length) break;
 
-            string line = transition.narrations[transition.index];
+            VoicedLine vl = transition.narrations[transition.index];
             transition.index++;
 
-            while (!NarratorManager.Instance.ShowText(line, channel.priority, this))
+            while (!NarratorManager.Instance.ShowText(
+                vl.text, channel.priority, this, vl.clip))
             {
                 yield return null;
                 if (_activeChannel != channel) { _inTransition = false; yield break; }
@@ -267,7 +268,8 @@ public class DirectedNarrator : MonoBehaviour
                         if (_activeChannel != channel)
                         { _inTransition = false; yield break; }
                     }
-                    while (!NarratorManager.Instance.ShowText(line, channel.priority, this))
+                    while (!NarratorManager.Instance.ShowText(
+                        vl.text, channel.priority, this, vl.clip))
                     {
                         yield return null;
                         if (_activeChannel != channel)
@@ -321,10 +323,11 @@ public class DirectedNarrator : MonoBehaviour
             if (_activeChannel != channel) { _inTransition = false; yield break; }
             if (channel.returnIndex >= channel.returnTransitions.Length) break;
 
-            string rLine = channel.returnTransitions[channel.returnIndex];
+            VoicedLine vl = channel.returnTransitions[channel.returnIndex];
             channel.returnIndex++;
 
-            if (!NarratorManager.Instance.ShowText(rLine, channel.priority, this))
+            if (!NarratorManager.Instance.ShowText(
+                vl.text, channel.priority, this, vl.clip))
             {
                 _inTransition = false;
                 yield break;
@@ -375,9 +378,10 @@ public class DirectedNarrator : MonoBehaviour
             while (_paused) yield return null;
             if (_activeChannel != channel) yield break;
 
-            string currentLine = channel.queue[channel.index].text;
+            NarrationLine nl = channel.queue[channel.index];
 
-            while (!NarratorManager.Instance.ShowText(currentLine, channel.priority, this))
+            while (!NarratorManager.Instance.ShowText(
+                nl.text, channel.priority, this, nl.clip))
             {
                 yield return null;
                 if (_activeChannel != channel) yield break;
@@ -396,7 +400,7 @@ public class DirectedNarrator : MonoBehaviour
                     if (_activeChannel != channel) yield break;
 
                     while (!NarratorManager.Instance.ShowText(
-                        currentLine, channel.priority, this))
+                        nl.text, channel.priority, this, nl.clip))
                     {
                         yield return null;
                         if (_activeChannel != channel) yield break;
@@ -420,7 +424,7 @@ public class DirectedNarrator : MonoBehaviour
                     if (_activeChannel != channel) yield break;
 
                     while (!NarratorManager.Instance.ShowText(
-                        currentLine, channel.priority, this))
+                        nl.text, channel.priority, this, nl.clip))
                     {
                         yield return null;
                         if (_activeChannel != channel) yield break;
@@ -458,13 +462,16 @@ public class DirectedNarrator : MonoBehaviour
         _sequenceCoroutine = null;
     }
 
+
     private IEnumerator PlayIdleLoop()
     {
         while (_isIdle)
         {
+            VoicedLine vl = idleNarrations[_idleIndex];
+
             while (_isIdle
                    && !NarratorManager.Instance.ShowText(
-                       idleNarrations[_idleIndex], idlePriority, this))
+                       vl.text, idlePriority, this, vl.clip))
                 yield return null;
 
             if (!_isIdle) break;

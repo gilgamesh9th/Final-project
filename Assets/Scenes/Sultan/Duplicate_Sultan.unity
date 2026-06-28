@@ -1022,7 +1022,8 @@ MonoBehaviour:
   disableWhenDone: 0
   lookCooldown: 2
   lookNarrations:
-  - cube detected
+  - text: 
+    clip: {fileID: 0}
 --- !u!1 &214321260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,7 +1825,8 @@ MonoBehaviour:
   disableWhenDone: 0
   lookCooldown: 2
   lookNarrations:
-  - sphere detected
+  - text: 
+    clip: {fileID: 0}
 --- !u!1 &322115326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,7 +2162,7 @@ Transform:
   m_GameObject: {fileID: 400704754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.3, y: 1.33, z: -35.8}
+  m_LocalPosition: {x: 0.04, y: 1.33, z: -35.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3498,18 +3500,23 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: f
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
     - text: ff
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
     - text: fff
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
     - text: ffff
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
     - text: fffff
+      clip: {fileID: 0}
       isImportant: 1
       destinationIfUnsaid: HallwayBackward
     returnTransitions: []
@@ -3522,15 +3529,19 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: b
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
     - text: bb
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
     - text: bbb
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
     - text: bbbb
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
     returnTransitions: []
@@ -3539,13 +3550,18 @@ MonoBehaviour:
   - fromChannel: HallwayBackward
     toChannel: HallwayForward
     narrations:
-    - Alright. Where were we?
+    - text: 
+      clip: {fileID: 0}
     linesPerSwitch: 1
   idleNarrations:
-  - I
-  - II
-  - III
-  - IIII
+  - text: 
+    clip: {fileID: 0}
+  - text: 
+    clip: {fileID: 0}
+  - text: 
+    clip: {fileID: 0}
+  - text: 
+    clip: {fileID: 0}
   lineDuration: 4
   lineGap: 0.5
   idlePriority: 1
@@ -5265,7 +5281,8 @@ MonoBehaviour:
   disableWhenDone: 0
   lookCooldown: 2
   lookNarrations:
-  - 'this a fucking cube '
+  - text: This is a cube
+    clip: {fileID: 0}
 --- !u!1 &984134996
 GameObject:
   m_ObjectHideFlags: 0
@@ -8859,7 +8876,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZoneNarrator
   priority: 3
   narrations:
-  - Error in Var Updater
+  - text: 
+    clip: {fileID: 0}
   immediate: 0
 --- !u!4 &1567518211
 Transform:
@@ -9637,7 +9655,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZoneNarrator
   priority: 3
   narrations:
-  - 'ZoneTriggerWorks (narration placeholder) '
+  - text: 
+    clip: {fileID: 0}
   immediate: 1
 --- !u!65 &1725370465
 BoxCollider:
@@ -11304,11 +11323,120 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8043972279986834129, guid: 42dd8f898eb6a4b7bacb40c5943ac2d0, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 8799600222229825937}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3715821644406998667, guid: 42dd8f898eb6a4b7bacb40c5943ac2d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8799600222229825937}
   m_SourcePrefab: {fileID: 100100000, guid: 42dd8f898eb6a4b7bacb40c5943ac2d0, type: 3}
+--- !u!1 &8799600222229825936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3715821644406998667, guid: 42dd8f898eb6a4b7bacb40c5943ac2d0, type: 3}
+  m_PrefabInstance: {fileID: 8799600222229825935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8799600222229825937
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8799600222229825936}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
