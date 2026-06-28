@@ -1,5 +1,15 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
+public class NarrationLine
+{
+    [TextArea] public string text;
+    public bool isImportant;
+    public string destinationIfUnsaid;
+    [System.NonSerialized] public bool moved;
+}
 
 [System.Serializable]
 public class NarrationChannel
@@ -7,13 +17,30 @@ public class NarrationChannel
     public string channelName;
     public int priority = 2;
     public Condition[] conditions;
+    public NarrationLine[] narrations;
+    [TextArea] public string[] returnTransitions;
+    public int returnLinesCount = 0;
+
+    [System.NonSerialized] public List<NarrationLine> queue;
+    [System.NonSerialized] public int index;
+    [System.NonSerialized] public int returnIndex;
+}
+
+[System.Serializable]
+public class ChannelTransition
+{
+    public string fromChannel;
+    public string toChannel;
     [TextArea] public string[] narrations;
+    public int linesPerSwitch = 1;
+
     [System.NonSerialized] public int index;
 }
 
 public class DirectedNarrator : MonoBehaviour
 {
     [SerializeField] private NarrationChannel[] channels;
+    [SerializeField] private ChannelTransition[] transitions;
     [TextArea]
     [SerializeField] private string[] idleNarrations;
     [SerializeField] private float lineDuration = 4f;
@@ -26,9 +53,11 @@ public class DirectedNarrator : MonoBehaviour
     private NarrationChannel _activeChannel;
     private Coroutine _sequenceCoroutine;
     private Coroutine _idleCoroutine;
+    private Dictionary<string, NarrationChannel> _channelLookup;
 
     private bool _paused;
     private bool _isIdle;
+    private bool _inTransition;
     private float _idleTimer;
     private float _moveTimer;
     private Vector3 _lastPosition;
@@ -36,6 +65,17 @@ public class DirectedNarrator : MonoBehaviour
 
     private void Start()
     {
+        _channelLookup = new Dictionary<string, NarrationChannel>();
+
+        foreach (var ch in channels)
+        {
+            ch.queue = new List<NarrationLine>(ch.narrations);
+            ch.index = 0;
+            ch.returnIndex = 0;
+            if (!string.IsNullOrEmpty(ch.channelName))
+                _channelLookup[ch.channelName] = ch;
+        }
+
         if (playerTransform != null)
             _lastPosition = playerTransform.position;
     }
@@ -79,7 +119,8 @@ public class DirectedNarrator : MonoBehaviour
         {
             _moveTimer = 0f;
 
-            if (!_isIdle && _activeChannel != null && _sequenceCoroutine != null)
+            if (!_isIdle && !_inTransition
+                && _activeChannel != null && _sequenceCoroutine != null)
             {
                 _idleTimer += Time.deltaTime;
                 if (_idleTimer >= idleThreshold)
@@ -116,7 +157,6 @@ public class DirectedNarrator : MonoBehaviour
         NarratorManager.Instance.Release(this);
     }
 
-
     private void CheckChannels()
     {
         NarrationChannel matched = null;
@@ -131,6 +171,8 @@ public class DirectedNarrator : MonoBehaviour
 
         if (matched == _activeChannel) return;
 
+        NarrationChannel previous = _activeChannel;
+
         if (_sequenceCoroutine != null)
         {
             StopCoroutine(_sequenceCoroutine);
@@ -139,20 +181,201 @@ public class DirectedNarrator : MonoBehaviour
             NarratorManager.Instance.Release(this);
         }
 
+        if (previous != null)
+            ProcessUnsaidLines(previous);
+
         _activeChannel = matched;
 
-        if (_activeChannel != null && _activeChannel.index < _activeChannel.narrations.Length)
-            _sequenceCoroutine = StartCoroutine(PlaySequence(_activeChannel));
+        if (_activeChannel != null && _activeChannel.index < _activeChannel.queue.Count)
+        {
+            ChannelTransition transition = FindTransition(previous, _activeChannel);
+            if (transition != null
+                && transition.index < transition.narrations.Length
+                && transition.linesPerSwitch > 0)
+            {
+                _sequenceCoroutine = StartCoroutine(
+                    PlayTransitionThenSequence(transition, _activeChannel));
+            }
+            else
+            {
+                _sequenceCoroutine = StartCoroutine(PlaySequence(_activeChannel));
+            }
+        }
+    }
+
+    private void ProcessUnsaidLines(NarrationChannel channel)
+    {
+        var insertionOffsets = new Dictionary<NarrationChannel, int>();
+
+        for (int i = channel.index; i < channel.queue.Count; i++)
+        {
+            NarrationLine line = channel.queue[i];
+            if (!line.isImportant || string.IsNullOrEmpty(line.destinationIfUnsaid))
+                continue;
+            if (line.moved) continue;
+
+            if (!_channelLookup.TryGetValue(line.destinationIfUnsaid, out var dest))
+                continue;
+
+            if (!insertionOffsets.ContainsKey(dest))
+                insertionOffsets[dest] = 0;
+
+            line.moved = true;
+            dest.queue.Insert(dest.index + insertionOffsets[dest], line);
+            insertionOffsets[dest]++;
+        }
+
+        for (int i = channel.queue.Count - 1; i >= channel.index; i--)
+        {
+            if (channel.queue[i].moved)
+                channel.queue.RemoveAt(i);
+        }
+    }
+
+    private IEnumerator PlayTransitionThenSequence(
+        ChannelTransition transition, NarrationChannel channel)
+    {
+        _inTransition = true;
+
+        int linesToPlay = Mathf.Min(
+            transition.linesPerSwitch,
+            transition.narrations.Length - transition.index);
+
+        for (int i = 0; i < linesToPlay; i++)
+        {
+            if (_activeChannel != channel) { _inTransition = false; yield break; }
+            if (transition.index >= transition.narrations.Length) break;
+
+            string line = transition.narrations[transition.index];
+            transition.index++;
+
+            while (!NarratorManager.Instance.ShowText(line, channel.priority, this))
+            {
+                yield return null;
+                if (_activeChannel != channel) { _inTransition = false; yield break; }
+            }
+
+            float elapsed = 0f;
+            while (elapsed < lineDuration)
+            {
+                if (NarratorManager.Instance.CurrentOwner != this)
+                {
+                    while (NarratorManager.Instance.CurrentOwner != null
+                           && NarratorManager.Instance.CurrentOwner != this)
+                    {
+                        yield return null;
+                        if (_activeChannel != channel)
+                        { _inTransition = false; yield break; }
+                    }
+                    while (!NarratorManager.Instance.ShowText(line, channel.priority, this))
+                    {
+                        yield return null;
+                        if (_activeChannel != channel)
+                        { _inTransition = false; yield break; }
+                    }
+                    elapsed = 0f;
+                    continue;
+                }
+                if (_activeChannel != channel) { _inTransition = false; yield break; }
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            NarratorManager.Instance.ClearText(this);
+
+            if (i < linesToPlay - 1 || channel.index < channel.queue.Count)
+            {
+                elapsed = 0f;
+                while (elapsed < lineGap)
+                {
+                    if (_activeChannel != channel) { _inTransition = false; yield break; }
+                    elapsed += Time.deltaTime;
+                    yield return null;
+                }
+            }
+        }
+
+        _inTransition = false;
+
+        if (_activeChannel == channel && channel.index < channel.queue.Count)
+            _sequenceCoroutine = StartCoroutine(PlaySequence(channel));
+        else
+            _sequenceCoroutine = null;
+    }
+
+    private IEnumerator PlayReturnTransitions(NarrationChannel channel)
+    {
+        if (channel.returnTransitions == null || channel.returnTransitions.Length == 0)
+            yield break;
+        if (channel.returnLinesCount <= 0) yield break;
+
+        int linesToPlay = Mathf.Min(
+            channel.returnLinesCount,
+            channel.returnTransitions.Length - channel.returnIndex);
+        if (linesToPlay <= 0) yield break;
+
+        _inTransition = true;
+
+        for (int r = 0; r < linesToPlay; r++)
+        {
+            if (_activeChannel != channel) { _inTransition = false; yield break; }
+            if (channel.returnIndex >= channel.returnTransitions.Length) break;
+
+            string rLine = channel.returnTransitions[channel.returnIndex];
+            channel.returnIndex++;
+
+            if (!NarratorManager.Instance.ShowText(rLine, channel.priority, this))
+            {
+                _inTransition = false;
+                yield break;
+            }
+
+            float re = 0f;
+            while (re < lineDuration)
+            {
+                if (NarratorManager.Instance.CurrentOwner != this)
+                {
+                    _inTransition = false;
+                    yield break;
+                }
+                if (_activeChannel != channel) { _inTransition = false; yield break; }
+                re += Time.deltaTime;
+                yield return null;
+            }
+
+            NarratorManager.Instance.ClearText(this);
+
+            if (r < linesToPlay - 1)
+            {
+                re = 0f;
+                while (re < lineGap)
+                {
+                    if (_activeChannel != channel) { _inTransition = false; yield break; }
+                    re += Time.deltaTime;
+                    yield return null;
+                }
+            }
+        }
+
+        _inTransition = false;
+
+        float gapElapsed = 0f;
+        while (gapElapsed < lineGap)
+        {
+            if (_activeChannel != channel) yield break;
+            gapElapsed += Time.deltaTime;
+            yield return null;
+        }
     }
 
     private IEnumerator PlaySequence(NarrationChannel channel)
     {
-        while (channel.index < channel.narrations.Length)
+        while (channel.index < channel.queue.Count)
         {
             while (_paused) yield return null;
             if (_activeChannel != channel) yield break;
 
-            string currentLine = channel.narrations[channel.index];
+            string currentLine = channel.queue[channel.index].text;
 
             while (!NarratorManager.Instance.ShowText(currentLine, channel.priority, this))
             {
@@ -172,7 +395,8 @@ public class DirectedNarrator : MonoBehaviour
                     while (_paused) yield return null;
                     if (_activeChannel != channel) yield break;
 
-                    while (!NarratorManager.Instance.ShowText(currentLine, channel.priority, this))
+                    while (!NarratorManager.Instance.ShowText(
+                        currentLine, channel.priority, this))
                     {
                         yield return null;
                         if (_activeChannel != channel) yield break;
@@ -192,7 +416,11 @@ public class DirectedNarrator : MonoBehaviour
                         while (_paused) yield return null;
                     }
 
-                    while (!NarratorManager.Instance.ShowText(currentLine, channel.priority, this))
+                    yield return PlayReturnTransitions(channel);
+                    if (_activeChannel != channel) yield break;
+
+                    while (!NarratorManager.Instance.ShowText(
+                        currentLine, channel.priority, this))
                     {
                         yield return null;
                         if (_activeChannel != channel) yield break;
@@ -209,7 +437,7 @@ public class DirectedNarrator : MonoBehaviour
             channel.index++;
             NarratorManager.Instance.ClearText(this);
 
-            if (channel.index < channel.narrations.Length)
+            if (channel.index < channel.queue.Count)
             {
                 elapsed = 0f;
                 while (elapsed < lineGap)
@@ -235,7 +463,8 @@ public class DirectedNarrator : MonoBehaviour
         while (_isIdle)
         {
             while (_isIdle
-                   && !NarratorManager.Instance.ShowText(idleNarrations[_idleIndex], idlePriority, this))
+                   && !NarratorManager.Instance.ShowText(
+                       idleNarrations[_idleIndex], idlePriority, this))
                 yield return null;
 
             if (!_isIdle) break;
@@ -251,7 +480,6 @@ public class DirectedNarrator : MonoBehaviour
                         yield return null;
                     break;
                 }
-
                 elapsed += Time.deltaTime;
                 yield return null;
             }
@@ -277,6 +505,20 @@ public class DirectedNarrator : MonoBehaviour
 
         NarratorManager.Instance.ClearText(this);
         NarratorManager.Instance.Release(this);
+    }
+
+    private ChannelTransition FindTransition(
+        NarrationChannel from, NarrationChannel to)
+    {
+        if (from == null || to == null || transitions == null) return null;
+
+        foreach (var t in transitions)
+        {
+            if (t.fromChannel == from.channelName
+                && t.toChannel == to.channelName)
+                return t;
+        }
+        return null;
     }
 
     private bool AllConditionsMet(Condition[] conditions)
