@@ -6,8 +6,7 @@ public class LookTarget : MonoBehaviour
     [SerializeField] private bool disableWhenDone = false;
     [SerializeField] private float lookCooldown = 2f;
 
-    [TextArea]
-    [SerializeField] private string[] lookNarrations = { " " };
+    [SerializeField] private VoicedLine[] lookNarrations;
 
     private int _lookIndex;
     private float _lastTriggerTime = -99f;
@@ -19,14 +18,15 @@ public class LookTarget : MonoBehaviour
 
         if (TryGetComponent<ConditionalNarrator>(out var conditional))
         {
-            string line = conditional.Evaluate();
-            if (string.IsNullOrEmpty(line))
+            VoicedLine line = conditional.Evaluate();
+            if (line == null)
             {
                 if (disableWhenDone) _exhausted = true;
                 return;
             }
 
-            if (!NarratorManager.Instance.SayImmediate(line, priority, this))
+            if (!NarratorManager.Instance.SayImmediate(
+                line.text, priority, this, line.clip))
                 return;
 
             _lastTriggerTime = Time.time;
@@ -41,7 +41,9 @@ public class LookTarget : MonoBehaviour
 
         if (Time.time - _lastTriggerTime < lookCooldown) return;
 
-        if (!NarratorManager.Instance.SayImmediate(lookNarrations[_lookIndex], priority, this))
+        var entry = lookNarrations[_lookIndex];
+        if (!NarratorManager.Instance.SayImmediate(
+            entry.text, priority, this, entry.clip))
             return;
 
         _lookIndex++;

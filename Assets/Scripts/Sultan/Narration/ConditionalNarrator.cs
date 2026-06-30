@@ -14,7 +14,7 @@ public class Condition
 public class NarrationRule
 {
     public Condition[] conditions;
-    [TextArea] public string[] narrations;
+    public VoicedLine[] narrations;
 }
 
 public class ConditionalNarrator : MonoBehaviour
@@ -24,8 +24,7 @@ public class ConditionalNarrator : MonoBehaviour
 
     [SerializeField] private NarrationRule[] rules;
 
-    [TextArea]
-    [SerializeField] private string[] fallbackNarrations;
+    [SerializeField] private VoicedLine[] fallbackNarrations;
 
     [SerializeField] private bool immediate = false;
 
@@ -47,13 +46,15 @@ public class ConditionalNarrator : MonoBehaviour
         if (NarratorManager.Instance == null) return;
         _playerInside = true;
 
-        string line = Evaluate();
-        if (string.IsNullOrEmpty(line)) return;
+        VoicedLine line = Evaluate();
+        if (line == null) return;
 
         if (immediate)
-            NarratorManager.Instance.SayImmediate(line, priority, this);
+            NarratorManager.Instance.SayImmediate(
+                line.text, priority, this, line.clip);
         else
-            NarratorManager.Instance.Say(line, priority, this);
+            NarratorManager.Instance.Say(
+                line.text, priority, this, line.clip);
     }
 
     private void OnTriggerExit(Collider other)
@@ -62,7 +63,7 @@ public class ConditionalNarrator : MonoBehaviour
         _playerInside = false;
     }
 
-    public string Evaluate()
+    public VoicedLine Evaluate()
     {
         if (_exhausted) return null;
 

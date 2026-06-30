@@ -3,23 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[System.Serializable]
+public class VoicedLine
+{
+    [TextArea] public string text;
+    public AudioClip clip;
+}
+
 public class NarratorManager : MonoBehaviour
 {
     public static NarratorManager Instance { get; private set; }
 
     [SerializeField] private TextMeshProUGUI narratorText;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private float displayDuration = 4f;
     [SerializeField] private float gapBetweenLines = 0.5f;
 
-    private readonly Queue<string> _queue = new Queue<string>();
-    private bool _isDisplaying;
+    private struct QueuedLine
+    {
+        public string text;
+        public AudioClip clip;
+    }
 
+    private readonly Queue<QueuedLine> _queue = new Queue<QueuedLine>();
+    private bool _isDisplaying;
     private int _currentPriority = -1;
     private object _currentOwner;
-
     public int CurrentPriority => _currentPriority;
     public object CurrentOwner => _currentOwner;
-
 
     public bool TryClaim(int priority, object owner)
     {
@@ -42,7 +53,6 @@ public class NarratorManager : MonoBehaviour
         _currentOwner = null;
     }
 
-
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -50,30 +60,48 @@ public class NarratorManager : MonoBehaviour
         narratorText.text = "";
     }
 
-    public bool Say(string text, int priority, object owner)
+    private void PlayClip(AudioClip clip)
+    {
+        if (audioSource == null) return;
+        audioSource.Stop();
+        if (clip == null) return;
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
+
+    private void StopClip()
+    {
+        if (audioSource == null) return;
+        audioSource.Stop();
+    }
+
+
+    public bool Say(string text, int priority, object owner, AudioClip clip = null)
     {
         if (!TryClaim(priority, owner)) return false;
 
         StopAllCoroutines();
+        StopClip();
         _isDisplaying = false;
-        _queue.Enqueue(text);
+        _queue.Enqueue(new QueuedLine { text = text, clip = clip });
         StartCoroutine(DrainQueue(owner));
         return true;
     }
 
-    public bool SayImmediate(string text, int priority, object owner)
+    public bool SayImmediate(string text, int priority, object owner, AudioClip clip = null)
     {
         if (!TryClaim(priority, owner)) return false;
 
         StopAllCoroutines();
+        StopClip();
         _queue.Clear();
         _isDisplaying = false;
-        _queue.Enqueue(text);
+        _queue.Enqueue(new QueuedLine { text = text, clip = clip });
         StartCoroutine(DrainQueue(owner));
         return true;
     }
 
-    public bool ShowText(string text, int priority, object owner)
+    public bool ShowText(string text, int priority, object owner, AudioClip clip = null)
     {
         if (!TryClaim(priority, owner)) return false;
 
@@ -81,6 +109,7 @@ public class NarratorManager : MonoBehaviour
         _queue.Clear();
         _isDisplaying = false;
         narratorText.text = text;
+        PlayClip(clip);
         return true;
     }
 
@@ -92,21 +121,22 @@ public class NarratorManager : MonoBehaviour
         _queue.Clear();
         _isDisplaying = false;
         narratorText.text = "";
+        StopClip();
     }
 
     public void Say(string text)
     {
-        Say(text, 0, null);
+        Say(text, 0, null, null);
     }
 
     public void SayImmediate(string text)
     {
-        SayImmediate(text, 0, null);
+        SayImmediate(text, 0, null, null);
     }
 
     public void ShowText(string text)
     {
-        ShowText(text, 0, null);
+        ShowText(text, 0, null, null);
     }
 
     public void ClearText()
@@ -114,18 +144,41 @@ public class NarratorManager : MonoBehaviour
         ClearText(null);
     }
 
+    // private IEnumerator DrainQueue(object owner)
+    // {
+    //     _isDisplaying = true;
+    //     while (_queue.Count > 0)
+    //     {
+    //         var line = _queue.Dequeue();
+    //         narratorText.text = line.text;
+    //         PlayClip(line.clip);
+    //         yield return new WaitForSeconds(displayDuration);
+    //         narratorText.text = "";
+    //         StopClip();
+    //         if (_queue.Count > 0)
+    //             yield return new WaitForSeconds(gapBetweenLines);
+    //     }
+    //     _isDisplaying = false;
+    //     Release(owner);
+    // }
+
     private IEnumerator DrainQueue(object owner)
     {
         _isDisplaying = true;
         while (_queue.Count > 0)
         {
-            narratorText.text = _queue.Dequeue();
-            yield return new WaitForSeconds(displayDuration);
+            var line = _queue.Dequeue();
+            float duration = line.clip != null ? line.clip.length : displayDuration;
+            narratorText.text = line.text;
+            PlayClip(line.clip);
+            yield return new WaitForSeconds(duration);
             narratorText.text = "";
+            StopClip();
             if (_queue.Count > 0)
                 yield return new WaitForSeconds(gapBetweenLines);
         }
         _isDisplaying = false;
         Release(owner);
     }
+    
 }

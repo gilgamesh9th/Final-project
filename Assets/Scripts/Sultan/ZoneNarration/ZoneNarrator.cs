@@ -4,8 +4,7 @@ public class ZoneNarrator : MonoBehaviour
 {
     [SerializeField] private int priority = 3;
 
-    [TextArea]
-    [SerializeField] private string[] narrations = { " " };
+    [SerializeField] private VoicedLine[] narrations;
 
     [SerializeField] private bool immediate = false;
 
@@ -22,22 +21,27 @@ public class ZoneNarrator : MonoBehaviour
 
         if (TryGetComponent<ConditionalNarrator>(out var conditional))
         {
-            string line = conditional.Evaluate();
-            if (string.IsNullOrEmpty(line)) return;
+            VoicedLine line = conditional.Evaluate();
+            if (line == null) return;
 
             if (immediate)
-                NarratorManager.Instance.SayImmediate(line, priority, this);
+                NarratorManager.Instance.SayImmediate(
+                    line.text, priority, this, line.clip);
             else
-                NarratorManager.Instance.Say(line, priority, this);
+                NarratorManager.Instance.Say(
+                    line.text, priority, this, line.clip);
             return;
         }
 
         if (_index >= narrations.Length) return;
 
+        var entry = narrations[_index];
         if (immediate)
-            NarratorManager.Instance.SayImmediate(narrations[_index], priority, this);
+            NarratorManager.Instance.SayImmediate(
+                entry.text, priority, this, entry.clip);
         else
-            NarratorManager.Instance.Say(narrations[_index], priority, this);
+            NarratorManager.Instance.Say(
+                entry.text, priority, this, entry.clip);
 
         _index++;
     }
