@@ -1,6 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[System.Serializable]
+public struct ColorEntry
+{
+    public PuzzleColor puzzleColor;
+    public Material material;
+}
+
 public class SequenceLight : MonoBehaviour
 {
     public ColorPuzzleManager manager;
@@ -9,10 +16,11 @@ public class SequenceLight : MonoBehaviour
     public float colorDuration = 1f;
     public float pauseDuration = 0.3f;
     public float loopPause = 1.5f;
-    public float lightIntensity = 100f;
+    public float lightIntensity = 5f;
     public float lightRange = 4f;
     public float spotAngle = 60f;
     public float innerSpotAngle = 30f;
+    public ColorEntry[] colors;
 
     private Material mat;
     private int colorIndex = 0;
@@ -30,13 +38,12 @@ public class SequenceLight : MonoBehaviour
         spotLight.spotAngle = spotAngle;
         spotLight.innerSpotAngle = innerSpotAngle;
 
-        XylophoneBar[] bars = FindObjectsOfType<XylophoneBar>();
-        foreach (var bar in bars)
+        foreach (var entry in colors)
         {
-            if (!colorMap.ContainsKey(bar.barColor))
-            {
-                colorMap[bar.barColor] = bar.GetComponent<Renderer>().material.color;
-            }
+            Color c = entry.material.HasProperty("_BaseColor")
+                ? entry.material.GetColor("_BaseColor")
+                : entry.material.color;
+            colorMap[entry.puzzleColor] = c;
         }
 
         ShowColor(0);
