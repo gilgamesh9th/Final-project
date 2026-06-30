@@ -144,15 +144,34 @@ public class NarratorManager : MonoBehaviour
         ClearText(null);
     }
 
+    // private IEnumerator DrainQueue(object owner)
+    // {
+    //     _isDisplaying = true;
+    //     while (_queue.Count > 0)
+    //     {
+    //         var line = _queue.Dequeue();
+    //         narratorText.text = line.text;
+    //         PlayClip(line.clip);
+    //         yield return new WaitForSeconds(displayDuration);
+    //         narratorText.text = "";
+    //         StopClip();
+    //         if (_queue.Count > 0)
+    //             yield return new WaitForSeconds(gapBetweenLines);
+    //     }
+    //     _isDisplaying = false;
+    //     Release(owner);
+    // }
+
     private IEnumerator DrainQueue(object owner)
     {
         _isDisplaying = true;
         while (_queue.Count > 0)
         {
             var line = _queue.Dequeue();
+            float duration = line.clip != null ? line.clip.length : displayDuration;
             narratorText.text = line.text;
             PlayClip(line.clip);
-            yield return new WaitForSeconds(displayDuration);
+            yield return new WaitForSeconds(duration);
             narratorText.text = "";
             StopClip();
             if (_queue.Count > 0)
@@ -161,4 +180,5 @@ public class NarratorManager : MonoBehaviour
         _isDisplaying = false;
         Release(owner);
     }
+    
 }

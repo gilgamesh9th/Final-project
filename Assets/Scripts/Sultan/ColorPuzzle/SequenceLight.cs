@@ -4,12 +4,16 @@ using System.Collections.Generic;
 public class SequenceLight : MonoBehaviour
 {
     public ColorPuzzleManager manager;
-    public Light pointLight;
+    public Light spotLight;
     public Renderer sphereRenderer;
     public float colorDuration = 1f;
     public float pauseDuration = 0.3f;
     public float loopPause = 1.5f;
-    public float lightIntensity = 5f;
+    public float lightIntensity = 100f;
+    public float lightRange = 4f;
+    public float spotAngle = 60f;
+    public float innerSpotAngle = 30f;
+
     private Material mat;
     private int colorIndex = 0;
     private float timer = 0f;
@@ -20,7 +24,11 @@ public class SequenceLight : MonoBehaviour
     void Start()
     {
         mat = sphereRenderer.material;
-        mat.SetColor("_EmissionColor", Color.black);
+
+        spotLight.type = LightType.Spot;
+        spotLight.range = lightRange;
+        spotLight.spotAngle = spotAngle;
+        spotLight.innerSpotAngle = innerSpotAngle;
 
         XylophoneBar[] bars = FindObjectsOfType<XylophoneBar>();
         foreach (var bar in bars)
@@ -85,20 +93,20 @@ public class SequenceLight : MonoBehaviour
 
         Color c = GetBarColor(seq[index]);
         mat.SetColor("_BaseColor", c);
-        pointLight.color = c;
-        pointLight.intensity = lightIntensity;
+        spotLight.color = c;
+        spotLight.intensity = lightIntensity;
     }
 
     void Dim()
     {
         mat.SetColor("_BaseColor", Color.black);
-        pointLight.intensity = 0f;
+        spotLight.intensity = 0f;
     }
 
     void TurnOff()
     {
         mat.SetColor("_BaseColor", Color.black);
-        pointLight.intensity = 0f;
+        spotLight.intensity = 0f;
     }
 
     Color GetBarColor(PuzzleColor pc)
