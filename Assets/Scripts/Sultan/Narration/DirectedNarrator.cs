@@ -22,6 +22,7 @@ public class NarrationChannel
     public VoicedLine[] returnTransitions;
     public int returnLinesCount = 0;
     public bool loopReturnTransitions = false;
+    public bool loopLastLine = false;
 
     // Runtime
     [System.NonSerialized] public List<NarrationLine> queue;
@@ -392,6 +393,84 @@ public class DirectedNarrator : MonoBehaviour
         }
     }
 
+    private IEnumerator DisplayLine(NarrationLine nl, NarrationChannel channel)
+    {
+        while (!NarratorManager.Instance.ShowText(
+            nl.text, channel.priority, this, nl.clip))
+        {
+            yield return null;
+            if (_activeChannel != channel) yield break;
+            while (_paused) yield return null;
+        }
+
+        float duration = GetDuration(nl.clip);
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            if (_paused)
+            {
+                NarratorManager.Instance.ClearText(this);
+                NarratorManager.Instance.Release(this);
+
+                while (_paused) yield return null;
+                if (_activeChannel != channel) yield break;
+
+                while (!NarratorManager.Instance.ShowText(
+                    nl.text, channel.priority, this, nl.clip))
+                {
+                    yield return null;
+                    if (_activeChannel != channel) yield break;
+                    while (_paused) yield return null;
+                }
+                elapsed = 0f;
+                continue;
+            }
+
+            if (NarratorManager.Instance.CurrentOwner != this)
+            {
+                while (NarratorManager.Instance.CurrentOwner != null
+                       && NarratorManager.Instance.CurrentOwner != this)
+                {
+                    yield return null;
+                    if (_activeChannel != channel) yield break;
+                    while (_paused) yield return null;
+                }
+
+                yield return PlayReturnTransitions(channel);
+                if (_activeChannel != channel) yield break;
+
+                while (!NarratorManager.Instance.ShowText(
+                    nl.text, channel.priority, this, nl.clip))
+                {
+                    yield return null;
+                    if (_activeChannel != channel) yield break;
+                }
+                elapsed = 0f;
+                continue;
+            }
+
+            if (_activeChannel != channel) yield break;
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    private IEnumerator WaitGap(NarrationChannel channel)
+    {
+        float elapsed = 0f;
+        while (elapsed < lineGap)
+        {
+            while (_paused) yield return null;
+            if (_activeChannel != channel) yield break;
+
+            if (NarratorManager.Instance.CurrentOwner == null
+                || NarratorManager.Instance.CurrentOwner == this)
+                elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+    }
+
     private IEnumerator PlaySequence(NarrationChannel channel)
     {
         while (channel.index < channel.queue.Count)
@@ -401,83 +480,36 @@ public class DirectedNarrator : MonoBehaviour
 
             NarrationLine nl = channel.queue[channel.index];
 
-            while (!NarratorManager.Instance.ShowText(
-                nl.text, channel.priority, this, nl.clip))
-            {
-                yield return null;
-                if (_activeChannel != channel) yield break;
-                while (_paused) yield return null;
-            }
-
-            float duration = GetDuration(nl.clip);
-            float elapsed = 0f;
-            while (elapsed < duration)
-            {
-                if (_paused)
-                {
-                    NarratorManager.Instance.ClearText(this);
-                    NarratorManager.Instance.Release(this);
-
-                    while (_paused) yield return null;
-                    if (_activeChannel != channel) yield break;
-
-                    while (!NarratorManager.Instance.ShowText(
-                        nl.text, channel.priority, this, nl.clip))
-                    {
-                        yield return null;
-                        if (_activeChannel != channel) yield break;
-                        while (_paused) yield return null;
-                    }
-                    elapsed = 0f;
-                    continue;
-                }
-
-                if (NarratorManager.Instance.CurrentOwner != this)
-                {
-                    while (NarratorManager.Instance.CurrentOwner != null
-                           && NarratorManager.Instance.CurrentOwner != this)
-                    {
-                        yield return null;
-                        if (_activeChannel != channel) yield break;
-                        while (_paused) yield return null;
-                    }
-
-                    yield return PlayReturnTransitions(channel);
-                    if (_activeChannel != channel) yield break;
-
-                    while (!NarratorManager.Instance.ShowText(
-                        nl.text, channel.priority, this, nl.clip))
-                    {
-                        yield return null;
-                        if (_activeChannel != channel) yield break;
-                    }
-                    elapsed = 0f;
-                    continue;
-                }
-
-                if (_activeChannel != channel) yield break;
-                elapsed += Time.deltaTime;
-                yield return null;
-            }
+            yield return DisplayLine(nl, channel);
+            if (_activeChannel != channel) yield break;
 
             channel.index++;
             NarratorManager.Instance.ClearText(this);
 
             if (channel.index < channel.queue.Count)
             {
-                elapsed = 0f;
-                while (elapsed < lineGap)
-                {
-                    while (_paused) yield return null;
-                    if (_activeChannel != channel) yield break;
-
-                    if (NarratorManager.Instance.CurrentOwner == null
-                        || NarratorManager.Instance.CurrentOwner == this)
-                        elapsed += Time.deltaTime;
-
-                    yield return null;
-                }
+                yield return WaitGap(channel);
+                if (_activeChannel != channel) yield break;
             }
+        }
+
+        if (channel.loopLastLine && channel.queue.Count > 0)
+        {
+            NarrationLine lastLine = channel.queue[channel.queue.Count - 1];
+            while (_activeChannel == channel)
+            {
+                while (_paused) yield return null;
+                if (_activeChannel != channel) yield break;
+
+                yield return DisplayLine(lastLine, channel);
+                if (_activeChannel != channel) yield break;
+
+                NarratorManager.Instance.ClearText(this);
+
+                yield return WaitGap(channel);
+                if (_activeChannel != channel) yield break;
+            }
+            yield break;
         }
 
         NarratorManager.Instance.Release(this);
@@ -585,4 +617,4 @@ public class DirectedNarrator : MonoBehaviour
         return clip != null ? clip.length : lineDuration;
     }
     
-}//
+}
