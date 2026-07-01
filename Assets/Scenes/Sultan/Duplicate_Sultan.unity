@@ -2849,7 +2849,7 @@ Transform:
   m_GameObject: {fileID: 400704754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.8, y: 1.28, z: -40.9}
+  m_LocalPosition: {x: -1.02, y: -7.48, z: -40.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4446,26 +4446,35 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: Attention, please.
-      clip: {fileID: 8300000, guid: 3aa4888cb65a648aaabdd5a821c5540d, type: 3}
+    - text: Test... Test...
+      clip: {fileID: 8300000, guid: c68ad476a4d784118ac30d8cf7645d6c, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
-    - text: I will escort you through the hallways.
-      clip: {fileID: 8300000, guid: 1d63b4702810248cbbfc474ebf891d1b, type: 3}
+    - text: Attention, please!
+      clip: {fileID: 8300000, guid: b2d0c222a250b446da16fe61f9f04f5f, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
-    - text: 'Do not talk to anyone in the hallways. Weird people around here. '
-      clip: {fileID: 8300000, guid: ce258567f36b24ba99a2879988ccbff8, type: 3}
+    - text: Welcome to our humbe hotel
+      clip: {fileID: 8300000, guid: c00f69cbe51fc42e8b44fd0bfe1b156c, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: RightJunctionForward
+    - text: I will escort you through the speaker, so you don't get lost. Or bored.
+        Nobody gets bored in our hotel!
+      clip: {fileID: 8300000, guid: 571edb82f39af4f7ba7c7dc6ba31eb06, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
-    - text: 'At the end of the hallway take a left then a right. '
-      clip: {fileID: 8300000, guid: 8ecb935c093cb49ad8ba83e9e1dd0131, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-    - text: fffff
-      clip: {fileID: 0}
+    - text: Please proceed to the end of the hallway. You're doing great.
+      clip: {fileID: 8300000, guid: 119c7f2bddf944f0682da78b936d265a, type: 3}
       isImportant: 1
       destinationIfUnsaid: RightJunctionForward
+    - text: You know the way by now.
+      clip: {fileID: 8300000, guid: 3eea1dfef8f8a4d8d857da18911669c9, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+    - text: End of the hallway. Then take a left.
+      clip: {fileID: 8300000, guid: d9fe0db6399574667b16a37e910b25aa, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
     returnTransitions: []
     returnLinesCount: 0
     loopReturnTransitions: 0
@@ -4476,20 +4485,20 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: b
-      clip: {fileID: 0}
+    - text: Hold on. Why are you going back?
+      clip: {fileID: 8300000, guid: 72f307acc1fe2408f83222944ace6511, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
-    - text: bb
-      clip: {fileID: 0}
+    - text: No. No. You're not supposed to go back.
+      clip: {fileID: 8300000, guid: 43297bd2c7e734992a227688cf8d2483, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
-    - text: bbb
-      clip: {fileID: 0}
+    - text: Turn around!
+      clip: {fileID: 8300000, guid: 39d60843df50b48db91efb2f75994d77, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
-    - text: bbbb
-      clip: {fileID: 0}
+    - text: Come on, dude. I told you a million times. Wrong way!
+      clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
     returnTransitions: []
@@ -4526,23 +4535,37 @@ MonoBehaviour:
     toChannel: HallwayForward
     narrations:
     - text: Good. Where were we? Ah, yes!
-      clip: {fileID: 8300000, guid: 566d9b01bbe2146e8b6f3b1e9db96085, type: 3}
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+    - text: There you are. As I was saying...
+      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+    - text: Okay... Before you so rudely interrupted me... I was saying...
+      clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
     linesPerSwitch: 1
     loop: 1
   idleNarrations:
   - text: Are you gonna move or what?
-    clip: {fileID: 8300000, guid: 2bd873523d1b6438ab3238bf8bc7c8f1, type: 3}
-  - text: II
-    clip: {fileID: 0}
-  - text: III
-    clip: {fileID: 0}
-  - text: IIII
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: b69e51b23a72949fbbd83829122a99f5, type: 3}
+  - text: You're not gonna just stand there, are you?
+    clip: {fileID: 8300000, guid: 46b2e4edb51024eb6a924f1731992260, type: 3}
+  - text: You know this would be boring if you don't do anything?
+    clip: {fileID: 8300000, guid: 28ba010a22d22403d88dc4749a63124f, type: 3}
+  - text: Move, please!
+    clip: {fileID: 8300000, guid: 8d34f4c5112eb43d5a49bf0d728eece1, type: 3}
+  - text: Move, damn you!
+    clip: {fileID: 8300000, guid: 6f70fc38145f0499db7c574a19d84dcb, type: 3}
+  - text: Security! I'll call security if you don't move.
+    clip: {fileID: 8300000, guid: d86c8733566804baf8352908d200f8fa, type: 3}
+  - text: You're lucky the security guy is nowhere to be found. Move...or I'll come
+      get you myself.
+    clip: {fileID: 8300000, guid: 8911a2703da5c44bf879dde4b6916d75, type: 3}
   lineDuration: 4
   lineGap: 0.5
   idlePriority: 1
   idleThreshold: 10
   moveToResumeTime: 2.5
+  movementGraceWindow: 0.3
   loopIdle: 1
   playerTransform: {fileID: 400704758}
 --- !u!4 &592384909
@@ -14628,9 +14651,13 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -79.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2858154983719147000, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3344774732096762599, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.6
+      value: 20.3
       objectReference: {fileID: 0}
     - target: {fileID: 3344774732096762599, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14638,7 +14665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3344774732096762599, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 33.7
+      value: 13.4
       objectReference: {fileID: 0}
     - target: {fileID: 3850330476978877495, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_IsActive
@@ -14651,6 +14678,10 @@ PrefabInstance:
     - target: {fileID: 4167254570982908782, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_Size.z
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572235934982904055, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4596293523193094863, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14667,6 +14698,10 @@ PrefabInstance:
     - target: {fileID: 5140441824990162660, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_Name
       value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140441824990162660, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5283897036792232729, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14718,7 +14753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5419456078938145546, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 110
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5577336253207513659, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_IsActive
@@ -14883,6 +14918,10 @@ PrefabInstance:
     - target: {fileID: 7082962341456955506, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_Size.z
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369708211949777274, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7587487936801846747, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_IsActive
@@ -16115,15 +16154,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1887106080828312585, guid: 72af805f4793946cebc31f83c8d90385, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1887106080828312585, guid: 72af805f4793946cebc31f83c8d90385, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000036798156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1887106080828312585, guid: 72af805f4793946cebc31f83c8d90385, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1887106080828312585, guid: 72af805f4793946cebc31f83c8d90385, type: 3}
       propertyPath: m_LocalRotation.w
