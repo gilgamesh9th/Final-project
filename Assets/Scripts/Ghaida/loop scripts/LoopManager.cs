@@ -1,44 +1,114 @@
 using UnityEngine;
+using System.Collections;
 
 public class LoopManager : MonoBehaviour
 {
     public static LoopManager Instance;
 
-    public int loopCount = 0; // tracks how many loops completed
-    public bool hasCompletedLoop = false; // true only after player hits forward trigger
-    public GameObject normalObject; // assign in inspector
-    public GameObject anomalyObject; // assign in inspector
+    [System.Serializable]
+    public class AnomalyPair
+    {
+        public GameObject normalObject;
+        public GameObject anomalyObject;
+    }
+
+    public AnomalyPair[] anomalyObjects; // assign pairs in inspector
+    public AudioClip flickerSound;
+    public PlayerTeleporter forwardTrigger; // assign end trigger to disable on solve
+
+    private int loopCount = 0;
+    private int guessesRemaining = 3;
+    private int currentAnomalyIndex = 0;
+    private bool interactionEnabled = true;
+    private bool puzzleSolved = false;
+
+    // narrator events
+    public static event System.Action OnLoopStart;
+    public static event System.Action OnWrongGuess;
+    public static event System.Action OnGuessesExhausted;
+    public static event System.Action OnLoopBreak;
+
     void Awake() => Instance = this;
 
-    // odd loops show anomaly, even loops are normal
-    public bool IsAnomalyVersion => loopCount % 2 == 1;
+    public bool InteractionEnabled => interactionEnabled && !puzzleSolved;
 
-    // called by forward trigger
-    public void OnPlayerReturned()
+    public void OnLoopCompleted()
     {
         loopCount++;
-        hasCompletedLoop = true;
+        guessesRemaining = 3;
+        interactionEnabled = true;
+
+        if (loopCount >= 2)
+            SwapAnomaly();
+
+        OnLoopStart?.Invoke();
     }
 
-    // swaps anomaly on/off based on loop count
-    public void UpdateHallway()
+    private void SwapAnomaly()
     {
-        Debug.Log("updating hallway");
-        normalObject.SetActive(!IsAnomalyVersion);
-        anomalyObject.SetActive(IsAnomalyVersion);
-    }
-
-    // called when player correctly identifies anomaly
-    public void BreakLoop()
-    {
-        Debug.Log("loop broken");
-        // disable all triggers
-        foreach (var trigger in FindObjectsByType<PlayerTeleporter>(FindObjectsSortMode.None))
+        // hide previous anomaly
+        if (currentAnomalyIndex < anomalyObjects.Length)
         {
-            Debug.Log("disabling " + trigger.gameObject.name);
-            trigger.enabled = false;
-            trigger.GetComponent<Collider>().enabled = false;
+            anomalyObjects[currentAnomalyIndex].anomalyObject.SetActive(false);
+            anomalyObjects[currentAnomalyIndex].normalObject.SetActive(true);
         }
-        FindObjectsByType<HallwayEntrance>(FindObjectsSortMode.None)[0].enabled = false;
+
+        // pick next
+        currentAnomalyIndex = (loopCount - 2) % anomalyObjects.Length;
+
+        // show new anomaly
+        anomalyObjects[currentAnomalyIndex].normalObject.SetActive(false);
+        anomalyObjects[currentAnomalyIndex].anomalyObject.SetActive(true);
+    }
+
+    public void WrongGuess()
+    {
+        guessesRemaining--;
+        OnWrongGuess?.Invoke();
+
+        if (guessesRemaining <= 0)
+        {
+            interactionEnabled = false;
+            OnGuessesExhausted?.Invoke();
+        }
+    }
+
+    public void CorrectGuess()
+    {
+        puzzleSolved = true;
+        StartCoroutine(FlickerAndBreak());
+    }
+
+    private IEnumerator FlickerAndBreak()
+    {
+        AnomalyPair current = anomalyObjects[currentAnomalyIndex];
+        AudioSource audio = GetComponent<AudioSource>();
+
+        if (audio && flickerSound)
+            audio.PlayOneShot(flickerSound);
+
+        // flicker 4 times
+        for (int i = 0; i < 4; i++)
+        {
+            current.anomalyObject.SetActive(true);
+            current.normalObject.SetActive(false);
+            yield return new WaitForSeconds(0.1f);
+            current.anomalyObject.SetActive(false);
+            current.normalObject.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        // settle on normal
+        current.normalObject.SetActive(true);
+        current.anomalyObject.SetActive(false);
+
+        OnLoopBreak?.Invoke();
+
+        // disable forward trigger
+        if (forwardTrigger != null)
+        {
+            forwardTrigger.enabled = false;
+            forwardTrigger.GetComponent<Collider>().enabled = false;
+        }
     }
 }
