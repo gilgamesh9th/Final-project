@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInteraction : MonoBehaviour
+public class PlayerInteractionII : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float interactDistance = 15f;

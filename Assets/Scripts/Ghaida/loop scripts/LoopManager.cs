@@ -46,17 +46,18 @@ public class LoopManager : MonoBehaviour
 
     private void SwapAnomaly()
     {
-        // hide previous anomaly
-        if (currentAnomalyIndex < anomalyObjects.Length)
+        Debug.Log("SwapAnomaly called, loopCount: " + loopCount + " currentAnomalyIndex: " + currentAnomalyIndex);
+
+        if (loopCount > 2)
         {
+            Debug.Log("resetting previous: " + currentAnomalyIndex);
             anomalyObjects[currentAnomalyIndex].anomalyObject.SetActive(false);
             anomalyObjects[currentAnomalyIndex].normalObject.SetActive(true);
         }
 
-        // pick next
         currentAnomalyIndex = (loopCount - 2) % anomalyObjects.Length;
+        Debug.Log("new anomaly index: " + currentAnomalyIndex);
 
-        // show new anomaly
         anomalyObjects[currentAnomalyIndex].normalObject.SetActive(false);
         anomalyObjects[currentAnomalyIndex].anomalyObject.SetActive(true);
     }
