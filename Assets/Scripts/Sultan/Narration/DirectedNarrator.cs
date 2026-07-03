@@ -10,6 +10,8 @@ public class NarrationLine
     public bool isImportant;
     public string destinationIfUnsaid;
     [System.NonSerialized] public bool moved;
+    public bool discardOnInterrupt;
+    [System.NonSerialized] public bool started;
 }
 
 [System.Serializable]
@@ -24,7 +26,6 @@ public class NarrationChannel
     public bool loopReturnTransitions = false;
     public bool loopLastLine = false;
 
-    // Runtime
     [System.NonSerialized] public List<NarrationLine> queue;
     [System.NonSerialized] public int index;
     [System.NonSerialized] public int returnIndex;
@@ -395,6 +396,7 @@ public class DirectedNarrator : MonoBehaviour
 
     private IEnumerator DisplayLine(NarrationLine nl, NarrationChannel channel)
     {
+        nl.started = true;
         while (!NarratorManager.Instance.ShowText(
             nl.text, channel.priority, this, nl.clip))
         {
@@ -414,6 +416,7 @@ public class DirectedNarrator : MonoBehaviour
 
                 while (_paused) yield return null;
                 if (_activeChannel != channel) yield break;
+                if (nl.discardOnInterrupt) yield break;
 
                 while (!NarratorManager.Instance.ShowText(
                     nl.text, channel.priority, this, nl.clip))
@@ -436,6 +439,7 @@ public class DirectedNarrator : MonoBehaviour
                     while (_paused) yield return null;
                 }
 
+                if (nl.discardOnInterrupt) yield break; 
                 yield return PlayReturnTransitions(channel);
                 if (_activeChannel != channel) yield break;
 
@@ -479,6 +483,12 @@ public class DirectedNarrator : MonoBehaviour
             if (_activeChannel != channel) yield break;
 
             NarrationLine nl = channel.queue[channel.index];
+
+            if (nl.discardOnInterrupt && nl.started)
+            {
+                channel.index++;
+                continue;
+            }
 
             yield return DisplayLine(nl, channel);
             if (_activeChannel != channel) yield break;
