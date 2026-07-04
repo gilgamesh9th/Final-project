@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (GameUI.IsPaused) return;
         CameraRot();
 
         bool isGrounded = _controller.isGrounded;

@@ -36,7 +36,7 @@ public class PlayerInteractionII : MonoBehaviour
 
         bool hitInteractable = Physics.Raycast(ray, out RaycastHit hit, interactDistance)
                                 && hit.collider.TryGetComponent(out IInteractable _);
-
+       
         if (hitInteractable != isLookingAtInteractable)
         {
             isLookingAtInteractable = hitInteractable;

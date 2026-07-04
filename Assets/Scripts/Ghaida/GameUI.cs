@@ -33,6 +33,8 @@ public class GameUI : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         EventSystem.current.SetSelectedGameObject(null);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Resume()
@@ -41,6 +43,8 @@ public class GameUI : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         EventSystem.current.SetSelectedGameObject(null);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void QuitGame()
