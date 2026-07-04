@@ -1,55 +1,75 @@
+using System.Collections;
 using UnityEngine;
 
 public class LookTarget : MonoBehaviour
 {
     [SerializeField] private int priority = 5;
     [SerializeField] private bool disableWhenDone = false;
-    [SerializeField] private float lookCooldown = 2f;
+    [SerializeField] private float defaultLineDuration = 5f;
 
     [SerializeField] private VoicedLine[] lookNarrations;
 
     private int _lookIndex;
-    private float _lastTriggerTime = -99f;
     private bool _exhausted;
+    private Coroutine _narrationRoutine;
 
-    public void OnLooked()
+    public void OnLookEnter()
     {
-        if (_exhausted) return;
+        NarratorManager.Instance.Hold(this);
+        if (_exhausted || _narrationRoutine != null) return;
+        _narrationRoutine = StartCoroutine(NarrationLoop());
+    }
 
-        if (TryGetComponent<ConditionalNarrator>(out var conditional))
+    public void OnLookExit()
+    {
+        NarratorManager.Instance.ReleaseHold(this);
+        if (_narrationRoutine != null)
         {
-            VoicedLine line = conditional.Evaluate();
-            if (line == null)
+            StopCoroutine(_narrationRoutine);
+            _narrationRoutine = null;
+        }
+    }
+
+    private IEnumerator NarrationLoop()
+    {
+        bool hasConditional = TryGetComponent<ConditionalNarrator>(out var conditional);
+
+        while (!_exhausted)
+        {
+            VoicedLine line;
+
+            if (hasConditional)
             {
-                if (disableWhenDone) _exhausted = true;
-                return;
+                line = conditional.Evaluate();
+                if (line == null)
+                {
+                    if (disableWhenDone) _exhausted = true;
+                    break;
+                }
+            }
+            else
+            {
+                if (_lookIndex >= lookNarrations.Length)
+                {
+                    if (disableWhenDone) _exhausted = true;
+                    break;
+                }
+                line = lookNarrations[_lookIndex];
             }
 
             if (!NarratorManager.Instance.SayImmediate(
                 line.text, priority, this, line.clip))
-                return;
+            {
+                continue;
+            }
 
-            _lastTriggerTime = Time.time;
-            return;
+            if (!hasConditional)
+                _lookIndex++;
+
+            float wait = line.clip != null ? line.clip.length : defaultLineDuration;
+            yield return new WaitForSeconds(wait);
         }
 
-        if (_lookIndex >= lookNarrations.Length)
-        {
-            if (disableWhenDone) _exhausted = true;
-            return;
-        }
-
-        if (Time.time - _lastTriggerTime < lookCooldown) return;
-
-        var entry = lookNarrations[_lookIndex];
-        if (!NarratorManager.Instance.SayImmediate(
-            entry.text, priority, this, entry.clip))
-            return;
-
-        _lookIndex++;
-        _lastTriggerTime = Time.time;
-
-        if (_lookIndex >= lookNarrations.Length && disableWhenDone)
-            _exhausted = true;
+        _narrationRoutine = null;
     }
 }

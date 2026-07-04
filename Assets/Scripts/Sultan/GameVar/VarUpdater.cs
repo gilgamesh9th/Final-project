@@ -3,12 +3,18 @@ using UnityEngine;
 public enum UpdateMode { Set, Increment }
 
 [System.Serializable]
-public class VarUpdate
+public class VarWrite
 {
-    public Condition[] conditions;
     public string key;
     public UpdateMode mode;
     public int value = 1;
+}
+
+[System.Serializable]
+public class VarUpdate
+{
+    public Condition[] conditions;
+    public VarWrite[] writes;
 }
 
 public class VarUpdater : MonoBehaviour
@@ -27,10 +33,13 @@ public class VarUpdater : MonoBehaviour
         {
             if (!AllConditionsMet(u.conditions)) continue;
 
-            if (u.mode == UpdateMode.Increment)
-                GameVarStore.Instance.Add(u.key, u.value);
-            else
-                GameVarStore.Instance.Set(u.key, u.value);
+            foreach (var w in u.writes)
+            {
+                if (w.mode == UpdateMode.Increment)
+                    GameVarStore.Instance.Add(w.key, w.value);
+                else
+                    GameVarStore.Instance.Set(w.key, w.value);
+            }
         }
     }
 

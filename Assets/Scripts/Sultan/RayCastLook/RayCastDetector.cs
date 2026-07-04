@@ -19,8 +19,11 @@ public class RayCastDetector : MonoBehaviour
 
         IsEngaged = currentTarget != null;
 
-        if (currentTarget != null && currentTarget != _previousTarget)
-            currentTarget.OnLooked();
+        if (currentTarget != _previousTarget)
+        {
+            _previousTarget?.OnLookExit();
+            currentTarget?.OnLookEnter();
+        }
 
         _previousTarget = currentTarget;
     }
