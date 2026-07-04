@@ -2964,6 +2964,7 @@ GameObject:
   - component: {fileID: 400704761}
   - component: {fileID: 400704762}
   - component: {fileID: 400704763}
+  - component: {fileID: 400704764}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -3060,7 +3061,7 @@ Transform:
   m_GameObject: {fileID: 400704754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -73.4, y: -3.24, z: -21.7}
+  m_LocalPosition: {x: -26.65, y: -0.97, z: -118.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3085,7 +3086,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 4
+  m_Height: 5
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -3141,6 +3142,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTeleportCooldown
   canTeleport: 1
+--- !u!114 &400704764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400704754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607d9b36de4e144409e45f05aa182424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractionII
+  playerCamera: {fileID: 1040291437}
+  interactDistance: 15
+  interactAction: {fileID: -3311245385978027217, guid: 7dd1fe7874c964c44b251789a8784b64, type: 3}
+  interactionDot: {fileID: 5715726354438073845}
 --- !u!1 &402462704
 GameObject:
   m_ObjectHideFlags: 0
@@ -8991,7 +9008,7 @@ Transform:
   m_GameObject: {fileID: 1040291435}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 2.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34448,7 +34465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: initialVars.Array.data[28].value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 595650942304427066, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_IsActive
