@@ -2,22 +2,15 @@ using UnityEngine;
 
 public class HallwayObject : MonoBehaviour, IInteractable
 {
-    public bool isAnomaly = false; // only true on the one anomaly object during odd loops
+    public bool isAnomaly = false;
 
-    // called by interaction system
     public void Interact()
     {
-        PuzzleUI.Instance.Show(this);
-    }
+        if (!LoopManager.Instance.InteractionEnabled) return;
 
-    // called by UI buttons
-    public void OnAnomalyChosen(bool playerSaidAnomaly)
-    {
-        if (playerSaidAnomaly && isAnomaly)
-            LoopManager.Instance.BreakLoop(); // correct guess
-        else if (playerSaidAnomaly && !isAnomaly)
-            Debug.Log("wrong guess - narrator line here"); // wrong guess
-
-        PuzzleUI.Instance.Hide();
+        if (isAnomaly)
+            LoopManager.Instance.CorrectGuess();
+        else
+            LoopManager.Instance.WrongGuess();
     }
 }

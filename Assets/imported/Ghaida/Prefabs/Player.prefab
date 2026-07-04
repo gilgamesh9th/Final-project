@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4722820198780966256}
   - component: {fileID: 5172816075757000272}
   - component: {fileID: 8966470716770946548}
-  - component: {fileID: 4726390843538883226}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -138,25 +137,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &4726390843538883226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68129006301709049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2051e718b07ba4bef942d5e5d18fef26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MalletController
-  pickupRange: 3
-  holdPos: {x: 0.35, y: -0.25, z: 0.5}
-  holdRot: {x: 0, y: 0, z: -45}
-  strikeAngle: 45
-  downTime: 0.08
-  upTime: 0.12
-  strikeRange: 2.5
 --- !u!1 &7257217604284310303
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +152,8 @@ GameObject:
   - component: {fileID: 1750497296370875093}
   - component: {fileID: 9185608936177443349}
   - component: {fileID: 3938947514816747255}
+  - component: {fileID: 4152574420784762452}
+  - component: {fileID: 6436885498601072446}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -210,7 +192,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7257217604284310303}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -336,3 +318,32 @@ MonoBehaviour:
   mouseSensitivity: 0.1
   verticalLookMin: -80
   verticalLookMax: 80
+--- !u!114 &4152574420784762452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7257217604284310303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607d9b36de4e144409e45f05aa182424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  playerCamera: {fileID: 4722820198780966256}
+  interactDistance: 15
+  interactAction: {fileID: -3311245385978027217, guid: 7dd1fe7874c964c44b251789a8784b64, type: 3}
+  interactionDot: {fileID: 0}
+--- !u!114 &6436885498601072446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7257217604284310303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7657a724c560ef54e914091761900515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerTeleportCooldown
+  canTeleport: 1

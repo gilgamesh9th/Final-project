@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 126578151038281699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.85858, y: 0.85858, z: 0.85858}
+  m_LocalScale: {x: 2.073326, y: 2.073326, z: 2.073326}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1366894465105447320}
@@ -764,6 +764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a55a9398ed8be4b943743ce1e7e72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::inGameUI
+  pauseMenuUI: {fileID: 0}
+  pauseAction: {fileID: 0}
 --- !u!1 &1681680024845500142
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +869,7 @@ RectTransform:
   m_GameObject: {fileID: 1893086640827064532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.40604, y: 0.40604, z: 0.40604}
+  m_LocalScale: {x: 0.43474707, y: 0.43474707, z: 0.43474707}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 485807003341688495}
@@ -875,7 +877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 254, y: -74}
+  m_AnchoredPosition: {x: 254, y: -65.5}
   m_SizeDelta: {x: 403, y: 173}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9156385539355104596
@@ -2326,7 +2328,7 @@ RectTransform:
   m_GameObject: {fileID: 7024592803778898676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.40604, y: 0.40604, z: 0.40604}
+  m_LocalScale: {x: 0.45449278, y: 0.45449278, z: 0.45449278}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1049014487965271568}
@@ -2334,7 +2336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 254, y: -134}
+  m_AnchoredPosition: {x: 254, y: -125.9}
   m_SizeDelta: {x: 340, y: 146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5773767664808943075
