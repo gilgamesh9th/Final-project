@@ -7,6 +7,7 @@ public class GameUI : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private InputActionReference pauseAction;
+    [SerializeField] private GameObject textCanvas;
 
     public static bool IsPaused { get; private set; }
 
@@ -31,6 +32,7 @@ public class GameUI : MonoBehaviour
     {
         IsPaused = true;
         pauseMenuUI.SetActive(true);
+        textCanvas.SetActive(false);
         Time.timeScale = 0f;
         EventSystem.current.SetSelectedGameObject(null);
         Cursor.lockState = CursorLockMode.None;
@@ -41,6 +43,7 @@ public class GameUI : MonoBehaviour
     {
         IsPaused = false;
         pauseMenuUI.SetActive(false);
+        textCanvas.SetActive(true);
         Time.timeScale = 1f;
         EventSystem.current.SetSelectedGameObject(null);
         Cursor.lockState = CursorLockMode.Locked;
