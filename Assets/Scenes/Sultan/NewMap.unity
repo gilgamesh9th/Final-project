@@ -4002,6 +4002,9 @@ MonoBehaviour:
     - variableKey: RightJunction3
       comparison: 1
       value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 0
     writes:
     - key: HallwayForward
       mode: 0
@@ -4016,6 +4019,9 @@ MonoBehaviour:
     - variableKey: RightJunction3
       comparison: 1
       value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 0
     writes:
     - key: HallwayForward
       mode: 0
@@ -4026,6 +4032,43 @@ MonoBehaviour:
     - key: BackwardCount
       mode: 1
       value: 1
+  - conditions:
+    - variableKey: RightJunction3
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction3
+      comparison: 1
+      value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction3
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction3
+      comparison: 1
+      value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 1
+    - key: HallwayBackward2
+      mode: 0
+      value: 0
 --- !u!54 &431643558
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5666,6 +5709,36 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+    - text: Deliver your damn pizza!
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Back on track!
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Deliver your damn pizza!
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Deliver your damn pizza!
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Deliver your damn pizza!
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Back on track!
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -5682,6 +5755,41 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: NOOOO
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Why?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Why?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Why?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Why?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Why?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Why?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Why?
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
@@ -7305,6 +7413,9 @@ MonoBehaviour:
     - variableKey: RightJunction2
       comparison: 1
       value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 0
     writes:
     - key: HallwayForward
       mode: 0
@@ -7319,6 +7430,9 @@ MonoBehaviour:
     - variableKey: RightJunction2
       comparison: 1
       value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 0
     writes:
     - key: HallwayForward
       mode: 0
@@ -7329,6 +7443,43 @@ MonoBehaviour:
     - key: BackwardCount
       mode: 1
       value: 1
+  - conditions:
+    - variableKey: RightJunction2
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction2
+      comparison: 1
+      value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction2
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction2
+      comparison: 1
+      value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 1
+    - key: HallwayBackward2
+      mode: 0
+      value: 0
 --- !u!54 &848900193
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11712,6 +11863,9 @@ MonoBehaviour:
     - variableKey: RightJunction5
       comparison: 1
       value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 0
     writes:
     - key: HallwayForward
       mode: 0
@@ -11726,6 +11880,9 @@ MonoBehaviour:
     - variableKey: RightJunction5
       comparison: 1
       value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 0
     writes:
     - key: HallwayForward
       mode: 0
@@ -11733,6 +11890,46 @@ MonoBehaviour:
     - key: HallwayBackward
       mode: 0
       value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction5
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction5
+      comparison: 1
+      value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction5
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction5
+      comparison: 1
+      value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 1
+    - key: HallwayBackward2
+      mode: 0
+      value: 0
     - key: BackwardCount
       mode: 1
       value: 1
@@ -12642,6 +12839,9 @@ MonoBehaviour:
     - variableKey: RightJunction4
       comparison: 1
       value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 0
     writes:
     - key: HallwayForward
       mode: 0
@@ -12656,6 +12856,9 @@ MonoBehaviour:
     - variableKey: RightJunction4
       comparison: 1
       value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 0
     writes:
     - key: HallwayForward
       mode: 0
@@ -12666,6 +12869,43 @@ MonoBehaviour:
     - key: BackwardCount
       mode: 1
       value: 1
+  - conditions:
+    - variableKey: RightJunction4
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction4
+      comparison: 1
+      value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction4
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction4
+      comparison: 1
+      value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 1
+    - key: HallwayBackward2
+      mode: 0
+      value: 0
 --- !u!54 &1447064641
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13809,6 +14049,9 @@ MonoBehaviour:
     - variableKey: RightJunction1
       comparison: 1
       value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 0
     writes:
     - key: HallwayForward
       mode: 0
@@ -13823,6 +14066,9 @@ MonoBehaviour:
     - variableKey: RightJunction1
       comparison: 1
       value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 0
     writes:
     - key: HallwayForward
       mode: 0
@@ -13833,6 +14079,43 @@ MonoBehaviour:
     - key: BackwardCount
       mode: 1
       value: 1
+  - conditions:
+    - variableKey: RightJunction1
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction1
+      comparison: 1
+      value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction1
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction1
+      comparison: 1
+      value: 0
+    - variableKey: LoopHallway
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 1
+    - key: HallwayBackward2
+      mode: 0
+      value: 0
 --- !u!54 &1595737913
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14551,13 +14834,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718932919}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000033084483, y: 0.7219422, z: 0.000000018176927, w: 0.6919534}
-  m_LocalPosition: {x: -43.635002, y: -3.8, z: -50.62}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -34.64, y: -3.8, z: -44.7}
   m_LocalScale: {x: 2.450348, y: 2.4503477, z: 2.450348}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 92.43, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1718932924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33658,7 +33941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: initialVars.Array.data[28].value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 595650942304427066, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_IsActive
@@ -33878,7 +34161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[1].value
@@ -33894,6 +34177,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
@@ -33921,6 +34228,30 @@ PrefabInstance:
       value: BackwardCount
       objectReference: {fileID: 0}
     - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.data[0].mode
       value: 1
       objectReference: {fileID: 0}
@@ -33930,6 +34261,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
@@ -33951,6 +34290,62 @@ PrefabInstance:
     - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.data[2].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[2].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[0].comparison
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646147608154904910, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[2].variableKey
+      value: LoopHallway
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.size
@@ -35218,7 +35613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.size
@@ -35230,6 +35625,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
@@ -35257,6 +35676,34 @@ PrefabInstance:
       value: BackwardCount
       objectReference: {fileID: 0}
     - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].writes.Array.data[3].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.data[0].mode
       value: 1
       objectReference: {fileID: 0}
@@ -35266,6 +35713,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].writes.Array.data[3].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
@@ -35287,6 +35746,66 @@ PrefabInstance:
     - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.data[2].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].writes.Array.data[3].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[2].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[0].comparison
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456303279842641030, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[2].variableKey
+      value: LoopHallway
       objectReference: {fileID: 0}
     - target: {fileID: 8597065282989027429, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_Size.x
