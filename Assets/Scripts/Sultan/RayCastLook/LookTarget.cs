@@ -12,9 +12,12 @@ public class LookTarget : MonoBehaviour
     private int _lookIndex;
     private bool _exhausted;
     private Coroutine _narrationRoutine;
+    private bool _isLooking;
+    private bool _completingLine;
 
     public void OnLookEnter()
     {
+        _isLooking = true;
         NarratorManager.Instance.Hold(this);
         if (_exhausted || _narrationRoutine != null) return;
         _narrationRoutine = StartCoroutine(NarrationLoop());
@@ -22,6 +25,9 @@ public class LookTarget : MonoBehaviour
 
     public void OnLookExit()
     {
+        _isLooking = false;
+        if (_completingLine) return;
+
         NarratorManager.Instance.ReleaseHold(this);
         if (_narrationRoutine != null)
         {
@@ -57,6 +63,8 @@ public class LookTarget : MonoBehaviour
                 line = lookNarrations[_lookIndex];
             }
 
+            if (line.mustComplete) _completingLine = true;
+
             if (!NarratorManager.Instance.SayImmediate(
                 line.text, priority, this, line.clip))
             {
@@ -68,6 +76,16 @@ public class LookTarget : MonoBehaviour
 
             float wait = line.clip != null ? line.clip.length : defaultLineDuration;
             yield return new WaitForSeconds(wait);
+
+            if (_completingLine)
+            {
+                _completingLine = false;
+                if (!_isLooking)
+                {
+                    NarratorManager.Instance.ReleaseHold(this);
+                    break;
+                }
+            }
         }
 
         _narrationRoutine = null;
