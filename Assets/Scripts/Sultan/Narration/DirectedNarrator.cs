@@ -25,6 +25,10 @@ public class NarrationChannel
     public int returnLinesCount = 0;
     public bool loopReturnTransitions = false;
     public bool loopLastLine = false;
+    public string[] disableChannelsOnComplete;
+    public bool disableAllTransitionsOnComplete;
+    public string[] disableTransitionsOnComplete;
+    public bool disableIdleOnComplete;
 
     [System.NonSerialized] public List<NarrationLine> queue;
     [System.NonSerialized] public int index;
@@ -34,6 +38,7 @@ public class NarrationChannel
 [System.Serializable]
 public class ChannelTransition
 {
+    public string label;
     public string fromChannel;
     public string toChannel;
     public VoicedLine[] narrations;
@@ -69,6 +74,10 @@ public class DirectedNarrator : MonoBehaviour
     private Vector3 _lastPosition;
     private float _timeSinceLastMoved;
     private int _idleIndex;
+    private readonly HashSet<string> _disabledChannels = new HashSet<string>();
+    private readonly HashSet<string> _disabledTransitions = new HashSet<string>();
+    private bool _allTransitionsDisabled;
+    private bool _idleDisabled;
 
     private void Start()
     {
@@ -133,7 +142,7 @@ public class DirectedNarrator : MonoBehaviour
         {
             _moveTimer = 0f;
 
-            if (!_isIdle && !_inTransition
+            if (!_isIdle && !_inTransition && !_idleDisabled
                 && _activeChannel != null && _sequenceCoroutine != null)
             {
                 _idleTimer += Time.deltaTime;
@@ -174,14 +183,24 @@ public class DirectedNarrator : MonoBehaviour
     private void CheckChannels()
     {
         NarrationChannel matched = null;
+        bool matchWasDisabled = false;
         foreach (var ch in channels)
         {
             if (AllConditionsMet(ch.conditions))
             {
+                if (!string.IsNullOrEmpty(ch.channelName)
+                    && _disabledChannels.Contains(ch.channelName))
+                {
+                    matchWasDisabled = true;
+                    continue;
+                }
                 matched = ch;
                 break;
             }
         }
+
+        if (matchWasDisabled && matched == null && _activeChannel != null)
+            return;
 
         if (matched == _activeChannel) return;
 
@@ -203,6 +222,8 @@ public class DirectedNarrator : MonoBehaviour
         if (_activeChannel != null && _activeChannel.index < _activeChannel.queue.Count)
         {
             ChannelTransition transition = FindTransition(previous, _activeChannel);
+            if (transition != null && IsTransitionDisabled(transition))
+                transition = null;
             if (transition != null && transition.loop
                 && transition.index >= transition.narrations.Length)
                 transition.index = 0;
@@ -503,6 +524,8 @@ public class DirectedNarrator : MonoBehaviour
             }
         }
 
+        DisableLinkedChannels(channel);
+
         if (channel.loopLastLine && channel.queue.Count > 0)
         {
             NarrationLine lastLine = channel.queue[channel.queue.Count - 1];
@@ -524,6 +547,40 @@ public class DirectedNarrator : MonoBehaviour
 
         NarratorManager.Instance.Release(this);
         _sequenceCoroutine = null;
+    }
+
+    private void DisableLinkedChannels(NarrationChannel channel)
+    {
+        if (channel.disableChannelsOnComplete != null)
+        {
+            foreach (var name in channel.disableChannelsOnComplete)
+            {
+                if (!string.IsNullOrEmpty(name))
+                    _disabledChannels.Add(name);
+            }
+        }
+
+        if (channel.disableAllTransitionsOnComplete)
+            _allTransitionsDisabled = true;
+
+        if (channel.disableTransitionsOnComplete != null)
+        {
+            foreach (var label in channel.disableTransitionsOnComplete)
+            {
+                if (!string.IsNullOrEmpty(label))
+                    _disabledTransitions.Add(label);
+            }
+        }
+
+        if (channel.disableIdleOnComplete)
+            _idleDisabled = true;
+    }
+
+    private bool IsTransitionDisabled(ChannelTransition transition)
+    {
+        if (_allTransitionsDisabled) return true;
+        return !string.IsNullOrEmpty(transition.label)
+            && _disabledTransitions.Contains(transition.label);
     }
 
 
