@@ -31,6 +31,7 @@ public class NarratorManager : MonoBehaviour
     private object _currentOwner;
     public int CurrentPriority => _currentPriority;
     public object CurrentOwner => _currentOwner;
+    private object _holdOwner; //
 
     public bool TryClaim(int priority, object owner)
     {
@@ -44,6 +45,15 @@ public class NarratorManager : MonoBehaviour
         _currentPriority = priority;
         _currentOwner = owner;
         return true;
+    }
+
+    public void Hold(object owner) { _holdOwner = owner; }
+
+    public void ReleaseHold(object owner)
+    {
+        if (_holdOwner != owner) return;
+        _holdOwner = null;
+        Release(owner);
     }
 
     public void Release(object owner)
@@ -144,24 +154,6 @@ public class NarratorManager : MonoBehaviour
         ClearText(null);
     }
 
-    // private IEnumerator DrainQueue(object owner)
-    // {
-    //     _isDisplaying = true;
-    //     while (_queue.Count > 0)
-    //     {
-    //         var line = _queue.Dequeue();
-    //         narratorText.text = line.text;
-    //         PlayClip(line.clip);
-    //         yield return new WaitForSeconds(displayDuration);
-    //         narratorText.text = "";
-    //         StopClip();
-    //         if (_queue.Count > 0)
-    //             yield return new WaitForSeconds(gapBetweenLines);
-    //     }
-    //     _isDisplaying = false;
-    //     Release(owner);
-    // }
-
     private IEnumerator DrainQueue(object owner)
     {
         _isDisplaying = true;
@@ -178,7 +170,7 @@ public class NarratorManager : MonoBehaviour
                 yield return new WaitForSeconds(gapBetweenLines);
         }
         _isDisplaying = false;
-        Release(owner);
+        if (_holdOwner != owner) Release(owner);
     }
-    
+
 }
