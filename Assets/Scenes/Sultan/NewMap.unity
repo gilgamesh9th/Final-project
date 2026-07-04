@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0.5283019, g: 0.28657886, b: 0.30384484, a: 0}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 12474d7fc079f4363a3a80811e333ef8, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -119,6 +119,133 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &2922717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2922718}
+  - component: {fileID: 2922720}
+  - component: {fileID: 2922719}
+  m_Layer: 0
+  m_Name: Point Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2922718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922717}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0.0000029504295}
+  m_LocalPosition: {x: -0.0626, y: 0.10369948, z: -0.309}
+  m_LocalScale: {x: 0.21877529, y: 0.21877529, z: 0.21877529}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1658271850970640750}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2922719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &2922720
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922717}
+  m_Enabled: 1
+  serializedVersion: 12
+  m_Type: 2
+  m_Color: {r: 1, g: 0.769423, b: 0.6320754, a: 1}
+  m_Intensity: 0.23
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1 &33333810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1752668592477900426, guid: 72af805f4793946cebc31f83c8d90385, type: 3}
@@ -2720,7 +2847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &382597999
 Transform:
   m_ObjectHideFlags: 0
@@ -2752,6 +2879,9 @@ MonoBehaviour:
   - conditions: []
     writes:
     - key: LoopHallway
+      mode: 1
+      value: 1
+    - key: LoopCounter
       mode: 1
       value: 1
   - conditions:
@@ -3061,7 +3191,7 @@ Transform:
   m_GameObject: {fileID: 400704754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.65, y: -0.97, z: -118.85}
+  m_LocalPosition: {x: -75.6, y: -0.97, z: -17.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4341,6 +4471,146 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &447309159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 447309160}
+  - component: {fileID: 447309163}
+  - component: {fileID: 447309162}
+  - component: {fileID: 447309161}
+  m_Layer: 0
+  m_Name: LoopNarrative (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &447309160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447309159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.19, y: 2.88, z: -43.37}
+  m_LocalScale: {x: 14, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1628431370}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &447309161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447309159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c2536d608364535a646ee839267929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
+  updates:
+  - conditions: []
+    writes:
+    - key: LoopHallway5
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: LoopHallway5
+      comparison: 6
+      value: 0
+    - variableKey: LoopHallway5
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 1
+    - key: LoopBackward
+      mode: 0
+      value: 0
+    - key: HallwayForward
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: LoopHallway5
+      comparison: 5
+      value: 0
+    - variableKey: LoopHallway5
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 0
+    - key: LoopBackward
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+--- !u!54 &447309162
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447309159}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &447309163
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447309159}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &457597800
 GameObject:
   m_ObjectHideFlags: 0
@@ -5525,11 +5795,11 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: b2d0c222a250b446da16fe61f9f04f5f, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
-      discardOnInterrupt: 0
+      discardOnInterrupt: 1
     - text: Welcome to our humble hotel.
       clip: {fileID: 8300000, guid: c00f69cbe51fc42e8b44fd0bfe1b156c, type: 3}
       isImportant: 0
-      destinationIfUnsaid: RightJunctionForward
+      destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: I will escort you through the speaker, so you don't get lost. Or bored.
         Nobody gets bored in our hotel!
@@ -5617,46 +5887,6 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
-    disableChannelsOnComplete: []
-    disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
-    disableIdleOnComplete: 0
-  - channelName: LoopForward
-    priority: 6
-    conditions:
-    - variableKey: LoopForward
-      comparison: 0
-      value: 1
-    narrations:
-    - text: Loop F
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    returnTransitions: []
-    returnLinesCount: 1
-    loopReturnTransitions: 0
-    loopLastLine: 1
-    disableChannelsOnComplete: []
-    disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
-    disableIdleOnComplete: 0
-  - channelName: LoopBackward
-    priority: 6
-    conditions:
-    - variableKey: LoopBackward
-      comparison: 0
-      value: 1
-    narrations:
-    - text: Loop B
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    returnTransitions: []
-    returnLinesCount: 1
-    loopReturnTransitions: 0
-    loopLastLine: 1
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -5795,6 +6025,31 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: Come on, dude. I told you a million times. Wrong way!
+      clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: You just LOVE going back, don't you?
+      clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: 'You understand English right? Like words? '
+      clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: You know what. Do what you want.
+      clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 1
+    - text: Go back as much as you like.
+      clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Let a mantis eat you for all I care.
       clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
@@ -5946,6 +6201,171 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: LoopForward
+    priority: 6
+    conditions:
+    - variableKey: LoopForward
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Loop F
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Loop F1
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Loop F2
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: LoopBackward
+    priority: 6
+    conditions:
+    - variableKey: LoopBackward
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Loop B
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Loop B1
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: LoopForward1
+    priority: 6
+    conditions:
+    - variableKey: LoopForward1
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Loop1 F
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Loop1 F1
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Loop1 F2
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: LoopBackward1
+    priority: 6
+    conditions:
+    - variableKey: LoopBackward1
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Loop1 B
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Loop1 B1
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: LoopForward2
+    priority: 6
+    conditions:
+    - variableKey: LoopForward2
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Loop2 F
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Loop2 F1
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Loop2 F2
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: LoopBackward2
+    priority: 6
+    conditions:
+    - variableKey: LoopBackward2
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Loop2 B
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Loop2 B1
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -7385,6 +7805,146 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812672835}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &818603737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 818603738}
+  - component: {fileID: 818603741}
+  - component: {fileID: 818603740}
+  - component: {fileID: 818603739}
+  m_Layer: 0
+  m_Name: LoopNarrative (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &818603738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818603737}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.5, y: 2.88, z: -63}
+  m_LocalScale: {x: 14, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1628431370}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &818603739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818603737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c2536d608364535a646ee839267929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
+  updates:
+  - conditions: []
+    writes:
+    - key: LoopHallway3
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: LoopHallway3
+      comparison: 6
+      value: 0
+    - variableKey: LoopHallway3
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 1
+    - key: LoopBackward
+      mode: 0
+      value: 0
+    - key: HallwayForward
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: LoopHallway3
+      comparison: 5
+      value: 0
+    - variableKey: LoopHallway3
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 0
+    - key: LoopBackward
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+--- !u!54 &818603740
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818603737}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &818603741
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818603737}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &846299430
 GameObject:
   m_ObjectHideFlags: 0
@@ -7703,6 +8263,47 @@ Transform:
   - {fileID: 280850332}
   m_Father: {fileID: 1119375706}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &859850199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2789504966259761830, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+  m_PrefabInstance: {fileID: 2084499813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &859850205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859850199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c2536d608364535a646ee839267929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
+  updates:
+  - conditions: []
+    writes:
+    - key: LoopCounter
+      mode: 1
+      value: 1
+    - key: LoopHallway1
+      mode: 0
+      value: 0
+    - key: LoopHallway2
+      mode: 0
+      value: 0
+    - key: LoopHallway3
+      mode: 0
+      value: 0
+    - key: LoopHallway4
+      mode: 0
+      value: 0
+    - key: LoopHallway5
+      mode: 0
+      value: 0
+    - key: LoopHallway6
+      mode: 0
+      value: 0
 --- !u!1 &882977852
 GameObject:
   m_ObjectHideFlags: 0
@@ -9243,6 +9844,146 @@ Transform:
   - {fileID: 1647274474}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1107010669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1107010670}
+  - component: {fileID: 1107010673}
+  - component: {fileID: 1107010672}
+  - component: {fileID: 1107010671}
+  m_Layer: 0
+  m_Name: LoopNarrative (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1107010670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107010669}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 4.67, y: 2.88, z: -35.48}
+  m_LocalScale: {x: 14, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1628431370}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1107010671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107010669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c2536d608364535a646ee839267929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
+  updates:
+  - conditions: []
+    writes:
+    - key: LoopHallway6
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: LoopHallway6
+      comparison: 6
+      value: 0
+    - variableKey: LoopHallway6
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 1
+    - key: LoopBackward
+      mode: 0
+      value: 0
+    - key: HallwayForward
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: LoopHallway6
+      comparison: 5
+      value: 0
+    - variableKey: LoopHallway6
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 0
+    - key: LoopBackward
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+--- !u!54 &1107010672
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107010669}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1107010673
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107010669}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1119375705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12923,6 +13664,276 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422862509}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1430581312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1430581313}
+  - component: {fileID: 1430581316}
+  - component: {fileID: 1430581315}
+  - component: {fileID: 1430581314}
+  m_Layer: 0
+  m_Name: LoopNarrative (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1430581313
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430581312}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.5, y: 2.88, z: -85.1}
+  m_LocalScale: {x: 14, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1628431370}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1430581314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430581312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c2536d608364535a646ee839267929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
+  updates:
+  - conditions: []
+    writes:
+    - key: LoopHallway1
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: LoopHallway1
+      comparison: 6
+      value: 0
+    - variableKey: LoopHallway1
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 1
+    - key: LoopBackward
+      mode: 0
+      value: 0
+    - key: HallwayForward
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: LoopHallway1
+      comparison: 5
+      value: 0
+    - variableKey: LoopHallway1
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 0
+    - key: LoopBackward
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: LoopForward
+      comparison: 0
+      value: 1
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 2
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 0
+    - key: LoopForward1
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: LoopForward1
+      comparison: 0
+      value: 1
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 3
+    writes:
+    - key: LoopForward1
+      mode: 0
+      value: 0
+    - key: LoopForward2
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: LoopForward2
+      comparison: 0
+      value: 1
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 4
+    writes:
+    - key: LoopForward2
+      mode: 0
+      value: 0
+    - key: LoopForward3
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: LoopForward3
+      comparison: 0
+      value: 1
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 5
+    writes:
+    - key: LoopForward3
+      mode: 0
+      value: 0
+    - key: LoopForward4
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: LoopHallway1
+      comparison: 6
+      value: 0
+    - variableKey: LoopHallway1
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 2
+    writes:
+    - key: LoopForward1
+      mode: 0
+      value: 1
+    - key: LoopBackward1
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: LoopHallway1
+      comparison: 6
+      value: 0
+    - variableKey: LoopHallway1
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 3
+    writes:
+    - key: LoopForward2
+      mode: 0
+      value: 1
+    - key: LoopBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: LoopHallway1
+      comparison: 5
+      value: 0
+    - variableKey: LoopHallway1
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 2
+    writes:
+    - key: LoopForward1
+      mode: 0
+      value: 0
+    - key: LoopBackward1
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: LoopHallway1
+      comparison: 5
+      value: 0
+    - variableKey: LoopHallway1
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 3
+    writes:
+    - key: LoopForward2
+      mode: 0
+      value: 0
+    - key: LoopBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+--- !u!54 &1430581315
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430581312}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1430581316
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430581312}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1447064638
 GameObject:
   m_ObjectHideFlags: 0
@@ -13647,6 +14658,146 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498543205}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1510741561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1510741562}
+  - component: {fileID: 1510741565}
+  - component: {fileID: 1510741564}
+  - component: {fileID: 1510741563}
+  m_Layer: 0
+  m_Name: LoopNarrative (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1510741562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510741561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.5, y: 2.88, z: -53}
+  m_LocalScale: {x: 14, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1628431370}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1510741563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510741561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c2536d608364535a646ee839267929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
+  updates:
+  - conditions: []
+    writes:
+    - key: LoopHallway4
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: LoopHallway4
+      comparison: 6
+      value: 0
+    - variableKey: LoopHallway4
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 1
+    - key: LoopBackward
+      mode: 0
+      value: 0
+    - key: HallwayForward
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: LoopHallway4
+      comparison: 5
+      value: 0
+    - variableKey: LoopHallway4
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 0
+    - key: LoopBackward
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+--- !u!54 &1510741564
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510741561}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1510741565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510741561}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1530999244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1676351687200601281, guid: 72af805f4793946cebc31f83c8d90385, type: 3}
@@ -15498,6 +16649,146 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757562488}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1761075366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1761075367}
+  - component: {fileID: 1761075370}
+  - component: {fileID: 1761075369}
+  - component: {fileID: 1761075368}
+  m_Layer: 0
+  m_Name: LoopNarrative (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1761075367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761075366}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.5, y: 2.88, z: -73}
+  m_LocalScale: {x: 14, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1628431370}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1761075368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761075366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c2536d608364535a646ee839267929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
+  updates:
+  - conditions: []
+    writes:
+    - key: LoopHallway2
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: LoopHallway2
+      comparison: 6
+      value: 0
+    - variableKey: LoopHallway2
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 1
+    - key: LoopBackward
+      mode: 0
+      value: 0
+    - key: HallwayForward
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: LoopHallway2
+      comparison: 5
+      value: 0
+    - variableKey: LoopHallway2
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopForward
+      mode: 0
+      value: 0
+    - key: LoopBackward
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+--- !u!54 &1761075369
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761075366}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1761075370
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761075366}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1775137106
 GameObject:
   m_ObjectHideFlags: 0
@@ -16634,7 +17925,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2789504966259761830, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 859850205}
   m_SourcePrefab: {fileID: 100100000, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
 --- !u!1 &2085929226
 GameObject:
@@ -30684,7 +31978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &964461150960229705
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -35405,7 +36699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5283897036792232729, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -46
+      value: -45.1
       objectReference: {fileID: 0}
     - target: {fileID: 5283897036792232729, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -36368,6 +37662,24 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3344774732096762599, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 382597999}
+    - targetCorrespondingSourceObject: {fileID: 3344774732096762599, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1430581313}
+    - targetCorrespondingSourceObject: {fileID: 3344774732096762599, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1761075367}
+    - targetCorrespondingSourceObject: {fileID: 3344774732096762599, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 818603738}
+    - targetCorrespondingSourceObject: {fileID: 3344774732096762599, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1510741562}
+    - targetCorrespondingSourceObject: {fileID: 3344774732096762599, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 447309160}
+    - targetCorrespondingSourceObject: {fileID: 3344774732096762599, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1107010670}
     - targetCorrespondingSourceObject: {fileID: 7672594028810815350, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       insertIndex: 1
       addedObject: {fileID: 419520913}
@@ -43317,6 +44629,7 @@ Transform:
   - {fileID: 4057439270231682476}
   - {fileID: 3332452985545128987}
   - {fileID: 6753615700148194268}
+  - {fileID: 2922718}
   m_Father: {fileID: 6492728945013488217}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &1659512513353238028
@@ -56825,7 +58138,7 @@ Transform:
   m_GameObject: {fileID: 963354898219060662}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0031, y: 0.10369948, z: -0.0123}
+  m_LocalPosition: {x: -0.0031, y: 0.10369948, z: -0.0037}
   m_LocalScale: {x: 0.21877529, y: 0.21877529, z: 0.21877529}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65626,7 +66939,7 @@ Transform:
   m_GameObject: {fileID: 646175379875284947}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0031, y: 0.10369948, z: -0.0123}
+  m_LocalPosition: {x: -0.003, y: 0.10369948, z: 0.016}
   m_LocalScale: {x: 0.21877529, y: 0.21877529, z: 0.21877529}
   m_ConstrainProportionsScale: 0
   m_Children: []
