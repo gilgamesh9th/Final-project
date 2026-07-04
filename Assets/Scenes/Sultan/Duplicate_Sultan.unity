@@ -1201,6 +1201,7 @@ MonoBehaviour:
   lookNarrations:
   - text: 
     clip: {fileID: 0}
+    mustComplete: 0
 --- !u!1 &214321260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,6 +2337,7 @@ MonoBehaviour:
   lookNarrations:
   - text: 
     clip: {fileID: 0}
+    mustComplete: 0
 --- !u!1 &322115326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,7 +2715,7 @@ GameObject:
   - component: {fileID: 382598001}
   - component: {fileID: 382598000}
   m_Layer: 0
-  m_Name: HallwayNarrative12 (6)
+  m_Name: LoopNarrative
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2766,9 +2768,12 @@ MonoBehaviour:
     - key: LoopBackward
       mode: 0
       value: 0
+    - key: HallwayForward
+      mode: 0
+      value: 0
   - conditions:
     - variableKey: LoopHallway
-      comparison: 6
+      comparison: 5
       value: 0
     - variableKey: LoopHallway
       comparison: 1
@@ -5644,6 +5649,56 @@ MonoBehaviour:
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
     disableIdleOnComplete: 0
+  - channelName: HallwayForward2
+    priority: 6
+    conditions:
+    - variableKey: HallwayForward2
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Back on track!
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Deliver your damn pizza!
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: HallwayBackward2
+    priority: 6
+    conditions:
+    - variableKey: HallwayBackward2
+      comparison: 0
+      value: 1
+    narrations:
+    - text: NOOOO
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Why?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
   transitions:
   - label: 
     fromChannel: HallwayBackward
@@ -5651,12 +5706,16 @@ MonoBehaviour:
     narrations:
     - text: Good. Where were we? Ah, yes!
       clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 0
     - text: There you are. As I was saying...
       clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 0
     - text: Alright, back to it!
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 0
     - text: Okay... Before you so rudely interrupted me... I was saying...
       clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 0
     linesPerSwitch: 1
     loop: 1
   - label: 
@@ -5665,30 +5724,41 @@ MonoBehaviour:
     narrations:
     - text: Alright, back to it!
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 0
     - text: There you are. As I was saying...
       clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 0
     - text: Good. Where were we? Ah, yes!
       clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 0
     - text: Okay... Before you so rudely interrupted me... I was saying...
       clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 0
     linesPerSwitch: 1
     loop: 1
   idleNarrations:
   - text: Are you gonna move?
     clip: {fileID: 8300000, guid: b69e51b23a72949fbbd83829122a99f5, type: 3}
+    mustComplete: 0
   - text: You're not gonna just stand there, are you?
     clip: {fileID: 8300000, guid: 46b2e4edb51024eb6a924f1731992260, type: 3}
+    mustComplete: 0
   - text: You know this would be boring if you don't do anything?
     clip: {fileID: 8300000, guid: 28ba010a22d22403d88dc4749a63124f, type: 3}
+    mustComplete: 0
   - text: Move, please!
     clip: {fileID: 8300000, guid: 8d34f4c5112eb43d5a49bf0d728eece1, type: 3}
+    mustComplete: 0
   - text: Move, damn you!
     clip: {fileID: 8300000, guid: 6f70fc38145f0499db7c574a19d84dcb, type: 3}
+    mustComplete: 0
   - text: Security! I'll call security if you don't move.
     clip: {fileID: 8300000, guid: d86c8733566804baf8352908d200f8fa, type: 3}
+    mustComplete: 0
   - text: You're lucky the security guy is nowhere to be found. Move...or I'll come
       get you myself.
     clip: {fileID: 8300000, guid: 8911a2703da5c44bf879dde4b6916d75, type: 3}
+    mustComplete: 0
   lineDuration: 4
   lineGap: 0.5
   idlePriority: 1
@@ -6814,40 +6884,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
   updates:
   - conditions: []
-    writes: []
-  - conditions:
-    - variableKey: EmptyRoom1
-      comparison: 6
-      value: 0
-    writes: []
-  - conditions:
-    - variableKey: EmptyRoom1
-      comparison: 6
-      value: 0
-    writes: []
-  - conditions:
-    - variableKey: EmptyRoom1
-      comparison: 6
-      value: 0
-    writes: []
-  - conditions:
-    - variableKey: EmptyRoom1
-      comparison: 5
-      value: 0
-    writes: []
-  - conditions:
-    - variableKey: EmptyRoom1
-      comparison: 5
-      value: 0
-    writes: []
-  - conditions:
-    - variableKey: EmptyRoom1
-      comparison: 1
-      value: 0
-    - variableKey: EmptyRoom1
-      comparison: 4
+    writes:
+    - key: EmptyRoom1
+      mode: 1
       value: 1
-    writes: []
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 6
+      value: 0
+    writes:
+    - key: EmptyRoomNarrative1
+      mode: 0
+      value: 1
+    - key: HallwayForward
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 5
+      value: 0
+    writes:
+    - key: EmptyRoomNarrative1
+      mode: 0
+      value: 0
+    - key: HallwayForward
+      mode: 0
+      value: 1
 --- !u!1 &787682422
 GameObject:
   m_ObjectHideFlags: 0
@@ -7843,14 +7905,19 @@ MonoBehaviour:
   lookNarrations:
   - text: This is a cube. You found the only thing in the room.
     clip: {fileID: 0}
+    mustComplete: 0
   - text: You like this cube, don't you?
     clip: {fileID: 0}
+    mustComplete: 0
   - text: Stop staring at the cube and get out!
     clip: {fileID: 0}
+    mustComplete: 0
   - text: You can start at the cube on the way out.
     clip: {fileID: 0}
+    mustComplete: 0
   - text: Don't you have an order to deliver instead of staring endlessly at a cube?
     clip: {fileID: 0}
+    mustComplete: 0
 --- !u!1 &984134996
 GameObject:
   m_ObjectHideFlags: 0
@@ -8892,7 +8959,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 513678055439905930, guid: a2b486783019d4f8eb29ab6e7f8dd14b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 196
+      value: 80.5
       objectReference: {fileID: 0}
     - target: {fileID: 513678055439905930, guid: a2b486783019d4f8eb29ab6e7f8dd14b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8900,7 +8967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 513678055439905930, guid: a2b486783019d4f8eb29ab6e7f8dd14b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 44.1
+      value: -58.4
       objectReference: {fileID: 0}
     - target: {fileID: 513678055439905930, guid: a2b486783019d4f8eb29ab6e7f8dd14b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13483,6 +13550,7 @@ MonoBehaviour:
   narrations:
   - text: 
     clip: {fileID: 0}
+    mustComplete: 0
   immediate: 0
 --- !u!4 &1567518211
 Transform:
@@ -14373,6 +14441,144 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.1865, y: 1.6763058, z: 2.693518}
   m_Center: {x: -0.00012660027, y: 1.0038191, z: 0.0020990372}
+--- !u!1 &1718932919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1718932923}
+  - component: {fileID: 1718932922}
+  - component: {fileID: 1718932921}
+  - component: {fileID: 1718932920}
+  - component: {fileID: 1718932924}
+  m_Layer: 0
+  m_Name: stone table (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1718932920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718932919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7402d6b957e84dfd8814e8357d875fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LookTarget
+  priority: 7
+  disableWhenDone: 0
+  defaultLineDuration: 5
+  lookNarrations:
+  - text: Congrats! You found the only thing in the room.
+    clip: {fileID: 0}
+    mustComplete: 1
+  - text: Now, why don't you get out? I tjhmma  sjsjajsjajsjsjsj
+    clip: {fileID: 0}
+    mustComplete: 0
+  - text: GET OUT
+    clip: {fileID: 0}
+    mustComplete: 0
+--- !u!23 &1718932921
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718932919}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ead39b7587143e14ea9036b832586252, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1718932922
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718932919}
+  m_Mesh: {fileID: -5302633265429289067, guid: 390296ba669e01e4d99eb927c04240e9, type: 3}
+--- !u!4 &1718932923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718932919}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000033084483, y: 0.7219422, z: 0.000000018176927, w: 0.6919534}
+  m_LocalPosition: {x: -43.635002, y: -3.8, z: -50.62}
+  m_LocalScale: {x: 2.450348, y: 2.4503477, z: 2.450348}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 92.43, z: 0}
+--- !u!65 &1718932924
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718932919}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4996424, y: 1.2260619, z: 1}
+  m_Center: {x: 0.7498211, y: -0.0014218688, z: 0.00000011868921}
 --- !u!1 &1721874554
 GameObject:
   m_ObjectHideFlags: 0
@@ -14536,6 +14742,7 @@ MonoBehaviour:
   narrations:
   - text: 
     clip: {fileID: 0}
+    mustComplete: 0
   immediate: 1
 --- !u!65 &1725370465
 BoxCollider:
@@ -33403,7 +33610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: initialVars.Array.size
-      value: 31
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: initialVars.Array.data[22].key
@@ -33441,13 +33648,25 @@ PrefabInstance:
       propertyPath: initialVars.Array.data[30].key
       value: LoopBackward
       objectReference: {fileID: 0}
+    - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: initialVars.Array.data[31].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: initialVars.Array.data[32].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: initialVars.Array.data[28].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 595650942304427066, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.size
@@ -33462,8 +33681,32 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].conditions.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.data[0].key
@@ -33490,6 +33733,30 @@ PrefabInstance:
       value: BackwardCount
       objectReference: {fileID: 0}
     - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.data[0].mode
       value: 1
       objectReference: {fileID: 0}
@@ -33499,6 +33766,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
@@ -33522,8 +33797,68 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[2].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[0].comparison
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].conditions.Array.data[0].variableKey
       value: HallwayNarrative3
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 793357738641080309, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[2].variableKey
+      value: LoopHallway
       objectReference: {fileID: 0}
     - target: {fileID: 849443398537097947, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33619,7 +33954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[5].key
@@ -33646,20 +33981,32 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].conditions.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[1].conditions.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].conditions.Array.size
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[4].conditions.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[5].conditions.Array.size
@@ -33698,11 +34045,43 @@ PrefabInstance:
       value: BackwardCount
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.data[0].mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
@@ -33738,6 +34117,30 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].conditions.Array.data[0].comparison
       value: 5
       objectReference: {fileID: 0}
@@ -33746,7 +34149,19 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[1].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[1].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[3].conditions.Array.data[0].comparison
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[0].comparison
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
@@ -33756,6 +34171,22 @@ PrefabInstance:
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].conditions.Array.data[0].variableKey
       value: StartHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[1].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[1].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[1].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[1].variableKey
+      value: LoopHallway
       objectReference: {fileID: 0}
     - target: {fileID: 1904638212395436234, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[5].conditions.Array.data[0].variableKey
@@ -33811,7 +34242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.size
@@ -33823,7 +34254,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.data[0].key
@@ -33846,11 +34301,59 @@ PrefabInstance:
       value: BackwardCount
       objectReference: {fileID: 0}
     - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].writes.Array.data[2].key
+      value: HallwayBackward
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.data[0].mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.data[1].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].writes.Array.data[2].mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
@@ -33870,8 +34373,68 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[2].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[3].conditions.Array.data[0].comparison
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[0].comparison
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745248591746992770, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[2].variableKey
+      value: LoopHallway
       objectReference: {fileID: 0}
     - target: {fileID: 3850330476978877495, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_IsActive
@@ -33979,7 +34542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.size
@@ -33991,6 +34554,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
@@ -34018,6 +34605,30 @@ PrefabInstance:
       value: BackwardCount
       objectReference: {fileID: 0}
     - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.data[0].mode
       value: 1
       objectReference: {fileID: 0}
@@ -34027,6 +34638,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
@@ -34048,6 +34667,62 @@ PrefabInstance:
     - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.data[2].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[2].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[0].comparison
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493629165720596691, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[2].variableKey
+      value: LoopHallway
       objectReference: {fileID: 0}
     - target: {fileID: 5577336253207513659, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: m_IsActive
@@ -34299,7 +34974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[5].key
@@ -34326,8 +35001,32 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].conditions.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[5].conditions.Array.size
@@ -34358,11 +35057,43 @@ PrefabInstance:
       value: BackwardCount
       objectReference: {fileID: 0}
     - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].key
+      value: HallwayForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].key
+      value: HallwayBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].key
+      value: BackwardCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].writes.Array.data[0].mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[2].writes.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
@@ -34390,6 +35121,34 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].writes.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].conditions.Array.data[0].comparison
       value: 6
       objectReference: {fileID: 0}
@@ -34402,7 +35161,19 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[2].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].comparison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[3].conditions.Array.data[0].comparison
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[0].comparison
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
@@ -34420,6 +35191,22 @@ PrefabInstance:
     - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[0].conditions.Array.data[1].variableKey
       value: HallwayNarrative1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[1].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[2].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[3].conditions.Array.data[2].variableKey
+      value: LoopHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
+      propertyPath: updates.Array.data[4].conditions.Array.data[2].variableKey
+      value: LoopHallway
       objectReference: {fileID: 0}
     - target: {fileID: 8188036288663590370, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: updates.Array.data[5].conditions.Array.data[0].variableKey
@@ -209020,6 +209807,7 @@ SceneRoots:
   - {fileID: 592384909}
   - {fileID: 979180583}
   - {fileID: 1119375705}
+  - {fileID: 1718932923}
   - {fileID: 4896630218959015096}
   - {fileID: 783629539}
   - {fileID: 882977856}

@@ -8,6 +8,7 @@ public class VoicedLine
 {
     [TextArea] public string text;
     public AudioClip clip;
+    public bool mustComplete;
 }
 
 public class NarratorManager : MonoBehaviour
