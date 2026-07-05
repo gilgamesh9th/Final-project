@@ -264,7 +264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &16649254
 Transform:
   m_ObjectHideFlags: 0
@@ -3313,7 +3313,7 @@ Transform:
   m_GameObject: {fileID: 400704754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.7, y: -0.97, z: -129.8}
+  m_LocalPosition: {x: -75.6, y: -0.97, z: -17.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4732,9 +4732,6 @@ MonoBehaviour:
     - variableKey: LoopCounter
       comparison: 0
       value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 0
     writes:
     - key: LoopForward2
       mode: 0
@@ -4752,9 +4749,6 @@ MonoBehaviour:
     - variableKey: LoopCounter
       comparison: 0
       value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 0
     writes:
     - key: LoopForward2
       mode: 0
@@ -5850,6 +5844,7 @@ GameObject:
   - component: {fileID: 562791224}
   - component: {fileID: 562791227}
   - component: {fileID: 562791226}
+  - component: {fileID: 562791225}
   - component: {fileID: 562791228}
   m_Layer: 0
   m_Name: LoopNarrative (9)
@@ -5857,7 +5852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &562791224
 Transform:
   m_ObjectHideFlags: 0
@@ -5873,6 +5868,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1628431370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &562791225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562791223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb8bcc6ac41f4237bedb311312fc68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConditionalNarrator
+  priority: 10
+  disableWhenDone: 1
+  rules:
+  - conditions:
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 3
+    narrations:
+    - text: Whoah whoah! Hold on. Stand still.
+      clip: {fileID: 0}
+      mustComplete: 1
+    - text: Can you step backwards?
+      clip: {fileID: 0}
+      mustComplete: 1
+    - text: Another one please.
+      clip: {fileID: 0}
+      mustComplete: 1
+  fallbackNarrations: []
+  immediate: 0
 --- !u!54 &562791226
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5935,23 +5961,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
   updates:
   - conditions:
-    - variableKey: LoopCounter
-      comparison: 0
-      value: 3
-    writes:
-    - key: LoopF2
-      mode: 0
-      value: 1
-    - key: LoopForward2
-      mode: 0
-      value: 0
-    - key: LoopBackward2
-      mode: 0
-      value: 0
-  - conditions:
-    - variableKey: LoopCounter
-      comparison: 0
-      value: 3
     - variableKey: ObjectTrigger
       comparison: 0
       value: 0
@@ -6134,23 +6143,38 @@ MonoBehaviour:
       isImportant: 1
       destinationIfUnsaid: RightJunctionForward
       discardOnInterrupt: 0
-    - text: Ah! Look at you!
-      clip: {fileID: 8300000, guid: 6e14f75895b43416bb034a2963841c90, type: 3}
+    - text: You know the way by now.
+      clip: {fileID: 8300000, guid: 3eea1dfef8f8a4d8d857da18911669c9, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: You know your way around the hotel better than me.
-      clip: {fileID: 8300000, guid: 2e4dd926a77334c56bc137e9fa74bab6, type: 3}
+    - text: End of the hallway. Then take a left.
+      clip: {fileID: 8300000, guid: d9fe0db6399574667b16a37e910b25aa, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: All you have to do is take a right at the end of the hallway.
-      clip: {fileID: 8300000, guid: 92833f74e835d4ad6a1f1d64cde962e1, type: 3}
+    - text: You know what?
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: Go on. Room 8 is waiting.
-      clip: {fileID: 8300000, guid: 8236314d228cd4624ab99dbda28f2943, type: 3}
+    - text: I will play you a song until you find the way.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Set the mood you know.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: I only have Arabic song for some reason.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: 'But I love this song! '
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -6314,7 +6338,7 @@ MonoBehaviour:
       value: 1
     - variableKey: BackwardCount
       comparison: 4
-      value: 100
+      value: 8
     narrations:
     - text: Hold on. Why are you going back?
       clip: {fileID: 8300000, guid: 72f307acc1fe2408f83222944ace6511, type: 3}
@@ -6337,22 +6361,27 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: You just LOVE going back, don't you?
-      clip: {fileID: 8300000, guid: 9837f269a5f7c442b9f3c78c6f851f6e, type: 3}
+      clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: 'You understand English right? Like words? '
-      clip: {fileID: 8300000, guid: 0f70ae84a96a04dacb542c2aff3dc8d8, type: 3}
+      clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: You know what. Go back as much as you like.
-      clip: {fileID: 8300000, guid: f2177a8280aab47ea9bdff902f840b57, type: 3}
+    - text: You know what. Do what you want.
+      clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 1
+    - text: Go back as much as you like.
+      clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
     - text: Let a mantis eat you for all I care.
-      clip: {fileID: 8300000, guid: 387184ce7413849a2a5e73c7ee008724, type: 3}
+      clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -6372,7 +6401,7 @@ MonoBehaviour:
       value: 1
     - variableKey: BackwardCount
       comparison: 1
-      value: 100
+      value: 8
     narrations:
     - text: Back on track!
       clip: {fileID: 0}
@@ -6515,49 +6544,45 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: 'What do you think of this place? '
-      clip: {fileID: 8300000, guid: b905bc3c46c884c88b9699033c37777c, type: 3}
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: Would you live here?
-      clip: {fileID: 8300000, guid: f4ba7216d81b8461cb0a787fb2f0a2ac, type: 3}
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: 'You know... I built the whole thing myself. '
-      clip: {fileID: 8300000, guid: 2eed2654f6fcc43d1bb5bb280ad8e081, type: 3}
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: 'I built this place with my own precious hands. Brick by brick. '
-      clip: {fileID: 8300000, guid: 3757da38128fb4e8298a4bdf4b396404, type: 3}
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: I installed every lamp and placed every piece of furniture myself.
-      clip: {fileID: 8300000, guid: 99a1f4734401b4c1dbd478308d67a866, type: 3}
+    - text: I installed every lamp and placed every piece of furniture  I take pride
+        in my work.
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: It ain't much, but it's honest work.
-      clip: {fileID: 8300000, guid: ca24bc8e8f9044ff1973b6d37605f429, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Don't you feel welcomed and at east?
-      clip: {fileID: 8300000, guid: 4fcaa20d126e74e2081a832528776dcd, type: 3}
+    - text: Do you feel welcomed and at east? Do you feel confident and comfortable?
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: I think the residents of this place would say so.
-      clip: {fileID: 8300000, guid: 14a634ff85a6c4169827d09f8013000f, type: 3}
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
-    loopLastLine: 0
+    loopLastLine: 1
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -6569,28 +6594,18 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: No. No. Oh my god...
-      clip: {fileID: 8300000, guid: e26e8186d246e4c428acb5c47f4a8415, type: 3}
+    - text: No. No.
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: Do you not understand the concept of a hallway?
-      clip: {fileID: 8300000, guid: 0b416548695624309bbd045ae9da2f08, type: 3}
+    - text: 'The room is at the end of the hallway. '
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: In a hallway, you walk forward to get to a destination.
-      clip: {fileID: 8300000, guid: 957cad6756e00462e8f61f8a69a3c5c9, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Extremely simple.
-      clip: {fileID: 8300000, guid: 27a63b7ad6926476ab960f4b5894d743, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: TURN AROUND!
-      clip: {fileID: 8300000, guid: 39d60843df50b48db91efb2f75994d77, type: 3}
+    - text: Do not go back.
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -6610,34 +6625,39 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: "Wait. No... this isn\u2019t the way."
-      clip: {fileID: 8300000, guid: 239286ee437d444039072dfed1f9fab6, type: 3}
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: 'You must have made the wrong turn. '
-      clip: {fileID: 8300000, guid: b541a87a475594157aff69424e2222a8, type: 3}
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: 'Let me describe it to you in a way you understand. '
-      clip: {fileID: 8300000, guid: 4d3660ad630524efe91ca2b5d440dc59, type: 3}
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: You seem to keep getting lost.
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: Just follow the damn hallway. Can't be hard.
-      clip: {fileID: 8300000, guid: c26ed542e5f064b6999a241d67ebd9d8, type: 3}
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: Don't even think of going back.
-      clip: {fileID: 8300000, guid: 1d9a38958bf0143b9b09780b478632d9, type: 3}
+    - text: And don't even think of going back.
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
-    loopLastLine: 0
+    loopLastLine: 1
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -6650,14 +6670,14 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: Did I not tell you to not go back?
-      clip: {fileID: 8300000, guid: 4dde7b7bf76ae4e25a18b5e732217070, type: 3}
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
-    loopLastLine: 0
+    loopLastLine: 1
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -6670,7 +6690,17 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: Humming...
-      clip: {fileID: 8300000, guid: 1f48656693f974204a2b6e4fcee54405, type: 3}
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Loop2 F1
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Loop2 F2
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -6689,8 +6719,28 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: Humming...
-      clip: {fileID: 8300000, guid: 1f48656693f974204a2b6e4fcee54405, type: 3}
+    - text: Oh my god...
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Do you not understand the concept of a hallway?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: 'In a hallway, you walk forward to get to a destination. '
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: You walk backward to go back to where you came from.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Exremely simple.
+      clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -6753,111 +6803,6 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 1
-    disableChannelsOnComplete: []
-    disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
-    disableIdleOnComplete: 0
-  - channelName: LoopF2
-    priority: 10
-    conditions:
-    - variableKey: LoopF2
-      comparison: 0
-      value: 1
-    narrations:
-    - text: How peculiar.
-      clip: {fileID: 8300000, guid: f734d68f28ce3460d8d9044f79cf4af3, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Something has changed.
-      clip: {fileID: 8300000, guid: 291bfbbb0f787451fb56a204deef2184, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Can you get closer to that thing on the right?
-      clip: {fileID: 8300000, guid: 6dae2a34179e645898dcdbdc8ddc6ef5, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Do you think everything looks the same as last time we were here?
-      clip: {fileID: 8300000, guid: bce85204793ca4410ac490c99654f480, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: You know what. Never mind I'm probably just tired.
-      clip: {fileID: 8300000, guid: 5f678f031116b4e35a290b1aa9ea7450, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: I'm going to go get some coffee. Be right back.
-      clip: {fileID: 8300000, guid: 2e5d33ee387234fbc88aa7eaa07edfb2, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    returnTransitions: []
-    returnLinesCount: 1
-    loopReturnTransitions: 0
-    loopLastLine: 0
-    disableChannelsOnComplete: []
-    disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
-    disableIdleOnComplete: 0
-  - channelName: LoopB2
-    priority: 7
-    conditions:
-    - variableKey: LoopB2
-      comparison: 0
-      value: 1
-    narrations:
-    - text: Whoah whoah! Hold on. Stand still.
-      clip: {fileID: 8300000, guid: b22dc60056e724ee095a783b0c7d885a, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Can you step backwards?
-      clip: {fileID: 8300000, guid: c3724b19fbf484f3d91a7707a2c54078, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Another one please.
-      clip: {fileID: 8300000, guid: 1dc2e51acfdf14eb6a6ded81af5522cc, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    returnTransitions: []
-    returnLinesCount: 1
-    loopReturnTransitions: 0
-    loopLastLine: 1
-    disableChannelsOnComplete: []
-    disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
-    disableIdleOnComplete: 0
-  - channelName: LoopSolved
-    priority: 7
-    conditions:
-    - variableKey: LoopSolved
-      comparison: 0
-      value: 1
-    narrations:
-    - text: Aha!
-      clip: {fileID: 8300000, guid: cb4b0fa1b39e942c1b96bf731b84fa07, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: That's why you were stuck.
-      clip: {fileID: 8300000, guid: c8c3ef496bbb746628a8de2785e20949, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Now you should be unstuck.
-      clip: {fileID: 8300000, guid: f01f0a654b2bd4b6fb943a716e7b9de0, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    returnTransitions: []
-    returnLinesCount: 1
-    loopReturnTransitions: 0
-    loopLastLine: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -8436,9 +8381,6 @@ MonoBehaviour:
     - variableKey: LoopCounter
       comparison: 0
       value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 0
     writes:
     - key: LoopForward2
       mode: 0
@@ -8456,9 +8398,6 @@ MonoBehaviour:
     - variableKey: LoopCounter
       comparison: 0
       value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 0
     writes:
     - key: LoopForward2
       mode: 0
@@ -10514,9 +10453,6 @@ MonoBehaviour:
     - variableKey: LoopCounter
       comparison: 0
       value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 0
     writes:
     - key: LoopForward2
       mode: 0
@@ -10534,9 +10470,6 @@ MonoBehaviour:
     - variableKey: LoopCounter
       comparison: 0
       value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 0
     writes:
     - key: LoopForward2
       mode: 0
@@ -14560,6 +14493,23 @@ MonoBehaviour:
       value: 0
   - conditions:
     - variableKey: LoopHallway1
+      comparison: 6
+      value: 0
+    - variableKey: LoopHallway1
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 3
+    writes:
+    - key: LoopForward2
+      mode: 0
+      value: 1
+    - key: LoopBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: LoopHallway1
       comparison: 5
       value: 0
     - variableKey: LoopHallway1
@@ -14580,26 +14530,6 @@ MonoBehaviour:
       value: 1
   - conditions:
     - variableKey: LoopHallway1
-      comparison: 6
-      value: 0
-    - variableKey: LoopHallway1
-      comparison: 1
-      value: 0
-    - variableKey: LoopCounter
-      comparison: 0
-      value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 0
-    writes:
-    - key: LoopForward2
-      mode: 0
-      value: 1
-    - key: LoopBackward2
-      mode: 0
-      value: 0
-  - conditions:
-    - variableKey: LoopHallway1
       comparison: 5
       value: 0
     - variableKey: LoopHallway1
@@ -14608,9 +14538,6 @@ MonoBehaviour:
     - variableKey: LoopCounter
       comparison: 0
       value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 0
     writes:
     - key: LoopForward2
       mode: 0
@@ -14621,26 +14548,6 @@ MonoBehaviour:
     - key: BackwardCount
       mode: 1
       value: 1
-  - conditions:
-    - variableKey: LoopHallway1
-      comparison: 5
-      value: 0
-    - variableKey: LoopHallway1
-      comparison: 1
-      value: 0
-    - variableKey: LoopCounter
-      comparison: 0
-      value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 1
-    writes:
-    - key: LoopF2
-      mode: 0
-      value: 1
-    - key: LoopB2
-      mode: 0
-      value: 0
 --- !u!54 &1430581315
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15552,9 +15459,6 @@ MonoBehaviour:
     - variableKey: LoopCounter
       comparison: 0
       value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 0
     writes:
     - key: LoopForward2
       mode: 0
@@ -15572,9 +15476,6 @@ MonoBehaviour:
     - variableKey: LoopCounter
       comparison: 0
       value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 0
     writes:
     - key: LoopForward2
       mode: 0
@@ -16890,14 +16791,14 @@ MonoBehaviour:
   defaultLineDuration: 5
   lookNarrations:
   - text: Congrats! You found the only thing in the room.
-    clip: {fileID: 8300000, guid: 7d7996586c76b4313a5430bfc03fdd2a, type: 3}
+    clip: {fileID: 0}
     mustComplete: 1
-  - text: Now, why don't you get out?
-    clip: {fileID: 8300000, guid: 8f3dc72361dee47f1936b43f581ce639, type: 3}
-    mustComplete: 1
+  - text: Now, why don't you get out? I tjhmma  sjsjajsjajsjsjsj
+    clip: {fileID: 0}
+    mustComplete: 0
   - text: GET OUT
-    clip: {fileID: 8300000, guid: 8697f210f575f46d7bd1a3c55f55422a, type: 3}
-    mustComplete: 1
+    clip: {fileID: 0}
+    mustComplete: 0
 --- !u!23 &1718932921
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17623,22 +17524,13 @@ MonoBehaviour:
     - variableKey: LoopCounter
       comparison: 0
       value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 0
     writes:
-    - key: LoopB2
-      mode: 1
-      value: 1
-    - key: LoopF2
-      mode: 0
-      value: 0
     - key: LoopForward2
       mode: 0
-      value: 0
-    - key: ObjectTrigger
-      mode: 0
       value: 1
+    - key: LoopBackward2
+      mode: 0
+      value: 0
   - conditions:
     - variableKey: LoopHallway2
       comparison: 5
@@ -17649,14 +17541,11 @@ MonoBehaviour:
     - variableKey: LoopCounter
       comparison: 0
       value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 1
     writes:
-    - key: LoopF2
+    - key: LoopForward2
       mode: 0
       value: 0
-    - key: LoopB2
+    - key: LoopBackward2
       mode: 0
       value: 1
     - key: BackwardCount
@@ -18842,26 +18731,6 @@ PrefabInstance:
     - target: {fileID: 1203625442002602702, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
-      propertyPath: onSolveWrites.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
-      propertyPath: onSolveWrites.Array.data[0].key
-      value: LoopF2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
-      propertyPath: onSolveWrites.Array.data[1].key
-      value: LoopB2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
-      propertyPath: onSolveWrites.Array.data[2].key
-      value: LoopSolved
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
-      propertyPath: onSolveWrites.Array.data[2].value
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36649,7 +36518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: initialVars.Array.size
-      value: 37
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: initialVars.Array.data[22].key
@@ -36698,18 +36567,6 @@ PrefabInstance:
     - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: initialVars.Array.data[33].key
       value: ObjectTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
-      propertyPath: initialVars.Array.data[34].key
-      value: LoopF2
-      objectReference: {fileID: 0}
-    - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
-      propertyPath: initialVars.Array.data[35].key
-      value: LoopB2
-      objectReference: {fileID: 0}
-    - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
-      propertyPath: initialVars.Array.data[36].key
-      value: LoopSolved
       objectReference: {fileID: 0}
     - target: {fileID: 378328437315260270, guid: 1511ed2db510747cf991cca240d29f1b, type: 3}
       propertyPath: initialVars.Array.data[28].value
