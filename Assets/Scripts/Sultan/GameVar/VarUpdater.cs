@@ -36,7 +36,11 @@ public class VarUpdater : MonoBehaviour
             foreach (var w in u.writes)
             {
                 if (w.mode == UpdateMode.Increment)
+                {
                     GameVarStore.Instance.Add(w.key, w.value);
+                    Debug.Log(w.key);
+                    Debug.Log(w.value);
+                }
                 else
                     GameVarStore.Instance.Set(w.key, w.value);
             }

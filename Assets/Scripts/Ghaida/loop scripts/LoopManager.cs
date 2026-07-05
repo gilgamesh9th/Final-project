@@ -16,6 +16,7 @@ public class LoopManager : MonoBehaviour
     public AudioClip flickerSound;
     public PlayerTeleporter forwardTrigger; // assign end trigger to disable on solve
 
+    [SerializeField] private VarWrite[] onSolveWrites;
     private int loopCount = 0;
     private int guessesRemaining = 3;
     private int currentAnomalyIndex = 0;
@@ -27,6 +28,7 @@ public class LoopManager : MonoBehaviour
     public static event System.Action OnWrongGuess;
     public static event System.Action OnGuessesExhausted;
     public static event System.Action OnLoopBreak;
+
 
     void Awake() => Instance = this;
 
@@ -77,6 +79,18 @@ public class LoopManager : MonoBehaviour
     public void CorrectGuess()
     {
         puzzleSolved = true;
+
+        if (GameVarStore.Instance != null)
+        {
+            foreach (var w in onSolveWrites)
+            {
+                if (w.mode == UpdateMode.Increment)
+                    GameVarStore.Instance.Add(w.key, w.value);
+                else
+                    GameVarStore.Instance.Set(w.key, w.value);
+            }
+        }
+        
         StartCoroutine(FlickerAndBreak());
     }
 
