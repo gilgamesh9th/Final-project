@@ -5,6 +5,8 @@ public class RayCastDetector : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float raycastDistance = 15f;
 
+    public static bool IsEngaged { get; private set; }
+
     private LookTarget _previousTarget;
 
     private void Update()
@@ -15,8 +17,13 @@ public class RayCastDetector : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))
             hit.collider.TryGetComponent(out currentTarget);
 
-        if (currentTarget != null && currentTarget != _previousTarget)
-            currentTarget.OnLooked();
+        IsEngaged = currentTarget != null;
+
+        if (currentTarget != _previousTarget)
+        {
+            _previousTarget?.OnLookExit();
+            currentTarget?.OnLookEnter();
+        }
 
         _previousTarget = currentTarget;
     }

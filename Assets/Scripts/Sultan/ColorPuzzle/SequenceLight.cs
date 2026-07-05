@@ -1,15 +1,27 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[System.Serializable]
+public struct ColorEntry
+{
+    public PuzzleColor puzzleColor;
+    public Material material;
+}
+
 public class SequenceLight : MonoBehaviour
 {
     public ColorPuzzleManager manager;
-    public Light pointLight;
+    public Light spotLight;
     public Renderer sphereRenderer;
     public float colorDuration = 1f;
     public float pauseDuration = 0.3f;
     public float loopPause = 1.5f;
     public float lightIntensity = 5f;
+    public float lightRange = 4f;
+    public float spotAngle = 60f;
+    public float innerSpotAngle = 30f;
+    public ColorEntry[] colors;
+
     private Material mat;
     private int colorIndex = 0;
     private float timer = 0f;
@@ -20,15 +32,18 @@ public class SequenceLight : MonoBehaviour
     void Start()
     {
         mat = sphereRenderer.material;
-        mat.SetColor("_EmissionColor", Color.black);
 
-        XylophoneBar[] bars = FindObjectsOfType<XylophoneBar>();
-        foreach (var bar in bars)
+        spotLight.type = LightType.Spot;
+        spotLight.range = lightRange;
+        spotLight.spotAngle = spotAngle;
+        spotLight.innerSpotAngle = innerSpotAngle;
+
+        foreach (var entry in colors)
         {
-            if (!colorMap.ContainsKey(bar.barColor))
-            {
-                colorMap[bar.barColor] = bar.GetComponent<Renderer>().material.color;
-            }
+            Color c = entry.material.HasProperty("_BaseColor")
+                ? entry.material.GetColor("_BaseColor")
+                : entry.material.color;
+            colorMap[entry.puzzleColor] = c;
         }
 
         ShowColor(0);
@@ -85,20 +100,20 @@ public class SequenceLight : MonoBehaviour
 
         Color c = GetBarColor(seq[index]);
         mat.SetColor("_BaseColor", c);
-        pointLight.color = c;
-        pointLight.intensity = lightIntensity;
+        spotLight.color = c;
+        spotLight.intensity = lightIntensity;
     }
 
     void Dim()
     {
         mat.SetColor("_BaseColor", Color.black);
-        pointLight.intensity = 0f;
+        spotLight.intensity = 0f;
     }
 
     void TurnOff()
     {
         mat.SetColor("_BaseColor", Color.black);
-        pointLight.intensity = 0f;
+        spotLight.intensity = 0f;
     }
 
     Color GetBarColor(PuzzleColor pc)
