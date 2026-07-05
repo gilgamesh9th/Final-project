@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 68129006301709049}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 2.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -152,8 +152,8 @@ GameObject:
   - component: {fileID: 1750497296370875093}
   - component: {fileID: 9185608936177443349}
   - component: {fileID: 3938947514816747255}
-  - component: {fileID: 4152574420784762452}
   - component: {fileID: 6436885498601072446}
+  - component: {fileID: 4152574420784762452}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -169,14 +169,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7257217604284310303}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 120.98, y: 1.25, z: 47.35}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26.65, y: -0.97, z: -118.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1894999184356910823}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2229833555378501143
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -192,7 +192,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7257217604284310303}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -275,7 +275,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 5
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -318,22 +318,6 @@ MonoBehaviour:
   mouseSensitivity: 0.1
   verticalLookMin: -80
   verticalLookMax: 80
---- !u!114 &4152574420784762452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7257217604284310303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 607d9b36de4e144409e45f05aa182424, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
-  playerCamera: {fileID: 4722820198780966256}
-  interactDistance: 15
-  interactAction: {fileID: -3311245385978027217, guid: 7dd1fe7874c964c44b251789a8784b64, type: 3}
-  interactionDot: {fileID: 0}
 --- !u!114 &6436885498601072446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,3 +331,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTeleportCooldown
   canTeleport: 1
+--- !u!114 &4152574420784762452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7257217604284310303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607d9b36de4e144409e45f05aa182424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractionII
+  playerCamera: {fileID: 4722820198780966256}
+  interactDistance: 15
+  interactAction: {fileID: -3311245385978027217, guid: 7dd1fe7874c964c44b251789a8784b64, type: 3}
+  interactionDot: {fileID: 0}
