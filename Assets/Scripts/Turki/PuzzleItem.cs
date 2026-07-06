@@ -54,4 +54,6 @@ public class PuzzleItem : MonoBehaviour
 
         transform.position = targetPosition;
     }
+
 }
+

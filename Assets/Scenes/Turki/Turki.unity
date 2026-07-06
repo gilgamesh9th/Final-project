@@ -1018,9 +1018,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7402d6b957e84dfd8814e8357d875fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookTarget
-  lookCooldown: 2
+  priority: 5
+  disableWhenDone: 0
+  defaultLineDuration: 5
   lookNarrations:
-  - cube detected
+  - text: 
+    clip: {fileID: 0}
+    mustComplete: 0
 --- !u!1 &214321260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,9 +1822,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7402d6b957e84dfd8814e8357d875fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookTarget
-  lookCooldown: 2
+  priority: 5
+  disableWhenDone: 0
+  defaultLineDuration: 5
   lookNarrations:
-  - sphere detected
+  - text: 
+    clip: {fileID: 0}
+    mustComplete: 0
 --- !u!1 &322115326
 GameObject:
   m_ObjectHideFlags: 0
@@ -8779,8 +8787,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58488e4f35c54d2890a3b0b8e20a19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoneNarrator
+  priority: 3
   narrations:
-  - Error in Var Updater
+  - text: 
+    clip: {fileID: 0}
+    mustComplete: 0
   immediate: 0
 --- !u!4 &1567518211
 Transform:
@@ -8809,20 +8820,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb8bcc6ac41f4237bedb311312fc68e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConditionalNarrator
+  priority: 4
+  disableWhenDone: 0
   rules:
-  - variableKey: BeenToLobby
-    comparison: 0
-    value: 1
-    narration: Been to the lobby once
-  - variableKey: BeenToLobby
-    comparison: 0
-    value: 0
-    narration: Not been to the lobby
-  - variableKey: BeenToLobby
-    comparison: 1
-    value: 1
-    narration: Been to the lobby too many times
-  fallbackNarration: Fallback test
+  - conditions: []
+    narrations: []
+  - conditions: []
+    narrations: []
+  - conditions: []
+    narrations: []
+  fallbackNarrations: []
+  immediate: 0
 --- !u!54 &1567518213
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9559,8 +9567,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58488e4f35c54d2890a3b0b8e20a19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoneNarrator
+  priority: 3
   narrations:
-  - 'ZoneTriggerWorks (narration placeholder) '
+  - text: 
+    clip: {fileID: 0}
+    mustComplete: 0
   immediate: 1
 --- !u!65 &1725370465
 BoxCollider:
@@ -9623,9 +9634,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
   updates:
-  - key: BeenToLobby
-    mode: 1
-    value: 1
+  - conditions: []
+    writes: []
 --- !u!1 &1727858618
 GameObject:
   m_ObjectHideFlags: 0
@@ -11193,9 +11203,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NarratorManager
   narratorText: {fileID: 1042193360}
+  audioSource: {fileID: 0}
   displayDuration: 4
   gapBetweenLines: 0.5
---- !u!1001 &1649900819656612145
+--- !u!1001 &4068927788249087381
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11203,55 +11214,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2227755509811747496, guid: 8e5a34b98ade5a44798eddd01f22543f, type: 3}
+    - target: {fileID: 2002487056907652314, guid: a68d3b9ab0eceb74c9242a00ce8612cd, type: 3}
+      propertyPath: m_Name
+      value: TurkiPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583267547187845599, guid: a68d3b9ab0eceb74c9242a00ce8612cd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 51.8126
       objectReference: {fileID: 0}
-    - target: {fileID: 2227755509811747496, guid: 8e5a34b98ade5a44798eddd01f22543f, type: 3}
+    - target: {fileID: 6583267547187845599, guid: a68d3b9ab0eceb74c9242a00ce8612cd, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 2227755509811747496, guid: 8e5a34b98ade5a44798eddd01f22543f, type: 3}
+    - target: {fileID: 6583267547187845599, guid: a68d3b9ab0eceb74c9242a00ce8612cd, type: 3}
       propertyPath: m_LocalPosition.z
       value: 274.5252
       objectReference: {fileID: 0}
-    - target: {fileID: 2227755509811747496, guid: 8e5a34b98ade5a44798eddd01f22543f, type: 3}
+    - target: {fileID: 6583267547187845599, guid: a68d3b9ab0eceb74c9242a00ce8612cd, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2227755509811747496, guid: 8e5a34b98ade5a44798eddd01f22543f, type: 3}
+    - target: {fileID: 6583267547187845599, guid: a68d3b9ab0eceb74c9242a00ce8612cd, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2227755509811747496, guid: 8e5a34b98ade5a44798eddd01f22543f, type: 3}
+    - target: {fileID: 6583267547187845599, guid: a68d3b9ab0eceb74c9242a00ce8612cd, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2227755509811747496, guid: 8e5a34b98ade5a44798eddd01f22543f, type: 3}
+    - target: {fileID: 6583267547187845599, guid: a68d3b9ab0eceb74c9242a00ce8612cd, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2227755509811747496, guid: 8e5a34b98ade5a44798eddd01f22543f, type: 3}
+    - target: {fileID: 6583267547187845599, guid: a68d3b9ab0eceb74c9242a00ce8612cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2227755509811747496, guid: 8e5a34b98ade5a44798eddd01f22543f, type: 3}
+    - target: {fileID: 6583267547187845599, guid: a68d3b9ab0eceb74c9242a00ce8612cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2227755509811747496, guid: 8e5a34b98ade5a44798eddd01f22543f, type: 3}
+    - target: {fileID: 6583267547187845599, guid: a68d3b9ab0eceb74c9242a00ce8612cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3535145536379464374, guid: 8e5a34b98ade5a44798eddd01f22543f, type: 3}
-      propertyPath: m_Name
-      value: TurkiPuzzle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8e5a34b98ade5a44798eddd01f22543f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: a68d3b9ab0eceb74c9242a00ce8612cd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -11262,4 +11273,4 @@ SceneRoots:
   - {fileID: 2113977992}
   - {fileID: 959317970}
   - {fileID: 971882274}
-  - {fileID: 1649900819656612145}
+  - {fileID: 4068927788249087381}
