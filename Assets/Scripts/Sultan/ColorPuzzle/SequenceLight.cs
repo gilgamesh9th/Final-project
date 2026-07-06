@@ -22,16 +22,17 @@ public class SequenceLight : MonoBehaviour
     public float innerSpotAngle = 30f;
     public ColorEntry[] colors;
 
-    private Material mat;
+    private Material _originalMat;
     private int colorIndex = 0;
     private float timer = 0f;
     private bool inPause = false;
     private PuzzleColor[] lastSequence;
+    private Dictionary<PuzzleColor, Material> materialMap = new Dictionary<PuzzleColor, Material>();
     private Dictionary<PuzzleColor, Color> colorMap = new Dictionary<PuzzleColor, Color>();
 
     void Start()
     {
-        mat = sphereRenderer.material;
+        _originalMat = sphereRenderer.sharedMaterial;
 
         spotLight.type = LightType.Spot;
         spotLight.range = lightRange;
@@ -40,6 +41,8 @@ public class SequenceLight : MonoBehaviour
 
         foreach (var entry in colors)
         {
+            materialMap[entry.puzzleColor] = entry.material;
+
             Color c = entry.material.HasProperty("_BaseColor")
                 ? entry.material.GetColor("_BaseColor")
                 : entry.material.color;
@@ -98,21 +101,24 @@ public class SequenceLight : MonoBehaviour
         if (seq == null || index >= seq.Length)
             return;
 
-        Color c = GetBarColor(seq[index]);
-        mat.SetColor("_BaseColor", c);
-        spotLight.color = c;
+        PuzzleColor pc = seq[index];
+
+        if (materialMap.TryGetValue(pc, out Material m))
+            sphereRenderer.material = m;
+
+        spotLight.color = GetBarColor(pc);
         spotLight.intensity = lightIntensity;
     }
 
     void Dim()
     {
-        mat.SetColor("_BaseColor", Color.black);
+        sphereRenderer.material = _originalMat;
         spotLight.intensity = 0f;
     }
 
     void TurnOff()
     {
-        mat.SetColor("_BaseColor", Color.black);
+        sphereRenderer.material = _originalMat;
         spotLight.intensity = 0f;
     }
 
