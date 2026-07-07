@@ -2510,7 +2510,7 @@ MonoBehaviour:
   director: {fileID: 137024307}
   player: {fileID: 7257217602961571426}
   cutsceneCam: {fileID: 530122350}
-  playerCam: {fileID: 1590268157}
+  playerController: {fileID: 3938947515639974794}
 --- !u!43 &878936223
 Mesh:
   m_ObjectHideFlags: 0
