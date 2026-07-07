@@ -544,6 +544,18 @@ PrefabInstance:
       propertyPath: wallToShow
       value: 
       objectReference: {fileID: 815017101}
+    - target: {fileID: 815527655021767009, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 617996665}
+    - target: {fileID: 815527655021767009, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292887445862631282, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 617996667}
     - target: {fileID: 3490223839634660814, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
       propertyPath: m_Name
       value: ColorPuzzle
@@ -558,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6026965440240263528, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6841874950284184691, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1365,7 +1377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &505685111
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -2394,7 +2406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &617996666
 Animator:
   serializedVersion: 7
@@ -5719,7 +5731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1167663369
 Transform:
   m_ObjectHideFlags: 0
@@ -9222,7 +9234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &2024438383
 Animator:
   serializedVersion: 7
@@ -88705,7 +88717,7 @@ Transform:
   m_GameObject: {fileID: 7257217602961571426}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.0036975765, z: -0, w: 0.9999932}
-  m_LocalPosition: {x: -16.2, y: 7.6, z: -35.3}
+  m_LocalPosition: {x: -13.9, y: 7.6, z: -31.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -231347,7 +231359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5104170864988109787
 Transform:
   m_ObjectHideFlags: 0
