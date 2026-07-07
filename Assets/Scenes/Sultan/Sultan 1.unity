@@ -1042,12 +1042,15 @@ MonoBehaviour:
   fadeDuration: 1.5
   failSound: {fileID: 0}
   failVarKey: PuzzleFail
-  narrationDuration: 1
+  narrationDuration: 8
   onFailWrites:
   - key: PuzzleResume
     mode: 0
     value: 1
   - key: KidsRoom
+    mode: 0
+    value: 0
+  - key: PuzzleFail
     mode: 0
     value: 0
 --- !u!1 &300115945
@@ -5847,7 +5850,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.6
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5855,7 +5858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31
+      value: 9.7
       objectReference: {fileID: 0}
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -291791,6 +291794,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -291826,6 +291830,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -291861,6 +291866,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -291896,6 +291902,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -291934,6 +291941,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -291992,6 +292000,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292020,6 +292029,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292090,6 +292100,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292131,6 +292142,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292186,6 +292198,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292226,6 +292239,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 1
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292266,6 +292280,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292286,6 +292301,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292306,6 +292322,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 1
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292326,6 +292343,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 1
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292356,6 +292374,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 1
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292381,6 +292400,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 1
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292426,6 +292446,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292456,6 +292477,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 1
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292496,6 +292518,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292551,6 +292574,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 1
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292581,6 +292605,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292592,22 +292617,17 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: HUH
+    - text: Haa! Solve it right, focus!
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: lll
+    - text: Alright, I'll play it for you again.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: lll
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: fff
+    - text: 
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
@@ -292616,6 +292636,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 1
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292653,6 +292674,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292664,7 +292686,17 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: Success
+    - text: Bravooooo! I'm proud of you!
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Alright, what do you say we hang out together?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Get out of this room! Room 8 is around the corner.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
@@ -292672,7 +292704,8 @@ MonoBehaviour:
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
-    loopLastLine: 1
+    loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292693,6 +292726,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 1
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
@@ -292733,6 +292767,7 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
