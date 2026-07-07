@@ -1102,6 +1102,9 @@ MonoBehaviour:
     - key: HallwayForward3
       mode: 0
       value: 1
+    - key: HallwayForward3
+      mode: 0
+      value: 1
 --- !u!54 &300115948
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5847,7 +5850,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13
+      value: -13.8
       objectReference: {fileID: 0}
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5855,7 +5858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.4
+      value: -30.2
       objectReference: {fileID: 0}
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -73575,15 +73578,15 @@ MonoBehaviour:
   wallToHide: {fileID: 536085646}
   wallToShow: {fileID: 1829757979}
   onSolvedWrites:
-  - key: KidsRoom
-    mode: 0
-    value: 0
   - key: PuzzleResume
     mode: 0
     value: 0
   - key: PuzzleSuccess
     mode: 0
     value: 1
+  - key: KidsRoom
+    mode: 0
+    value: 0
   - key: PuzzleFail
     mode: 0
     value: 0
@@ -162512,7 +162515,7 @@ MonoBehaviour:
   - key: BackwardCount
     value: 0
   - key: LoopHallway
-    value: 1
+    value: 0
   - key: LoopForward
     value: 0
   - key: LoopBackward
@@ -292582,81 +292585,6 @@ MonoBehaviour:
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
     disableIdleOnComplete: 0
-  - channelName: PuzzleFail
-    priority: 7
-    conditions:
-    - variableKey: PuzzleFail
-      comparison: 0
-      value: 1
-    narrations:
-    - text: HUH
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: lll
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: lll
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: fff
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    returnTransitions: []
-    returnLinesCount: 1
-    loopReturnTransitions: 0
-    loopLastLine: 0
-    disableChannelsOnComplete: []
-    disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
-    disableIdleOnComplete: 0
-  - channelName: PuzzleSuccess
-    priority: 9
-    conditions:
-    - variableKey: PuzzleSuccess
-      comparison: 0
-      value: 1
-    narrations:
-    - text: Success
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    returnTransitions: []
-    returnLinesCount: 1
-    loopReturnTransitions: 0
-    loopLastLine: 1
-    disableChannelsOnComplete: []
-    disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
-    disableIdleOnComplete: 0
-  - channelName: PuzzleResume
-    priority: 7
-    conditions:
-    - variableKey: PuzzleResume
-      comparison: 0
-      value: 1
-    narrations:
-    - text: Resume
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    returnTransitions: []
-    returnLinesCount: 1
-    loopReturnTransitions: 0
-    loopLastLine: 1
-    disableChannelsOnComplete: []
-    disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
-    disableIdleOnComplete: 0
   - channelName: HallwayForward3
     priority: 9
     conditions:
@@ -292703,6 +292631,81 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: PuzzleFail
+    priority: 7
+    conditions:
+    - variableKey: PuzzleFail
+      comparison: 0
+      value: 1
+    narrations:
+    - text: HUH
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: lll
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: lll
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: fff
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: PuzzleResume
+    priority: 7
+    conditions:
+    - variableKey: PuzzleResume
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Resume
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: PuzzleSuccess
+    priority: 9
+    conditions:
+    - variableKey: PuzzleSuccess
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Success
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []

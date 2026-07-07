@@ -86,8 +86,32 @@ public class LoopManager : MonoBehaviour
             {
                 if (w.mode == UpdateMode.Increment)
                     GameVarStore.Instance.Add(w.key, w.value);
-                else
-                    GameVarStore.Instance.Set(w.key, w.value);
+                else{
+                    if(w.key == "LoopCounter")
+                    {
+                        if(GameVarStore.Instance.Get(w.key) < 3)
+                        {
+                            GameVarStore.Instance.Set("EarlyLoopSolve", 1);
+                            Debug.Log("Too early");
+                            Debug.Log(GameVarStore.Instance.Get("EarlyLoopSolve"));
+                            GameVarStore.Instance.Set("LoopCounter", 100);
+                        }
+                        // else if (
+                        //     GameVarStore.Instance.Set(w.key, w.value);
+                        //     Debug.Log(w.key);
+                        //     Debug.Log(w.value);
+                        // }
+                    }
+                    else if (w.key == "LoopSolved"){
+                        if(GameVarStore.Instance.Get("LoopCounter") > 2)
+                            GameVarStore.Instance.Set(w.key, w.value);
+                    }
+                    else{
+                        GameVarStore.Instance.Set(w.key, w.value);
+                        Debug.Log(w.key);
+                        Debug.Log(w.value);
+                    }
+                }
             }
         }
         

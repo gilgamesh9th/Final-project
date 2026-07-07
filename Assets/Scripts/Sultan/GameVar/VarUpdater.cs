@@ -39,10 +39,16 @@ public class VarUpdater : MonoBehaviour
                 {
                     GameVarStore.Instance.Add(w.key, w.value);
                     Debug.Log(w.key);
+                    Debug.Log("Increment");
                     Debug.Log(w.value);
                 }
                 else
+                {
                     GameVarStore.Instance.Set(w.key, w.value);
+                    Debug.Log(w.key);
+                    Debug.Log("Set");
+                    Debug.Log(w.value);
+                }
             }
         }
     }
