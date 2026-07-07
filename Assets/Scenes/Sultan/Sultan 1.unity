@@ -540,7 +540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &133023540
 Transform:
   m_ObjectHideFlags: 0
@@ -1068,7 +1068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &300115946
 Transform:
   m_ObjectHideFlags: 0
@@ -5847,7 +5847,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13
+      value: -15.6
       objectReference: {fileID: 0}
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5855,7 +5855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.4
+      value: -31
       objectReference: {fileID: 0}
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -73574,22 +73574,7 @@ MonoBehaviour:
         m_CallState: 2
   wallToHide: {fileID: 536085646}
   wallToShow: {fileID: 1829757979}
-  onSolvedWrites:
-  - key: KidsRoom
-    mode: 0
-    value: 0
-  - key: PuzzleResume
-    mode: 0
-    value: 0
-  - key: PuzzleSuccess
-    mode: 0
-    value: 1
-  - key: PuzzleFail
-    mode: 0
-    value: 0
-  - key: KidsRoomDone
-    mode: 0
-    value: 1
+  onSolvedWrites: []
 --- !u!1 &2366759741742654289
 GameObject:
   m_ObjectHideFlags: 0
@@ -162512,7 +162497,7 @@ MonoBehaviour:
   - key: BackwardCount
     value: 0
   - key: LoopHallway
-    value: 1
+    value: 0
   - key: LoopForward
     value: 0
   - key: LoopBackward
@@ -291806,11 +291791,10 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 0
-    disableChannelsOnComplete:
-    - HallwayBackward
+    disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
-    disableIdleOnComplete: 1
+    disableIdleOnComplete: 0
   - channelName: EmptyRoom1
     priority: 6
     conditions:
@@ -292062,17 +292046,22 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: Good job spotting the missing flowers, though!
+    - text: You must be wondering about the missing flowers from that vase, huh?
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: Personally, I would have never noticed.
+    - text: I took them for my wife. She loves when I bring flowers on our dates.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: You must think this is a weird hotel?
+    - text: I only see her once a year, you know.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: You must think this is a weird hotel? With a weird Bell boy?
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
@@ -292082,12 +292071,7 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: I think it's a lovely hotel.
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Some residents are weird though.
+    - text: I think it's a lovely hotel. Some residents are weird though.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
@@ -292097,17 +292081,7 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: I call that weirdo the tiny magician.
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: If you see that dude, run. He eats humans.
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Come on. Marid Washwashni is probably starving.
+    - text: DO NOT COME NEAR HIM
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
@@ -292127,47 +292101,28 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: NOOOO
+    - text: How many times do I have to tell you to not go back?
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: Why?
+    - text: I just don't understand.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: Why?
+    - text: Why do you keep going back?
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: Why?
+    - text: There is nothing back there.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: Why?
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Why?
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Why?
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Why?
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: Why?
+    - text: You go back so many times I'm starting to think you're not alright in
+        the head.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
@@ -292545,31 +292500,79 @@ MonoBehaviour:
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
     disableIdleOnComplete: 0
-  - channelName: KidsRoom
-    priority: 7
+  - channelName: HallwayForward3
+    priority: 9
     conditions:
-    - variableKey: KidsRoom
+    - variableKey: HallwayForward3
       comparison: 0
       value: 1
     narrations:
-    - text: "Hahaha, did you see the look on your face? You\u2019re probably thinking,
-        \"Why are we here...\""
+    - text: 'STOP! '
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: Oh, do you know that Arabic song?
+    - text: Did I tell you about the tiny hat magician?
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: "Well, it\u2019s the only one we have recorded anyway. Let me play it
-        for you...\n"
+    - text: The one who eats humans?
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: 
+    - text: He can't see or smell, but he hears human breathing.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: I'd love to tell you more but there is no time. You're sharing a hallway.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Now, there is a room on the left.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: If you hold your breath and move slowly, he won't notice you.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Now, slowly. You can't hold your breath any longer.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: HallwayBackward3
+    priority: 9
+    conditions:
+    - variableKey: HallwayBackward3
+      comparison: 0
+      value: 1
+    narrations:
+    - text: DO NOT GO BACK. The creature will eat you.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Keep going back and you're going to become magician meat.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Alright, enjoy becoming a meal.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
@@ -292605,6 +292608,43 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: fff
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: KidsRoom
+    priority: 7
+    conditions:
+    - variableKey: KidsRoom
+      comparison: 0
+      value: 1
+    narrations:
+    - text: "Hahaha, did you see the look on your face? You\u2019re probably thinking,
+        \"Why are we here...\""
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: Oh, do you know that Arabic song?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: "Well, it\u2019s the only one we have recorded anyway. Let me play it
+        for you...\n"
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+    - text: 
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
@@ -292657,56 +292697,6 @@ MonoBehaviour:
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
     disableIdleOnComplete: 0
-  - channelName: HallwayForward3
-    priority: 9
-    conditions:
-    - variableKey: HallwayForward3
-      comparison: 0
-      value: 1
-    narrations:
-    - text: HF3
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: HF3
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    returnTransitions: []
-    returnLinesCount: 1
-    loopReturnTransitions: 0
-    loopLastLine: 1
-    disableChannelsOnComplete: []
-    disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
-    disableIdleOnComplete: 0
-  - channelName: HallwayBackward3
-    priority: 9
-    conditions:
-    - variableKey: HallwayBackward3
-      comparison: 0
-      value: 1
-    narrations:
-    - text: HB3
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: HB3
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    returnTransitions: []
-    returnLinesCount: 1
-    loopReturnTransitions: 0
-    loopLastLine: 0
-    disableChannelsOnComplete: []
-    disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
-    disableIdleOnComplete: 0
   - channelName: EarlyLoopSolve
     priority: 9
     conditions:
@@ -292724,7 +292714,7 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: You cheated, though. And cheating is haram.
+    - text: You cheated, though. Cheating is haram.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 

@@ -44,4 +44,13 @@ public class GameVarStore : MonoBehaviour
     {
         Set(key, Get(key) + amount);
     }
+
+    public void LogVarsWithValue(int value)
+    {
+        foreach (var kvp in _vars)
+        {
+            if (kvp.Value == value)
+                Debug.Log($"[GameVarStore] {kvp.Key} = {kvp.Value}");
+        }
+    }
 }
