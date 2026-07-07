@@ -9,11 +9,17 @@ public class PuzzleManager : MonoBehaviour
     [Header("Puzzle Items")]
     public PuzzleItem[] puzzleItems;
 
+    [Header("Puzzle Buttons")]
+    public PuzzleButton[] puzzleButtons;
+
     [Header("Screen")]
     public GameObject codeScreen;
 
     [Header("Door")]
     public Animator doorAnimator;
+
+    [Header("Room Lock")]
+    public GameObject doorBlocker;
 
     [Header("Settings")]
     public float resetDelay = 1.5f;
@@ -28,14 +34,19 @@ public class PuzzleManager : MonoBehaviour
             codeScreen.SetActive(false);
     }
 
-    public void SelectItem(PuzzleItem item)
+    public void SelectButton(PuzzleButton button)
     {
         if (puzzleSolved) return;
         if (isResetting) return;
+        if (button == null || button.statueItem == null) return;
+
+        PuzzleItem item = button.statueItem;
 
         if (item.itemNumber == correctOrder[currentStep])
         {
+            button.PressDown();
             item.MoveForward();
+
             currentStep++;
 
             if (currentStep >= correctOrder.Length)
@@ -53,11 +64,18 @@ public class PuzzleManager : MonoBehaviour
     {
         isResetting = true;
 
-        yield return new WaitForSeconds(resetDelay);
+        yield return new WaitForSeconds(0.5f);
 
         foreach (PuzzleItem item in puzzleItems)
         {
-            item.MoveBack();
+            if (item != null)
+                item.MoveBack();
+        }
+
+        foreach (PuzzleButton button in puzzleButtons)
+        {
+            if (button != null)
+                button.RiseUp();
         }
 
         currentStep = 0;
@@ -73,6 +91,9 @@ public class PuzzleManager : MonoBehaviour
 
         if (codeScreen != null)
             codeScreen.SetActive(true);
+
+        if (doorBlocker != null)
+            doorBlocker.SetActive(false);
 
         if (doorAnimator != null)
             doorAnimator.SetTrigger("Open");
