@@ -18,9 +18,6 @@ public class PuzzleManager : MonoBehaviour
     [Header("Door")]
     public Animator doorAnimator;
 
-    [Header("Room Lock")]
-    public GameObject doorBlocker;
-
     [Header("Settings")]
     public float resetDelay = 1.5f;
 
@@ -91,9 +88,6 @@ public class PuzzleManager : MonoBehaviour
 
         if (codeScreen != null)
             codeScreen.SetActive(true);
-
-        if (doorBlocker != null)
-            doorBlocker.SetActive(false);
 
         if (doorAnimator != null)
             doorAnimator.SetTrigger("Open");
