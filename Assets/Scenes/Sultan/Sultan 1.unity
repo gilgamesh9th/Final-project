@@ -5850,7 +5850,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.5
+      value: -17.9
       objectReference: {fileID: 0}
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5858,7 +5858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.7
+      value: -39
       objectReference: {fileID: 0}
     - target: {fileID: 2769938731767080402, guid: f5213b6f2e62a814aba4cb945e000db1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -73577,7 +73577,16 @@ MonoBehaviour:
         m_CallState: 2
   wallToHide: {fileID: 536085646}
   wallToShow: {fileID: 1829757979}
-  onSolvedWrites: []
+  onSolvedWrites:
+  - key: PuzzleResume
+    mode: 0
+    value: 0
+  - key: KidsRoom
+    mode: 0
+    value: 0
+  - key: PuzzleSuccess
+    mode: 0
+    value: 1
 --- !u!1 &2366759741742654289
 GameObject:
   m_ObjectHideFlags: 0
@@ -83174,6 +83183,9 @@ MonoBehaviour:
     - variableKey: EmptyRoom1
       comparison: 6
       value: 0
+    - variableKey: HallwayForward
+      comparison: 0
+      value: 1
     writes:
     - key: EmptyRoomNarrative1
       mode: 0
@@ -83185,6 +83197,9 @@ MonoBehaviour:
     - variableKey: EmptyRoom1
       comparison: 5
       value: 0
+    - variableKey: HallwayForward
+      comparison: 0
+      value: 1
     writes:
     - key: EmptyRoomNarrative1
       mode: 0
@@ -83192,6 +83207,34 @@ MonoBehaviour:
     - key: HallwayForward
       mode: 0
       value: 1
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayForward2
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative1
+      mode: 0
+      value: 0
+    - key: HallwayForward2
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 6
+      value: 0
+    - variableKey: HallwayForward2
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative1
+      mode: 0
+      value: 1
+    - key: HallwayForward
+      mode: 0
+      value: 0
 --- !u!33 &2711186110010373759
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -292042,37 +292085,38 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: Alright!
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 0bcc3e83e4f6041589c2b64f00b27596, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: This time, take the right turns.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: da40d0b001aff45fa940bbbeeed9716b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: No shenanigns like last time.
-      clip: {fileID: 0}
+    - text: "\_No shenanigans like last time."
+      clip: {fileID: 8300000, guid: 880945b6392c044b9bf18c8cece91ae3, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: You must be wondering about the missing flowers from that vase, huh?
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: e47f21459852c4235ae4a01f9ba95895, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: I took them for my wife. She loves when I bring flowers on our dates.
-      clip: {fileID: 0}
+    - text: Well, I took them for my wife. She loves when I bring flowers on our
+        dates.
+      clip: {fileID: 8300000, guid: bdcb79d64d5094e14bd5c7bd5b3bb6bc, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: I only see her once a year, you know.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 2c1a41fbe7c1e43d581373998aed729d, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: You must think this is a weird hotel? With a weird Bell boy?
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 65af264b84b45452b818faec127b6a0d, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -292082,17 +292126,17 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: I think it's a lovely hotel. Some residents are weird though.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 7417d4c1191c84850a93f101fa3d3d0d, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: The weirdest one is the big dude with the tiny magician hat.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 7f4c206b7c44f4d7ca8889e3613c1987, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: DO NOT COME NEAR HIM
-      clip: {fileID: 0}
+    - text: DO NOT COME NEAR HIM.
+      clip: {fileID: 8300000, guid: 106502cc0082148aea10c2bf7ebcda78, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -292113,28 +292157,28 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: How many times do I have to tell you to not go back?
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: ffc9d1205a0d042ab85f60645ab6d471, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: I just don't understand.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: d9565d54a3a5a4994a86c34bc703d800, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: Why do you keep going back?
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 01b0ec179e7fb4c1ab1c064e9409c377, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: There is nothing back there.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: b7f5c1dd3ab5c4a1387a83608a361fa9, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: You go back so many times I'm starting to think you're not alright in
         the head.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: f495ffba50fd045f2aa095d79668d895, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -292531,49 +292575,49 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: 'STOP! '
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 92a8ba0497e684618b89cf9292ccaf88, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: Did I tell you about the tiny hat magician?
-      clip: {fileID: 0}
+    - text: Did I tell you about the magician with the tiny hat?
+      clip: {fileID: 8300000, guid: 959cb3c07dd58410686634714440e17b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: The one who eats humans?
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 151ab6a0e00ea4ad28722f4eb15264fe, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: He can't see or smell, but he hears human breathing.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 0fb739c1f4b6d43e0a5b1f7562323c55, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: I'd love to tell you more but there is no time. You're sharing a hallway.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: e8b0aa0d3f28645629aabcdad4d2fdf1, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: Now, there is a room on the left.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 089478b934b7041d79cbf418e75f0b7c, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: If you hold your breath and move slowly, he won't notice you.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: bdb466b98894d459883421390184ccfe, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: Now, slowly. You can't hold your breath any longer.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: b5938fe4e36f34a54affa103483fbb01, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
-    loopLastLine: 1
+    loopLastLine: 0
     restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
@@ -292587,17 +292631,17 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: DO NOT GO BACK. The creature will eat you.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: c39589a1b888549768597c05445d5cf6, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: Keep going back and you're going to become magician meat.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 30e60bed0157b48ad8e46008f7d43f48, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: Alright, enjoy becoming a meal.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: b9652d7e273674794a12cf1b7c9fce7c, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -292618,17 +292662,12 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: Haa! Solve it right, focus!
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: e905a040a54f949739b343da98248ce3, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: Alright, I'll play it for you again.
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-    - text: 
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 5adb52d72648b41e8979388962d5da64, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -292648,25 +292687,25 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: "Hahaha, did you see the look on your face? You\u2019re probably thinking,
-        \"Why are we here...\""
-      clip: {fileID: 0}
+    - text: "Do you see the look on your face? You\u2019re probably thinking, \"Why
+        are we here...\""
+      clip: {fileID: 8300000, guid: e3984906952cf4621a0112cf8246d6ce, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: Oh, do you know that Arabic song?
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 009bad2bb01f1437383303a4c06ffddc, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: "Well, it\u2019s the only one we have recorded anyway. Let me play it
         for you...\n"
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: aab267e6148164a60b7b0291c00ed6ff, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: 
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 7e8c2068657fd4ceda0f8b17745e2100, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -292687,17 +292726,17 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: Bravooooo! I'm proud of you!
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: c5d5177cea3e94bf2ab74fa518f32b72, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: Alright, what do you say we hang out together?
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 4d8780c8e78d3419a9572138033682cc, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-    - text: Get out of this room! Room 8 is around the corner.
-      clip: {fileID: 0}
+    - text: Get out of this room! I will be in room 8, which is just around the corner.
+      clip: {fileID: 8300000, guid: 2b332025917984e1688c17c760458878, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -292717,8 +292756,8 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: Resume
-      clip: {fileID: 0}
+    - text: 
+      clip: {fileID: 8300000, guid: 7e8c2068657fd4ceda0f8b17745e2100, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -292739,27 +292778,27 @@ MonoBehaviour:
       value: 1
     narrations:
     - text: Who told you about the vase? You solved it too quick!
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: c96017adce75c4108b8bc6409b59a434, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: You must've watched it in a YouTube tutorial
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 17d4d21c4f77045e39a8b7ce2d7ef13d, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: You cheated, though. Cheating is haram.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 370ea9febaf49484888991ce63e764dd, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: Come on, go ahead. You must know the way as well.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: d92793b6f82e24f3fa74c80b97f99463, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
     - text: You're in for a surprise at the reception.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: ae57094e7fd574e76b4c7767bb50a297, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -292868,7 +292907,7 @@ MonoBehaviour:
   lineDuration: 4
   lineGap: 0.5
   idlePriority: 1
-  idleThreshold: 6
+  idleThreshold: 12
   moveToResumeTime: 1
   movementGraceWindow: 0.3
   loopIdle: 1
