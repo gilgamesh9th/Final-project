@@ -25,6 +25,7 @@ public class NarrationChannel
     public int returnLinesCount = 0;
     public bool loopReturnTransitions = false;
     public bool loopLastLine = false;
+    public bool restartOnActivate = false;
     public string[] disableChannelsOnComplete;
     public bool disableAllTransitionsOnComplete;
     public string[] disableTransitionsOnComplete;
@@ -218,6 +219,18 @@ public class DirectedNarrator : MonoBehaviour
             ProcessUnsaidLines(previous);
 
         _activeChannel = matched;
+
+        if (_activeChannel != null && _activeChannel.restartOnActivate)
+        {
+            _activeChannel.queue = new List<NarrationLine>(_activeChannel.narrations);
+            _activeChannel.index = 0;
+            _activeChannel.returnIndex = 0;
+            foreach (var nl in _activeChannel.queue)
+            {
+                nl.started = false;
+                nl.moved = false;
+            }
+        }
 
         if (_activeChannel != null && _activeChannel.index < _activeChannel.queue.Count)
         {

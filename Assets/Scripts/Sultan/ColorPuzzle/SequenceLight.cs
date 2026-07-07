@@ -26,14 +26,24 @@ public class SequenceLight : MonoBehaviour
     private int colorIndex = 0;
     private float timer = 0f;
     private bool inPause = false;
+    private bool _active = false;
     private PuzzleColor[] lastSequence;
     private Dictionary<PuzzleColor, Material> materialMap = new Dictionary<PuzzleColor, Material>();
     private Dictionary<PuzzleColor, Color> colorMap = new Dictionary<PuzzleColor, Color>();
 
     void Start()
     {
+        spotLight.enabled = false;
+    }
+
+    public void Activate()
+    {
+        if (_active) return;
+        _active = true;
+
         _originalMat = sphereRenderer.sharedMaterial;
 
+        spotLight.enabled = true;
         spotLight.type = LightType.Spot;
         spotLight.range = lightRange;
         spotLight.spotAngle = spotAngle;
@@ -54,12 +64,14 @@ public class SequenceLight : MonoBehaviour
 
     void Update()
     {
+        if (!_active) return;
+
         PuzzleColor[] seq = manager.GetCurrentSequence();
 
         if (seq == null)
         {
             TurnOff();
-            enabled = false;
+            _active = false;
             return;
         }
 
@@ -120,6 +132,7 @@ public class SequenceLight : MonoBehaviour
     {
         sphereRenderer.material = _originalMat;
         spotLight.intensity = 0f;
+        spotLight.enabled = false;
     }
 
     Color GetBarColor(PuzzleColor pc)
