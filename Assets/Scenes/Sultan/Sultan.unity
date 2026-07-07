@@ -547,10 +547,10 @@ PrefabInstance:
     - target: {fileID: 815527655021767009, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
       propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 617996665}
+      objectReference: {fileID: 617996667}
     - target: {fileID: 815527655021767009, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
       propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: Unlock
       objectReference: {fileID: 0}
     - target: {fileID: 3292887445862631282, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
       propertyPath: door
@@ -4431,6 +4431,8 @@ MonoBehaviour:
   director: {fileID: 137024307}
   player: {fileID: 7257217602961571426}
   cutsceneCam: {fileID: 530122350}
+  mantis: {fileID: 3921128298245028132}
+  bellboy: {fileID: 7228014905760861638}
   playerController: {fileID: 3938947515639974794}
 --- !u!43 &878936223
 Mesh:
@@ -18026,7 +18028,7 @@ MonoBehaviour:
   lineDuration: 4
   lineGap: 0.5
   idlePriority: 1
-  idleThreshold: 12
+  idleThreshold: 20
   moveToResumeTime: 1
   movementGraceWindow: 0.3
   loopIdle: 1
@@ -196539,7 +196541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &3921661936777190432
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -212204,7 +212206,7 @@ Transform:
   m_GameObject: {fileID: 1564010854966815555}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000023286631, y: 0.95371443, z: -0.000000042966022, w: -0.30071387}
-  m_LocalPosition: {x: -13.1509695, y: 1.19, z: 9.399479}
+  m_LocalPosition: {x: -13.1509695, y: 0.994, z: 9.399479}
   m_LocalScale: {x: -0.826713, y: 0.0075569525, z: 0.5285529}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -294140,7 +294142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &7228014905760861639
 Animator:
   serializedVersion: 7
@@ -294151,7 +294153,7 @@ Animator:
   m_GameObject: {fileID: 7228014905760861638}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 425d627bf9aef8a4eb082e0c4f989a4c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -313212,7 +313214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7889093272908390482
 Transform:
   m_ObjectHideFlags: 0
