@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.2528302, g: 0.1464507, b: 0.14958519, a: 1}
+  m_AmbientSkyColor: {r: 0.19245279, g: 0.09114272, b: 0.09574772, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -485,6 +485,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1749855694}
     m_Modifications:
+    - target: {fileID: 267012432544935072, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 815527655021767009, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
       propertyPath: wallToHide
       value: 
@@ -500,6 +504,14 @@ PrefabInstance:
     - target: {fileID: 815527655021767009, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
       propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Unlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556439332900687364, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3086650494077278952, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3292887445862631282, guid: 1fd0cdd4f6e7441f888448d29788f97a, type: 3}
       propertyPath: door
@@ -250364,7 +250376,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 1, g: 0.769423, b: 0.6320754, a: 1}
-  m_Intensity: 4
+  m_Intensity: 1.59
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
