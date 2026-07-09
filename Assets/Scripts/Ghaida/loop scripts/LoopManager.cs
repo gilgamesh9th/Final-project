@@ -29,6 +29,10 @@ public class LoopManager : MonoBehaviour
     public static event System.Action OnGuessesExhausted;
     public static event System.Action OnLoopBreak;
 
+    // mantis n boy switch
+    [SerializeField] private GameObject mantis;
+    [SerializeField] private GameObject bellboy;
+
 
     void Awake() => Instance = this;
 
@@ -149,5 +153,9 @@ public class LoopManager : MonoBehaviour
             forwardTrigger.enabled = false;
             forwardTrigger.GetComponent<Collider>().enabled = false;
         }
+
+        mantis.SetActive(true);
+        bellboy.SetActive(false);
+
     }
 }
