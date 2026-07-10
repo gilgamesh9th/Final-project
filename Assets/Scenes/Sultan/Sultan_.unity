@@ -18385,53 +18385,63 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 1
+      mustComplete: 0
     - text: Attention, please!
       clip: {fileID: 8300000, guid: b2d0c222a250b446da16fe61f9f04f5f, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 1
+      mustComplete: 0
     - text: Welcome to our humble hotel.
       clip: {fileID: 8300000, guid: c00f69cbe51fc42e8b44fd0bfe1b156c, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     - text: I will escort you through the speaker, so you don't get lost. Or bored.
         Nobody gets bored in our hotel!
       clip: {fileID: 8300000, guid: 571edb82f39af4f7ba7c7dc6ba31eb06, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     - text: Please proceed to the end of the hallway. You're doing great.
       clip: {fileID: 8300000, guid: 119c7f2bddf944f0682da78b936d265a, type: 3}
       isImportant: 1
       destinationIfUnsaid: RightJunctionForward
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Ah! Look at you!
       clip: {fileID: 8300000, guid: 6e14f75895b43416bb034a2963841c90, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
-      discardOnInterrupt: 0
+      discardOnInterrupt: 1
+      mustComplete: 0
     - text: You know your way around the hotel better than me.
       clip: {fileID: 8300000, guid: 2e4dd926a77334c56bc137e9fa74bab6, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: All you have to do is take a right at the end of the hallway.
       clip: {fileID: 8300000, guid: 92833f74e835d4ad6a1f1d64cde962e1, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Go on. Room 8 is waiting.
       clip: {fileID: 8300000, guid: 8236314d228cd4624ab99dbda28f2943, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     - text: You know what? While you get there I will tell you a story! Once upon
         a time... Hold on. Once second. Be right back.
       clip: {fileID: 8300000, guid: 0a17ac625201d45759ba9d509adbe30f, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18452,22 +18462,26 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: b00b50805e8944ad68b7b2403a618afe, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
-      discardOnInterrupt: 0
+      discardOnInterrupt: 1
+      mustComplete: 0
     - text: There is nothing here.
       clip: {fileID: 8300000, guid: 3074ed9d0c6bd47c48d35695dbc516fd, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     - text: You should head back to the hallway.
       clip: {fileID: 8300000, guid: b57ee554455c54fdfa2c343a746f396c, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: What are you looking at? It's empty!
       clip: {fileID: 8300000, guid: 450620554f95a4c838bd8161b7f3ca9c, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18489,21 +18503,25 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: You know your way around the hotel better than me.
       clip: {fileID: 8300000, guid: 2e4dd926a77334c56bc137e9fa74bab6, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: All you have to do is take a right at the end of the hallway.
       clip: {fileID: 8300000, guid: 92833f74e835d4ad6a1f1d64cde962e1, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Go on. Room 8 is right waiting.
       clip: {fileID: 8300000, guid: 8236314d228cd4624ab99dbda28f2943, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18525,21 +18543,25 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: There is nothing here.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: You should go back to the hallway.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: What are you looking at? It's empty!
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18564,21 +18586,25 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: There is nothing there.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Go back.
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: What are you looking at? It's empty!
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18603,41 +18629,49 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: No. No. You're not supposed to go back.
       clip: {fileID: 8300000, guid: 43297bd2c7e734992a227688cf8d2483, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Turn around!
       clip: {fileID: 8300000, guid: 39d60843df50b48db91efb2f75994d77, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Come on, dude. I told you a million times. Wrong way!
       clip: {fileID: 8300000, guid: 4920f56b8b3dc48169ac19a9f6a9ba3b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: You just LOVE going back, don't you?
       clip: {fileID: 8300000, guid: 9837f269a5f7c442b9f3c78c6f851f6e, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: 'You understand English right? Like words? '
       clip: {fileID: 8300000, guid: 0f70ae84a96a04dacb542c2aff3dc8d8, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: You know what. Go back as much as you like.
       clip: {fileID: 8300000, guid: f2177a8280aab47ea9bdff902f840b57, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 1
+      mustComplete: 0
     - text: Let a mantis eat you for all I care.
       clip: {fileID: 8300000, guid: 387184ce7413849a2a5e73c7ee008724, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18662,11 +18696,13 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Deliver your damn pizza!
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18688,57 +18724,68 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: This time, take the right turns.
       clip: {fileID: 8300000, guid: da40d0b001aff45fa940bbbeeed9716b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: "\_No shenanigans like last time."
       clip: {fileID: 8300000, guid: 880945b6392c044b9bf18c8cece91ae3, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: You must be wondering about the missing flowers from that vase, huh?
       clip: {fileID: 8300000, guid: e47f21459852c4235ae4a01f9ba95895, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Well, I took them for my wife. She loves when I bring flowers on our
         dates.
       clip: {fileID: 8300000, guid: bdcb79d64d5094e14bd5c7bd5b3bb6bc, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: I only see her once a year, you know.
       clip: {fileID: 8300000, guid: 2c1a41fbe7c1e43d581373998aed729d, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: You must think this is a weird hotel? With a weird bell boy?
       clip: {fileID: 8300000, guid: 65af264b84b45452b818faec127b6a0d, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: It's only weird if you make it weird, you know.
       clip: {fileID: 8300000, guid: b91f9fda63cd24640842b554550eaae5, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: I think it's a lovely hotel. Some residents are weird though.
       clip: {fileID: 8300000, guid: 7417d4c1191c84850a93f101fa3d3d0d, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: The weirdest one is the big dude with the tiny magician hat.
       clip: {fileID: 8300000, guid: 7f4c206b7c44f4d7ca8889e3613c1987, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: DO NOT COME NEAR HIM.
       clip: {fileID: 8300000, guid: 106502cc0082148aea10c2bf7ebcda78, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18760,27 +18807,32 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: I just don't understand.
       clip: {fileID: 8300000, guid: d9565d54a3a5a4994a86c34bc703d800, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Why do you keep going back?
       clip: {fileID: 8300000, guid: 01b0ec179e7fb4c1ab1c064e9409c377, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: There is nothing back there.
       clip: {fileID: 8300000, guid: b7f5c1dd3ab5c4a1387a83608a361fa9, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: You go back so many times I'm starting to think you're not alright in
         the head.
       clip: {fileID: 8300000, guid: f495ffba50fd045f2aa095d79668d895, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18802,41 +18854,49 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     - text: Would you live here?
       clip: {fileID: 8300000, guid: f4ba7216d81b8461cb0a787fb2f0a2ac, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     - text: 'You know... I built the whole thing myself. '
       clip: {fileID: 8300000, guid: 2eed2654f6fcc43d1bb5bb280ad8e081, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     - text: 'I built this place with my own precious hands. Brick by brick. '
       clip: {fileID: 8300000, guid: 3757da38128fb4e8298a4bdf4b396404, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     - text: I installed every lamp and placed every piece of furniture myself.
       clip: {fileID: 8300000, guid: 99a1f4734401b4c1dbd478308d67a866, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     - text: It ain't much, but it's honest work.
       clip: {fileID: 8300000, guid: ca24bc8e8f9044ff1973b6d37605f429, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     - text: Don't you feel welcomed and at ease?
       clip: {fileID: 8300000, guid: 4fcaa20d126e74e2081a832528776dcd, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     - text: I think the residents of this place would say so.
       clip: {fileID: 8300000, guid: 14a634ff85a6c4169827d09f8013000f, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 1
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18858,26 +18918,31 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Do you not understand the concept of a hallway?
       clip: {fileID: 8300000, guid: 0b416548695624309bbd045ae9da2f08, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: In a hallway, you walk forward to get to a destination.
       clip: {fileID: 8300000, guid: 957cad6756e00462e8f61f8a69a3c5c9, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Extremely simple.
       clip: {fileID: 8300000, guid: 27a63b7ad6926476ab960f4b5894d743, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: TURN AROUND!
       clip: {fileID: 8300000, guid: 39d60843df50b48db91efb2f75994d77, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18899,26 +18964,31 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: 'You must have made the wrong turn. '
       clip: {fileID: 8300000, guid: b541a87a475594157aff69424e2222a8, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: 'Let me describe it to you in a way you understand. '
       clip: {fileID: 8300000, guid: 4d3660ad630524efe91ca2b5d440dc59, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Just follow the damn hallway. Can't be hard.
       clip: {fileID: 8300000, guid: c26ed542e5f064b6999a241d67ebd9d8, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Don't even think of going back.
       clip: {fileID: 8300000, guid: 1d9a38958bf0143b9b09780b478632d9, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18940,6 +19010,7 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18961,6 +19032,7 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -18982,6 +19054,7 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19003,16 +19076,19 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Loop3 F1
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Loop3 F2
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19034,11 +19110,13 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Loop3 B1
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19060,31 +19138,37 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Something has changed.
       clip: {fileID: 8300000, guid: 291bfbbb0f787451fb56a204deef2184, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Can you get closer to that thing on the right?
       clip: {fileID: 8300000, guid: 6dae2a34179e645898dcdbdc8ddc6ef5, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Do you think everything looks the same as last time we were here?
       clip: {fileID: 8300000, guid: bce85204793ca4410ac490c99654f480, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: You know what. Never mind I'm probably just tired.
       clip: {fileID: 8300000, guid: 5f678f031116b4e35a290b1aa9ea7450, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: I probably should get some coffee. I think I will.
       clip: {fileID: 8300000, guid: 7cb07fde4c503414c9a2c8868af060c4, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19106,16 +19190,19 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Can you step backwards?
       clip: {fileID: 8300000, guid: c3724b19fbf484f3d91a7707a2c54078, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Another one please.
       clip: {fileID: 8300000, guid: 1dc2e51acfdf14eb6a6ded81af5522cc, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19137,26 +19224,31 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: That's why you were stuck.
       clip: {fileID: 8300000, guid: c8c3ef496bbb746628a8de2785e20949, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Now you should be unstuck.
       clip: {fileID: 8300000, guid: f01f0a654b2bd4b6fb943a716e7b9de0, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Just follow the hallway, and you will find room 8.
       clip: {fileID: 8300000, guid: 0362ea69ecd2441659eae91b2a04b49c, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Mr. Marid Washwashni must be very hungry and waiting for his pizza!
       clip: {fileID: 8300000, guid: bf4ce968f31f84656b7bf299f9b28aad, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19178,41 +19270,49 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Did I tell you about the magician with the tiny hat?
       clip: {fileID: 8300000, guid: 959cb3c07dd58410686634714440e17b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: The one who eats humans?
       clip: {fileID: 8300000, guid: 151ab6a0e00ea4ad28722f4eb15264fe, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: He can't see or smell, but he hears human breathing.
       clip: {fileID: 8300000, guid: 0fb739c1f4b6d43e0a5b1f7562323c55, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: I'd love to tell you more but there is no time. You're sharing a hallway.
       clip: {fileID: 8300000, guid: e8b0aa0d3f28645629aabcdad4d2fdf1, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Now, there is a room on the left.
       clip: {fileID: 8300000, guid: 089478b934b7041d79cbf418e75f0b7c, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: If you hold your breath and move slowly, he won't notice you.
       clip: {fileID: 8300000, guid: bdb466b98894d459883421390184ccfe, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Now, slowly. You can't hold your breath any longer.
       clip: {fileID: 8300000, guid: b5938fe4e36f34a54affa103483fbb01, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19234,16 +19334,19 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Keep going back and you're going to become magician meat.
       clip: {fileID: 8300000, guid: 30e60bed0157b48ad8e46008f7d43f48, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Alright, enjoy becoming a meal.
       clip: {fileID: 8300000, guid: b9652d7e273674794a12cf1b7c9fce7c, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19265,11 +19368,13 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Alright, I'll play it for you again.
       clip: {fileID: 8300000, guid: 5adb52d72648b41e8979388962d5da64, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19292,22 +19397,26 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Oh, do you know that Arabic song?
       clip: {fileID: 8300000, guid: 009bad2bb01f1437383303a4c06ffddc, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: "Well, it\u2019s the only one we have recorded anyway. Let me play it
         for you...\n"
       clip: {fileID: 8300000, guid: aab267e6148164a60b7b0291c00ed6ff, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: 
       clip: {fileID: 8300000, guid: 7e8c2068657fd4ceda0f8b17745e2100, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 1
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19329,16 +19438,19 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Alright, what do you say we hang out together?
       clip: {fileID: 8300000, guid: 4d8780c8e78d3419a9572138033682cc, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Get out of this room! I will be in room 8, which is just around the corner.
       clip: {fileID: 8300000, guid: 2b332025917984e1688c17c760458878, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19360,6 +19472,7 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19381,26 +19494,31 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: You must've watched it in a YouTube tutorial
       clip: {fileID: 8300000, guid: 17d4d21c4f77045e39a8b7ce2d7ef13d, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: You cheated, though. Cheating is haram.
       clip: {fileID: 8300000, guid: 370ea9febaf49484888991ce63e764dd, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: Come on, go ahead. You must know the way as well.
       clip: {fileID: 8300000, guid: d92793b6f82e24f3fa74c80b97f99463, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     - text: You're in for a surprise at the reception.
       clip: {fileID: 8300000, guid: ae57094e7fd574e76b4c7767bb50a297, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19422,6 +19540,7 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19443,6 +19562,7 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
+      mustComplete: 0
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19548,10 +19668,14 @@ MonoBehaviour:
   lineDuration: 4
   lineGap: 0.5
   idlePriority: 1
-  idleThreshold: 12
+  idleThreshold: 8
   moveToResumeTime: 1
   movementGraceWindow: 0.3
   loopIdle: 1
+  idleDisableConditions:
+  - variableKey: IdleDisable
+    comparison: 0
+    value: 1
   playerTransform: {fileID: 452388109}
 --- !u!33 &298957782922974251
 MeshFilter:
@@ -337363,6 +337487,8 @@ MonoBehaviour:
   - key: HallwayForward4
     value: 0
   - key: HallwayBackward4
+    value: 0
+  - key: IdleDisable
     value: 0
 --- !u!23 &9126274881419095222
 MeshRenderer:

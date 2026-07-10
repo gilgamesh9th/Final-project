@@ -11,6 +11,7 @@ public class NarrationLine
     public string destinationIfUnsaid;
     [System.NonSerialized] public bool moved;
     public bool discardOnInterrupt;
+    public bool mustComplete;
     [System.NonSerialized] public bool started;
 }
 
@@ -61,6 +62,7 @@ public class DirectedNarrator : MonoBehaviour
     [SerializeField] private float moveToResumeTime = 2.5f;
     [SerializeField] private float movementGraceWindow = 0.3f;
     [SerializeField] private bool loopIdle = true;
+    [SerializeField] private Condition[] idleDisableConditions;
     [SerializeField] private Transform playerTransform;
 
     private NarrationChannel _activeChannel;
@@ -79,6 +81,8 @@ public class DirectedNarrator : MonoBehaviour
     private readonly HashSet<string> _disabledTransitions = new HashSet<string>();
     private bool _allTransitionsDisabled;
     private bool _idleDisabled;
+    private NarrationLine _currentLine;
+    private bool _pendingChannelSwitch;
 
     private void Start()
     {
@@ -102,6 +106,9 @@ public class DirectedNarrator : MonoBehaviour
         if (playerTransform == null) return;
 
         TrackMovement();
+
+        if (_isIdle && IsIdleSuppressed())
+            ResumeFromIdle();
 
         if (!_isIdle)
             CheckChannels();
@@ -143,7 +150,7 @@ public class DirectedNarrator : MonoBehaviour
         {
             _moveTimer = 0f;
 
-            if (!_isIdle && !_inTransition && !_idleDisabled
+            if (!_isIdle && !_inTransition && !_idleDisabled && !IsIdleSuppressed()
                 && _activeChannel != null && _sequenceCoroutine != null)
             {
                 _idleTimer += Time.deltaTime;
@@ -205,12 +212,19 @@ public class DirectedNarrator : MonoBehaviour
 
         if (matched == _activeChannel) return;
 
+        if (_currentLine != null && _currentLine.mustComplete)
+        {
+            _pendingChannelSwitch = true;
+            return;
+        }
+
         NarrationChannel previous = _activeChannel;
 
         if (_sequenceCoroutine != null)
         {
             StopCoroutine(_sequenceCoroutine);
             _sequenceCoroutine = null;
+            _currentLine = null;
             NarratorManager.Instance.ClearText(this);
             NarratorManager.Instance.Release(this);
         }
@@ -524,11 +538,20 @@ public class DirectedNarrator : MonoBehaviour
                 continue;
             }
 
+            _currentLine = nl;
             yield return DisplayLine(nl, channel);
+            _currentLine = null;
+
             if (_activeChannel != channel) yield break;
 
             channel.index++;
             NarratorManager.Instance.ClearText(this);
+
+            if (_pendingChannelSwitch)
+            {
+                _pendingChannelSwitch = false;
+                yield break;
+            }
 
             if (channel.index < channel.queue.Count)
             {
@@ -547,10 +570,19 @@ public class DirectedNarrator : MonoBehaviour
                 while (_paused) yield return null;
                 if (_activeChannel != channel) yield break;
 
+                _currentLine = lastLine;
                 yield return DisplayLine(lastLine, channel);
+                _currentLine = null;
+
                 if (_activeChannel != channel) yield break;
 
                 NarratorManager.Instance.ClearText(this);
+
+                if (_pendingChannelSwitch)
+                {
+                    _pendingChannelSwitch = false;
+                    yield break;
+                }
 
                 yield return WaitGap(channel);
                 if (_activeChannel != channel) yield break;
@@ -596,6 +628,10 @@ public class DirectedNarrator : MonoBehaviour
             && _disabledTransitions.Contains(transition.label);
     }
 
+    private bool IsIdleSuppressed()
+    {
+        return AllConditionsMet(idleDisableConditions);
+    }
 
     private IEnumerator PlayIdleLoop()
     {
