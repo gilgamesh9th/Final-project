@@ -11,6 +11,8 @@ public class NarrationLine
     public string destinationIfUnsaid;
     [System.NonSerialized] public bool moved;
     public bool discardOnInterrupt;
+    public bool mustComplete;
+    public float postDelay = 0.5f;
     [System.NonSerialized] public bool started;
 }
 
@@ -61,6 +63,7 @@ public class DirectedNarrator : MonoBehaviour
     [SerializeField] private float moveToResumeTime = 2.5f;
     [SerializeField] private float movementGraceWindow = 0.3f;
     [SerializeField] private bool loopIdle = true;
+    [SerializeField] private Condition[] idleDisableConditions;
     [SerializeField] private Transform playerTransform;
 
     private NarrationChannel _activeChannel;
@@ -79,6 +82,8 @@ public class DirectedNarrator : MonoBehaviour
     private readonly HashSet<string> _disabledTransitions = new HashSet<string>();
     private bool _allTransitionsDisabled;
     private bool _idleDisabled;
+    private NarrationLine _currentLine;
+    private bool _pendingChannelSwitch;
 
     private void Start()
     {
@@ -102,6 +107,9 @@ public class DirectedNarrator : MonoBehaviour
         if (playerTransform == null) return;
 
         TrackMovement();
+
+        if (_isIdle && IsIdleSuppressed())
+            ResumeFromIdle();
 
         if (!_isIdle)
             CheckChannels();
@@ -143,7 +151,7 @@ public class DirectedNarrator : MonoBehaviour
         {
             _moveTimer = 0f;
 
-            if (!_isIdle && !_inTransition && !_idleDisabled
+            if (!_isIdle && !_inTransition && !_idleDisabled && !IsIdleSuppressed()
                 && _activeChannel != null && _sequenceCoroutine != null)
             {
                 _idleTimer += Time.deltaTime;
@@ -205,12 +213,19 @@ public class DirectedNarrator : MonoBehaviour
 
         if (matched == _activeChannel) return;
 
+        if (_currentLine != null && _currentLine.mustComplete)
+        {
+            _pendingChannelSwitch = true;
+            return;
+        }
+
         NarrationChannel previous = _activeChannel;
 
         if (_sequenceCoroutine != null)
         {
             StopCoroutine(_sequenceCoroutine);
             _sequenceCoroutine = null;
+            _currentLine = null;
             NarratorManager.Instance.ClearText(this);
             NarratorManager.Instance.Release(this);
         }
@@ -340,7 +355,7 @@ public class DirectedNarrator : MonoBehaviour
             if (i < linesToPlay - 1 || channel.index < channel.queue.Count)
             {
                 elapsed = 0f;
-                while (elapsed < lineGap)
+                while (elapsed < vl.postDelay)
                 {
                     if (_activeChannel != channel) { _inTransition = false; yield break; }
                     elapsed += Time.deltaTime;
@@ -373,6 +388,7 @@ public class DirectedNarrator : MonoBehaviour
         if (linesToPlay <= 0) yield break;
 
         _inTransition = true;
+        float lastPostDelay = lineGap;
 
         for (int r = 0; r < linesToPlay; r++)
         {
@@ -380,6 +396,7 @@ public class DirectedNarrator : MonoBehaviour
             if (channel.returnIndex >= channel.returnTransitions.Length) break;
 
             VoicedLine vl = channel.returnTransitions[channel.returnIndex];
+            lastPostDelay = vl.postDelay;
             channel.returnIndex++;
 
             if (!NarratorManager.Instance.ShowText(
@@ -408,7 +425,7 @@ public class DirectedNarrator : MonoBehaviour
             if (r < linesToPlay - 1)
             {
                 re = 0f;
-                while (re < lineGap)
+                while (re < vl.postDelay)
                 {
                     if (_activeChannel != channel) { _inTransition = false; yield break; }
                     re += Time.deltaTime;
@@ -420,7 +437,7 @@ public class DirectedNarrator : MonoBehaviour
         _inTransition = false;
 
         float gapElapsed = 0f;
-        while (gapElapsed < lineGap)
+        while (gapElapsed < lastPostDelay)
         {
             if (_activeChannel != channel) yield break;
             gapElapsed += Time.deltaTime;
@@ -493,10 +510,10 @@ public class DirectedNarrator : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitGap(NarrationChannel channel)
+    private IEnumerator WaitGap(NarrationChannel channel, float duration)
     {
         float elapsed = 0f;
-        while (elapsed < lineGap)
+        while (elapsed < duration)
         {
             while (_paused) yield return null;
             if (_activeChannel != channel) yield break;
@@ -524,15 +541,24 @@ public class DirectedNarrator : MonoBehaviour
                 continue;
             }
 
+            _currentLine = nl;
             yield return DisplayLine(nl, channel);
+            _currentLine = null;
+
             if (_activeChannel != channel) yield break;
 
             channel.index++;
             NarratorManager.Instance.ClearText(this);
 
+            if (_pendingChannelSwitch)
+            {
+                _pendingChannelSwitch = false;
+                yield break;
+            }
+
             if (channel.index < channel.queue.Count)
             {
-                yield return WaitGap(channel);
+                yield return WaitGap(channel, nl.postDelay);
                 if (_activeChannel != channel) yield break;
             }
         }
@@ -547,12 +573,21 @@ public class DirectedNarrator : MonoBehaviour
                 while (_paused) yield return null;
                 if (_activeChannel != channel) yield break;
 
+                _currentLine = lastLine;
                 yield return DisplayLine(lastLine, channel);
+                _currentLine = null;
+
                 if (_activeChannel != channel) yield break;
 
                 NarratorManager.Instance.ClearText(this);
 
-                yield return WaitGap(channel);
+                if (_pendingChannelSwitch)
+                {
+                    _pendingChannelSwitch = false;
+                    yield break;
+                }
+
+                yield return WaitGap(channel, lastLine.postDelay);
                 if (_activeChannel != channel) yield break;
             }
             yield break;
@@ -596,6 +631,10 @@ public class DirectedNarrator : MonoBehaviour
             && _disabledTransitions.Contains(transition.label);
     }
 
+    private bool IsIdleSuppressed()
+    {
+        return AllConditionsMet(idleDisableConditions);
+    }
 
     private IEnumerator PlayIdleLoop()
     {
@@ -642,7 +681,7 @@ public class DirectedNarrator : MonoBehaviour
                 if (idleNarrations.Length > 1)
                 {
                     elapsed = 0f;
-                    while (elapsed < lineGap && _isIdle)
+                    while (elapsed < vl.postDelay && _isIdle)
                     {
                         elapsed += Time.deltaTime;
                         yield return null;
