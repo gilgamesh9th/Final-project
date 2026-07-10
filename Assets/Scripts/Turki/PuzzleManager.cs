@@ -12,11 +12,10 @@ public class PuzzleManager : MonoBehaviour
     [Header("Puzzle Buttons")]
     public PuzzleButton[] puzzleButtons;
 
-    [Header("Screen")]
-    public GameObject codeScreen;
+    
 
     [Header("Door")]
-    public Animator doorAnimator;
+    [SerializeField] private FinalCutscene door;
 
     [Header("Room Lock")]
     public GameObject doorBlocker;
@@ -28,11 +27,6 @@ public class PuzzleManager : MonoBehaviour
     private bool puzzleSolved = false;
     private bool isResetting = false;
 
-    void Start()
-    {
-        if (codeScreen != null)
-            codeScreen.SetActive(false);
-    }
 
     public void SelectButton(PuzzleButton button)
     {
@@ -89,13 +83,11 @@ public class PuzzleManager : MonoBehaviour
     {
         puzzleSolved = true;
 
-        if (codeScreen != null)
-            codeScreen.SetActive(true);
-
         if (doorBlocker != null)
             doorBlocker.SetActive(false);
 
-        if (doorAnimator != null)
-            doorAnimator.SetTrigger("Open");
+        if (door != null)
+            door.Unlock();
+
     }
 }
