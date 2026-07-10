@@ -193064,6 +193064,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleLevelFeedback
   feedbackLight: {fileID: 1873358955342906157}
   successColor: {r: 0, g: 1, b: 0, a: 1}
+  successIntensity: 200
+  fadeDuration: 1.5
   lightDuration: 3
   spatialSource: {fileID: 3750857421596497517}
   levelCompleteClips:
