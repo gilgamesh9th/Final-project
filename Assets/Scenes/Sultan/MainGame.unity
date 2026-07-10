@@ -1530,7 +1530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &452388109
 Transform:
   m_ObjectHideFlags: 0
@@ -4801,7 +4801,7 @@ Transform:
   m_GameObject: {fileID: 854881378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.0099998, z: 0}
+  m_LocalPosition: {x: -29.791048, y: 2.0099998, z: -37.83134}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20348,7 +20348,7 @@ MonoBehaviour:
   - variableKey: IdleDisable
     comparison: 0
     value: 1
-  playerTransform: {fileID: 452388109}
+  playerTransform: {fileID: 2769938731014895791}
 --- !u!33 &298957782922974251
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -295620,7 +295620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &7257695592245446993
 MeshRenderer:
   m_ObjectHideFlags: 0
