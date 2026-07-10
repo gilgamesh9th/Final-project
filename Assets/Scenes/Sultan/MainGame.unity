@@ -1540,7 +1540,7 @@ Transform:
   m_GameObject: {fileID: 452388108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.0036975765, z: -0, w: 0.9999932}
-  m_LocalPosition: {x: -15.2, y: -0.35628986, z: -76.8}
+  m_LocalPosition: {x: -46.3, y: -0.35628986, z: -114.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4801,7 +4801,7 @@ Transform:
   m_GameObject: {fileID: 854881378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.791048, y: 2.0099998, z: -37.83134}
+  m_LocalPosition: {x: 1.0270866, y: 2.0099998, z: 0.39760566}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19820,6 +19820,13 @@ MonoBehaviour:
       discardOnInterrupt: 0
       mustComplete: 0
       postDelay: 2
+    - text: One more.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 2
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -20202,7 +20209,53 @@ MonoBehaviour:
   - channelName: HallwayBackward4
     priority: 9
     conditions:
-    - variableKey: HallwayForward4
+    - variableKey: HallwayBackward4
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Who told you about the vase? You solved it too quick!
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0.5
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
+    restartOnActivate: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: LoopF21
+    priority: 9
+    conditions:
+    - variableKey: LoopF21
+      comparison: 0
+      value: 1
+    narrations:
+    - text: F21
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0.5
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
+    restartOnActivate: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: LoopB21
+    priority: 9
+    conditions:
+    - variableKey: LoopB21
       comparison: 0
       value: 1
     narrations:
@@ -209838,6 +209891,9 @@ MonoBehaviour:
     - key: KidsRoomDone
       mode: 0
       value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 1
 --- !u!1 &4372926398524513425
 GameObject:
   m_ObjectHideFlags: 0
@@ -217430,6 +217486,9 @@ MonoBehaviour:
     - key: SecondRound
       mode: 0
       value: 1
+    - key: EarlyLoopSolve
+      mode: 0
+      value: 0
 --- !u!1 &4637133725376016257
 GameObject:
   m_ObjectHideFlags: 0
@@ -219953,6 +220012,29 @@ MonoBehaviour:
       mode: 0
       value: 1
     - key: LoopB2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: LoopHallway1
+      comparison: 5
+      value: 0
+    - variableKey: LoopHallway1
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 3
+    - variableKey: ObjectTrigger
+      comparison: 0
+      value: 1
+    - variableKey: LoopB21
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopF21
+      mode: 0
+      value: 1
+    - key: LoopB21
       mode: 0
       value: 0
 --- !u!33 &4725623936566534413
@@ -264814,6 +264896,7 @@ GameObject:
   - component: {fileID: 331279750984179558}
   - component: {fileID: 3292887445758895745}
   - component: {fileID: 4372643641874318428}
+  - component: {fileID: 6256685088156910140}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -264821,6 +264904,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6256685088156910140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6256685088156910139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbc20b21a29c49e7bf0a4a694a753bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::printValues
 --- !u!33 &6257497457141811576
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -334536,6 +334631,32 @@ MonoBehaviour:
     - key: BackwardCount
       mode: 1
       value: 1
+  - conditions:
+    - variableKey: LoopHallway2
+      comparison: 6
+      value: 0
+    - variableKey: LoopHallway2
+      comparison: 1
+      value: 0
+    - variableKey: LoopCounter
+      comparison: 0
+      value: 3
+    - variableKey: ObjectTrigger
+      comparison: 0
+      value: 1
+    - variableKey: LoopF2
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopF21
+      mode: 0
+      value: 0
+    - key: LoopB21
+      mode: 0
+      value: 1
+    - key: LoopF2
+      mode: 0
+      value: 0
 --- !u!23 &8699501825092595277
 MeshRenderer:
   m_ObjectHideFlags: 0
