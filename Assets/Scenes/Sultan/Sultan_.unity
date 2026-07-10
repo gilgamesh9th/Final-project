@@ -198757,6 +198757,12 @@ MonoBehaviour:
     - key: LoopBackward2
       mode: 0
       value: 0
+    - key: LoopBackward1
+      mode: 0
+      value: 0
+    - key: LoopForward2
+      mode: 0
+      value: 0
   - conditions:
     - variableKey: LoopHallway6
       comparison: 5
@@ -198778,6 +198784,12 @@ MonoBehaviour:
       mode: 0
       value: 1
     - key: BackwardCount
+      mode: 1
+      value: 1
+    - key: LoopForward1
+      mode: 1
+      value: 1
+    - key: LoopBackward1
       mode: 1
       value: 1
 --- !u!4 &4152016726141509852
