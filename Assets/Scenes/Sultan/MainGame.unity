@@ -19331,8 +19331,8 @@ MonoBehaviour:
       postDelay: 2
     - text: 
       clip: {fileID: 8300000, guid: 5f50d23642cfe47d4ba9d2f47752a2fe, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
+      isImportant: 1
+      destinationIfUnsaid: EmptyRoomNarrative2
       discardOnInterrupt: 0
       mustComplete: 0
       postDelay: 1
@@ -20458,6 +20458,13 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
+    - text: 
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 5
     - text: My bad, he probably just wanted to go to the restroom.
       clip: {fileID: 8300000, guid: b652e4a6892c7474ba8345e93596cee3, type: 3}
       isImportant: 0
@@ -20585,7 +20592,7 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: Who told you about the vase? You solved it too quick!
+    - text: B21
       clip: {fileID: 0}
       isImportant: 0
       destinationIfUnsaid: 
@@ -76525,6 +76532,7 @@ GameObject:
   - component: {fileID: 6201097067176496381}
   - component: {fileID: 5717938232375911703}
   - component: {fileID: 7676977385133086622}
+  - component: {fileID: 7676977385133086623}
   m_Layer: 0
   m_Name: LoopNarrative (7)
   m_TagString: Untagged
@@ -306988,6 +306996,24 @@ MonoBehaviour:
     - key: LoopHallway6
       mode: 0
       value: 0
+--- !u!114 &7676977385133086623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2267676081142947990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0751e5df93ddb4600882d29ce10d0a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarObjectToggle
+  conditions:
+  - variableKey: LoopCounter
+    comparison: 0
+    value: 0
+  targets: []
+  reEnableWhenFalse: 0
 --- !u!4 &7677850177148846462
 Transform:
   m_ObjectHideFlags: 0
@@ -341144,7 +341170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8908341290928371762
 Transform:
   m_ObjectHideFlags: 0
