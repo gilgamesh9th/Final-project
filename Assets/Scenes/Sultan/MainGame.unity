@@ -1537,7 +1537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &452388109
 Transform:
   m_ObjectHideFlags: 0
@@ -1547,7 +1547,7 @@ Transform:
   m_GameObject: {fileID: 452388108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.0036975765, z: -0, w: 0.9999932}
-  m_LocalPosition: {x: -16.5, y: -0.35628986, z: -4.8}
+  m_LocalPosition: {x: -17, y: -0.35628986, z: -76.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2504,7 +2504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &560713846
 Transform:
   m_ObjectHideFlags: 0
@@ -11504,7 +11504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1974974396
 Transform:
   m_ObjectHideFlags: 0
@@ -20402,14 +20402,14 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 0.5
+      postDelay: 0.25
     - text: Alright, I'll play it for you again.
       clip: {fileID: 8300000, guid: 5adb52d72648b41e8979388962d5da64, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 0.5
+      postDelay: 0.1
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -20433,7 +20433,7 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 1
+      postDelay: 0.5
     - text: Oh, do you know that Arabic song?
       clip: {fileID: 8300000, guid: 009bad2bb01f1437383303a4c06ffddc, type: 3}
       isImportant: 0
@@ -20453,7 +20453,7 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 7e8c2068657fd4ceda0f8b17745e2100, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
-      discardOnInterrupt: 1
+      discardOnInterrupt: 0
       mustComplete: 0
       postDelay: 0.5
     returnTransitions: []
@@ -20946,7 +20946,7 @@ MonoBehaviour:
   - variableKey: IdleDisable
     comparison: 0
     value: 1
-  playerTransform: {fileID: 2769938731014895791}
+  playerTransform: {fileID: 452388109}
 --- !u!33 &298957782922974251
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -35426,6 +35426,7 @@ MonoBehaviour:
   - key: PuzzleSuccess
     mode: 0
     value: 1
+  levelFeedback: {fileID: 3750857421596497518}
 --- !u!33 &815820779444047900
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -89343,6 +89344,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3750857421596497516}
+  - component: {fileID: 3750857421596497517}
+  - component: {fileID: 3750857421596497518}
   m_Layer: 0
   m_Name: xylophoneE
   m_TagString: Untagged
@@ -192950,6 +192953,121 @@ Transform:
   - {fileID: 649807842737690036}
   m_Father: {fileID: 6841874950385839488}
   m_LocalEulerAnglesHint: {x: 0, y: -201.57, z: 0}
+--- !u!82 &3750857421596497517
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717239017165612574}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &3750857421596497518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717239017165612574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369b6e8e07bd541b79f8f5cbcabae7ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleLevelFeedback
+  feedbackLight: {fileID: 1873358955342906157}
+  successColor: {r: 0, g: 1, b: 0, a: 1}
+  lightDuration: 3
+  spatialSource: {fileID: 3750857421596497517}
+  levelCompleteClips:
+  - {fileID: 8300000, guid: d7b0ebd4af969448284397fbad235c08, type: 3}
 --- !u!23 &3751126571610569954
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -265821,7 +265939,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -296022,7 +296140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &7257695592245446993
 MeshRenderer:
   m_ObjectHideFlags: 0
