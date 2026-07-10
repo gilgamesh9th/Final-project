@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Ghaida/Main Menu.unity
     guid: ce89ad8a67730304cb90e50def6b19b8
   - enabled: 1
-    path: Assets/Scenes/Sultan/MainGame.unity
+    path: Assets/Scenes/Sultan/MainGame_old.unity
     guid: 2f113137bc68a4cec8a923f432b2787f
   - enabled: 1
     path: Assets/Scenes/Sultan/Final Cutscene.unity
