@@ -10246,6 +10246,131 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1710777246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1710777247}
+  - component: {fileID: 1710777250}
+  - component: {fileID: 1710777249}
+  - component: {fileID: 1710777248}
+  - component: {fileID: 1710777251}
+  m_Layer: 0
+  m_Name: LoopNarrative (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1710777247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710777246}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.899998, y: 2.88, z: -73}
+  m_LocalScale: {x: 14, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6172268528883160279}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1710777248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710777246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0751e5df93ddb4600882d29ce10d0a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarObjectToggle
+  conditions:
+  - variableKey: LoopB21
+    comparison: 0
+    value: 1
+  targets:
+  - {fileID: 1383195212278159862}
+  - {fileID: 4410853526579862521}
+  - {fileID: 1710777246}
+  reEnableWhenFalse: 0
+--- !u!54 &1710777249
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710777246}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1710777250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710777246}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1710777251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710777246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c2536d608364535a646ee839267929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
+  updates:
+  - conditions:
+    - variableKey: LoopB21
+      comparison: 0
+      value: 1
+    writes:
+    - key: IdleDisable
+      mode: 0
+      value: 1
 --- !u!43 &1720348099
 Mesh:
   m_ObjectHideFlags: 0
@@ -20117,7 +20242,7 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 0
-      postDelay: 1
+      postDelay: 0.25
     - text: That's why you were stuck.
       clip: {fileID: 8300000, guid: c8c3ef496bbb746628a8de2785e20949, type: 3}
       isImportant: 0
@@ -20131,20 +20256,20 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 1
+      postDelay: 0.25
     - text: Just follow the hallway, and you will find room 8.
       clip: {fileID: 8300000, guid: 0362ea69ecd2441659eae91b2a04b49c, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-      mustComplete: 1
-      postDelay: 1
+      mustComplete: 0
+      postDelay: 0.5
     - text: Mr. Marid Washwashni must be very hungry and waiting for his pizza!
       clip: {fileID: 8300000, guid: bf4ce968f31f84656b7bf299f9b28aad, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-      mustComplete: 1
+      mustComplete: 0
       postDelay: 0.5
     returnTransitions: []
     returnLinesCount: 1
@@ -20592,13 +20717,49 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: B21
-      clip: {fileID: 0}
+    - text: 'Alright, I''m too busy for this stubbornness about following the rules. '
+      clip: {fileID: 8300000, guid: 81656e6c0e7bc4a74b6c161d1e47dc37, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 0
-      postDelay: 0.5
+      postDelay: 1
+    - text: You don't want my help.
+      clip: {fileID: 8300000, guid: 29b8de8109b964ed689bb93b1e1301ad, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: Find what changed in the hallway.
+      clip: {fileID: 8300000, guid: 101116b2e0d0f4b358488122c8a3fb11, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: Press E when you find it.
+      clip: {fileID: 8300000, guid: b7d4cc156dd404f79ac9182ab13dd274, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: 'And for now... I''m gonna put you on hold. Gotta go prepare dinner for
+        my wife. '
+      clip: {fileID: 8300000, guid: 058ac1a7a91e0469d8ddcfacd98514b1, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: 
+      clip: {fileID: 8300000, guid: 8da2f07893e4946018147a26f8a0a7ec, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0.1
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -23075,6 +23236,9 @@ MonoBehaviour:
     - variableKey: ObjectTrigger
       comparison: 0
       value: 0
+    - variableKey: LoopB21
+      comparison: 0
+      value: 0
     writes:
     - key: LoopForward2
       mode: 0
@@ -23093,6 +23257,9 @@ MonoBehaviour:
       comparison: 0
       value: 3
     - variableKey: ObjectTrigger
+      comparison: 0
+      value: 0
+    - variableKey: LoopB21
       comparison: 0
       value: 0
     writes:
@@ -26521,11 +26688,11 @@ MonoBehaviour:
     postDelay: 0.5
   - text: Now, why don't you get out?
     clip: {fileID: 8300000, guid: 8f3dc72361dee47f1936b43f581ce639, type: 3}
-    mustComplete: 1
+    mustComplete: 0
     postDelay: 0.5
   - text: GET OUT
     clip: {fileID: 8300000, guid: 8697f210f575f46d7bd1a3c55f55422a, type: 3}
-    mustComplete: 1
+    mustComplete: 0
     postDelay: 0.5
 --- !u!1 &511858251971885740
 GameObject:
@@ -28066,7 +28233,7 @@ Transform:
   m_GameObject: {fileID: 1962774720178621634}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.01, y: 2.88, z: 73}
+  m_LocalPosition: {x: 2.73, y: 2.88, z: 73}
   m_LocalScale: {x: 14, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51179,6 +51346,7 @@ GameObject:
   - component: {fileID: 7256258352408610840}
   - component: {fileID: 6962133005822911442}
   - component: {fileID: 4725530038152701117}
+  - component: {fileID: 8979204695121923135}
   m_Layer: 0
   m_Name: LoopNarrative (1)
   m_TagString: Untagged
@@ -71723,7 +71891,7 @@ Transform:
   m_GameObject: {fileID: 5297579552190257970}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2, y: 2.88, z: 60.4}
+  m_LocalPosition: {x: 2.3, y: 2.88, z: 60.4}
   m_LocalScale: {x: 14, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76532,7 +76700,6 @@ GameObject:
   - component: {fileID: 6201097067176496381}
   - component: {fileID: 5717938232375911703}
   - component: {fileID: 7676977385133086622}
-  - component: {fileID: 7676977385133086623}
   m_Layer: 0
   m_Name: LoopNarrative (7)
   m_TagString: Untagged
@@ -211393,6 +211560,7 @@ GameObject:
   - component: {fileID: 4282100272459422866}
   - component: {fileID: 5263973116540781460}
   - component: {fileID: 8698785287939483199}
+  - component: {fileID: 8698785287939483200}
   m_Layer: 0
   m_Name: LoopNarrative (2)
   m_TagString: Untagged
@@ -212873,7 +213041,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 5, z: 12}
+  m_Size: {x: 0.1, y: 5, z: 12}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4467621591289583380
 GameObject:
@@ -217838,6 +218006,15 @@ MonoBehaviour:
     - key: LoopSolved
       mode: 0
       value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 0
+    - key: LoopB21
+      mode: 0
+      value: 0
+    - key: LoopF21
+      mode: 0
+      value: 0
 --- !u!1 &4637133725376016257
 GameObject:
   m_ObjectHideFlags: 0
@@ -220364,18 +220541,6 @@ MonoBehaviour:
       mode: 0
       value: 0
   - conditions:
-    - variableKey: LoopHallway1
-      comparison: 5
-      value: 0
-    - variableKey: LoopHallway1
-      comparison: 1
-      value: 0
-    - variableKey: LoopCounter
-      comparison: 0
-      value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 1
     - variableKey: LoopB21
       comparison: 0
       value: 1
@@ -220386,6 +220551,15 @@ MonoBehaviour:
     - key: LoopB21
       mode: 0
       value: 0
+    - key: LoopF2
+      mode: 0
+      value: 0
+    - key: LoopB2
+      mode: 0
+      value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
 --- !u!33 &4725623936566534413
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -221339,7 +221513,7 @@ Transform:
   m_GameObject: {fileID: 840841886581618615}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.99, y: -3.4, z: -55.16}
+  m_LocalPosition: {x: -31.2, y: -3.4, z: -54.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -262540,6 +262714,7 @@ Transform:
   - {fileID: 8255579012479901472}
   - {fileID: 8979204695121923134}
   - {fileID: 523662895304594606}
+  - {fileID: 1710777247}
   - {fileID: 3668609772902870093}
   - {fileID: 2757623793272131563}
   - {fileID: 314022072803734878}
@@ -306996,24 +307171,6 @@ MonoBehaviour:
     - key: LoopHallway6
       mode: 0
       value: 0
---- !u!114 &7676977385133086623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2267676081142947990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0751e5df93ddb4600882d29ce10d0a94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VarObjectToggle
-  conditions:
-  - variableKey: LoopCounter
-    comparison: 0
-    value: 0
-  targets: []
-  reEnableWhenFalse: 0
 --- !u!4 &7677850177148846462
 Transform:
   m_ObjectHideFlags: 0
@@ -334740,7 +334897,7 @@ MonoBehaviour:
       value: 0
     - key: LoopB2
       mode: 0
-      value: 1
+      value: 0
     - key: BackwardCount
       mode: 1
       value: 1
@@ -334770,6 +334927,30 @@ MonoBehaviour:
     - key: LoopF2
       mode: 0
       value: 0
+--- !u!114 &8698785287939483200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410853526579862521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0751e5df93ddb4600882d29ce10d0a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarObjectToggle
+  conditions:
+  - variableKey: LoopB2
+    comparison: 0
+    value: 1
+  targets:
+  - {fileID: 8516553683200514325}
+  - {fileID: 579165068132058490}
+  - {fileID: 5008182802899813880}
+  - {fileID: 6763629021765643403}
+  - {fileID: 2267676081142947990}
+  - {fileID: 8689580557676771344}
+  reEnableWhenFalse: 0
 --- !u!23 &8699501825092595277
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -343256,6 +343437,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6172268528883160279}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8979204695121923135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383195212278159862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0751e5df93ddb4600882d29ce10d0a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarObjectToggle
+  conditions:
+  - variableKey: LoopF21
+    comparison: 0
+    value: 1
+  targets:
+  - {fileID: 1383195212278159862}
+  - {fileID: 4410853526579862521}
+  - {fileID: 1383195212278159862}
+  reEnableWhenFalse: 0
 --- !u!1 &8980341030815097825
 GameObject:
   m_ObjectHideFlags: 0
