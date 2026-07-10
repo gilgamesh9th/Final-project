@@ -4374,7 +4374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &791694139
 Transform:
   m_ObjectHideFlags: 0
@@ -217825,6 +217825,9 @@ MonoBehaviour:
       mode: 0
       value: 1
     - key: EarlyLoopSolve
+      mode: 0
+      value: 0
+    - key: LoopSolved
       mode: 0
       value: 0
 --- !u!1 &4637133725376016257
