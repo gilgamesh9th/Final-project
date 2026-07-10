@@ -249140,6 +249140,262 @@ PrefabInstance:
       propertyPath: anomalyObjects.Array.data[2].anomalyObject
       value: 
       objectReference: {fileID: 780429482}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[0].key
+      value: LoopSolved
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[1].key
+      value: LoopF2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[2].key
+      value: LoopB2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[3].key
+      value: LoopForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[4].key
+      value: LoopBackward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[5].key
+      value: LoopForward1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[6].key
+      value: LoopBackward1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[7].key
+      value: LoopForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[8].key
+      value: LoopBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[9].key
+      value: LoopForward3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[0].key
+      value: LoopSolved
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[1].key
+      value: LoopF2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[2].key
+      value: LoopB2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[3].key
+      value: LoopForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[4].key
+      value: LoopBackward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[5].key
+      value: LoopForward1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[6].key
+      value: LoopBackward1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[7].key
+      value: LoopForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[8].key
+      value: LoopBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[9].key
+      value: LoopForward3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[0].key
+      value: LoopSolved
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[1].key
+      value: LoopF2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[2].key
+      value: LoopB2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[3].key
+      value: LoopForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[4].key
+      value: LoopBackward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[5].key
+      value: LoopForward1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[6].key
+      value: LoopBackward1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[7].key
+      value: LoopForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[8].key
+      value: LoopBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[9].key
+      value: LoopForward3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[10].key
+      value: LoopBackward3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[11].key
+      value: LoopForward4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[12].key
+      value: LoopBackward4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[13].key
+      value: LoopF21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[14].key
+      value: LoopB21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[15].key
+      value: LoopCounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[16].key
+      value: FoundFlowers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[10].key
+      value: LoopBackward3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[11].key
+      value: LoopForward4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[12].key
+      value: LoopBackward4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[13].key
+      value: LoopF21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[14].key
+      value: LoopB21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[15].key
+      value: LoopCounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[16].key
+      value: FoundStool
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[10].key
+      value: LoopBackward3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[11].key
+      value: LoopForward4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[12].key
+      value: LoopBackward4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[13].key
+      value: LoopF21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[14].key
+      value: LoopB21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[15].key
+      value: LoopCounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[16].key
+      value: FoundCCTV
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[15].value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[16].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[15].value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[16].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[15].value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[16].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8636409397059413533, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -348294,6 +348550,12 @@ MonoBehaviour:
   - key: EmptyRoomCount
     value: 0
   - key: SecondRound
+    value: 0
+  - key: FoundFlowers
+    value: 0
+  - key: FoundStool
+    value: 0
+  - key: FoundCCTV
     value: 0
 --- !u!23 &9126274881419095222
 MeshRenderer:
