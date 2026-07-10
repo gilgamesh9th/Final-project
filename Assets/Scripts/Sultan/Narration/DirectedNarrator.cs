@@ -12,6 +12,7 @@ public class NarrationLine
     [System.NonSerialized] public bool moved;
     public bool discardOnInterrupt;
     public bool mustComplete;
+    public float postDelay = 0.5f;
     [System.NonSerialized] public bool started;
 }
 
@@ -354,7 +355,7 @@ public class DirectedNarrator : MonoBehaviour
             if (i < linesToPlay - 1 || channel.index < channel.queue.Count)
             {
                 elapsed = 0f;
-                while (elapsed < lineGap)
+                while (elapsed < vl.postDelay)
                 {
                     if (_activeChannel != channel) { _inTransition = false; yield break; }
                     elapsed += Time.deltaTime;
@@ -387,6 +388,7 @@ public class DirectedNarrator : MonoBehaviour
         if (linesToPlay <= 0) yield break;
 
         _inTransition = true;
+        float lastPostDelay = lineGap;
 
         for (int r = 0; r < linesToPlay; r++)
         {
@@ -394,6 +396,7 @@ public class DirectedNarrator : MonoBehaviour
             if (channel.returnIndex >= channel.returnTransitions.Length) break;
 
             VoicedLine vl = channel.returnTransitions[channel.returnIndex];
+            lastPostDelay = vl.postDelay;
             channel.returnIndex++;
 
             if (!NarratorManager.Instance.ShowText(
@@ -422,7 +425,7 @@ public class DirectedNarrator : MonoBehaviour
             if (r < linesToPlay - 1)
             {
                 re = 0f;
-                while (re < lineGap)
+                while (re < vl.postDelay)
                 {
                     if (_activeChannel != channel) { _inTransition = false; yield break; }
                     re += Time.deltaTime;
@@ -434,7 +437,7 @@ public class DirectedNarrator : MonoBehaviour
         _inTransition = false;
 
         float gapElapsed = 0f;
-        while (gapElapsed < lineGap)
+        while (gapElapsed < lastPostDelay)
         {
             if (_activeChannel != channel) yield break;
             gapElapsed += Time.deltaTime;
@@ -507,10 +510,10 @@ public class DirectedNarrator : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitGap(NarrationChannel channel)
+    private IEnumerator WaitGap(NarrationChannel channel, float duration)
     {
         float elapsed = 0f;
-        while (elapsed < lineGap)
+        while (elapsed < duration)
         {
             while (_paused) yield return null;
             if (_activeChannel != channel) yield break;
@@ -555,7 +558,7 @@ public class DirectedNarrator : MonoBehaviour
 
             if (channel.index < channel.queue.Count)
             {
-                yield return WaitGap(channel);
+                yield return WaitGap(channel, nl.postDelay);
                 if (_activeChannel != channel) yield break;
             }
         }
@@ -584,7 +587,7 @@ public class DirectedNarrator : MonoBehaviour
                     yield break;
                 }
 
-                yield return WaitGap(channel);
+                yield return WaitGap(channel, lastLine.postDelay);
                 if (_activeChannel != channel) yield break;
             }
             yield break;
@@ -678,7 +681,7 @@ public class DirectedNarrator : MonoBehaviour
                 if (idleNarrations.Length > 1)
                 {
                     elapsed = 0f;
-                    while (elapsed < lineGap && _isIdle)
+                    while (elapsed < vl.postDelay && _isIdle)
                     {
                         elapsed += Time.deltaTime;
                         yield return null;
