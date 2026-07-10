@@ -1085,7 +1085,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 293805084134537201, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1749769190}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 230068692206936057, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1230565625}
   m_SourcePrefab: {fileID: 100100000, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
 --- !u!4 &185706467 stripped
 Transform:
@@ -3311,6 +3314,7 @@ GameObject:
   - component: {fileID: 678850326}
   - component: {fileID: 678850325}
   - component: {fileID: 678850324}
+  - component: {fileID: 678850327}
   m_Layer: 0
   m_Name: HallwayNarrative12 (22)
   m_TagString: Untagged
@@ -3422,6 +3426,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &678850327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678850322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5027e40fe693d470484367bad42eaff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableTriggers
+  triggers:
+  - {fileID: 818894931518402429}
+  - {fileID: 5484223274241783281}
+  - {fileID: 2285370016244330450}
+  - {fileID: 7116607609038674007}
+  - {fileID: 1927968924210385240}
 --- !u!43 &710444155
 Mesh:
   m_ObjectHideFlags: 0
@@ -6585,6 +6607,32 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!1 &1230565621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 230068692206936057, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
+  m_PrefabInstance: {fileID: 180995349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1230565625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230565621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c2536d608364535a646ee839267929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
+  updates:
+  - conditions: []
+    writes:
+    - key: HallwayForward4
+      mode: 0
+      value: 0
+    - key: 'TapeRoom '
+      mode: 0
+      value: 1
 --- !u!1 &1270457006
 GameObject:
   m_ObjectHideFlags: 0
@@ -19099,13 +19147,13 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-      mustComplete: 1
+      mustComplete: 0
       postDelay: 1.5
     - text: Please proceed to the end of the hallway. You're doing great.
       clip: {fileID: 8300000, guid: 119c7f2bddf944f0682da78b936d265a, type: 3}
-      isImportant: 1
-      destinationIfUnsaid: RightJunctionForward
-      discardOnInterrupt: 0
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 1
       mustComplete: 0
       postDelay: 0.5
     - text: Ah! Look at you!
@@ -19188,6 +19236,34 @@ MonoBehaviour:
       discardOnInterrupt: 0
       mustComplete: 1
       postDelay: 0.5
+    - text: You think you could find something?
+      clip: {fileID: 8300000, guid: b7f12c5c324424d68badf8cba9c15d1e, type: 3}
+      isImportant: 1
+      destinationIfUnsaid: EmptyRoomNarrative2
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1
+    - text: Playing detective, aren't we?
+      clip: {fileID: 8300000, guid: 3b3d7123d7ee54c39b0b3b6c5b189f7e, type: 3}
+      isImportant: 1
+      destinationIfUnsaid: EmptyRoomNarrative2
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1
+    - text: Let me play your theme song, then!
+      clip: {fileID: 8300000, guid: ddf81d36403a949d7bf4dcf022fab47f, type: 3}
+      isImportant: 1
+      destinationIfUnsaid: EmptyRoomNarrative2
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 2
+    - text: 
+      clip: {fileID: 8300000, guid: 5f50d23642cfe47d4ba9d2f47752a2fe, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -19266,6 +19342,20 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
+      postDelay: 5
+    - text: You want your song again? Don't you? Ok.
+      clip: {fileID: 8300000, guid: 4ad02fccadf1243a8a58420e179dcd2b, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: 
+      clip: {fileID: 8300000, guid: 5f50d23642cfe47d4ba9d2f47752a2fe, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
       postDelay: 1
     returnTransitions: []
     returnLinesCount: 1
@@ -20355,7 +20445,7 @@ MonoBehaviour:
       mustComplete: 0
       postDelay: 1.5
     - text: 
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: ec923a131b7484b5c89562b12f04aab8, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -20434,6 +20524,57 @@ MonoBehaviour:
     returnLinesCount: 1
     loopReturnTransitions: 0
     loopLastLine: 1
+    restartOnActivate: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: 'TapeRoom '
+    priority: 9
+    conditions:
+    - variableKey: 'TapeRoom '
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Sorry, but my wife is here.
+      clip: {fileID: 8300000, guid: 1047897feb3374d849d34f60f1bac680, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0.5
+    - text: You're kinda stuck in this room until you solve the riddle.
+      clip: {fileID: 8300000, guid: 85fb1e5864fcb49b982e47c9e87a9055, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: Don't worry! Just solve it, then find the only remaining room.
+      clip: {fileID: 8300000, guid: e7704b3aa7ce34e7d8a9fef360f3d669, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0.5
+    - text: That would be room 8.
+      clip: {fileID: 8300000, guid: 02b4fd849be404548b5d6784edb36f6e, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0.1
+    - text: Then you can finally get out.
+      clip: {fileID: 8300000, guid: 881451bc3c48c4995ab4a6f2c8cc7f49, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0.1
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 0
     restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
@@ -200293,6 +200434,9 @@ MonoBehaviour:
     - variableKey: KidsRoomDone
       comparison: 0
       value: 1
+    - variableKey: PuzzleResume
+      comparison: 0
+      value: 0
     writes:
     - key: HallwayForward3
       mode: 0
@@ -200301,6 +200445,9 @@ MonoBehaviour:
       mode: 0
       value: 0
     - key: PuzzleSuccess
+      mode: 0
+      value: 0
+    - key: PuzzleResume
       mode: 0
       value: 0
   - conditions:
@@ -350874,6 +351021,9 @@ MonoBehaviour:
     - key: HallwayForward
       mode: 0
       value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
   - conditions:
     - variableKey: EmptyRoom1
       comparison: 5
@@ -350891,6 +351041,9 @@ MonoBehaviour:
     - key: HallwayForward
       mode: 0
       value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 0
   - conditions:
     - variableKey: EmptyRoom1
       comparison: 5
@@ -350911,6 +351064,9 @@ MonoBehaviour:
     - key: HallwayForward2
       mode: 0
       value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 0
   - conditions:
     - variableKey: EmptyRoom1
       comparison: 6
@@ -350931,6 +351087,9 @@ MonoBehaviour:
     - key: HallwayForward2
       mode: 0
       value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
   - conditions:
     - variableKey: EmptyRoom1
       comparison: 5
@@ -350951,6 +351110,9 @@ MonoBehaviour:
     - key: HallwayForward2
       mode: 0
       value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 0
   - conditions:
     - variableKey: EmptyRoom1
       comparison: 6
@@ -350971,6 +351133,9 @@ MonoBehaviour:
     - key: HallwayForward2
       mode: 0
       value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
 --- !u!114 &9213708868751187582
 MonoBehaviour:
   m_ObjectHideFlags: 0
