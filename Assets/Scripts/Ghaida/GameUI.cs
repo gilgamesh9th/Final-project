@@ -67,7 +67,7 @@ public class GameUI : MonoBehaviour
     public void LoadGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Sultan");
+        SceneManager.LoadScene("MainGame");
        
     }
 }
