@@ -630,7 +630,7 @@ PlayableDirector:
   - key: {fileID: 5965437625361049066, guid: 317bc5cf0c97fdb40a3fd17021103bf0, type: 2}
     value: {fileID: 1589401003}
   - key: {fileID: 2034605364799697911, guid: 317bc5cf0c97fdb40a3fd17021103bf0, type: 2}
-    value: {fileID: 4404931400001659807}
+    value: {fileID: 8421338575280534671}
   m_ExposedReferences:
     m_References:
     - a653ff470fbe3ba43a83ded5682e1a98: {fileID: 1864624735}
@@ -688,12 +688,12 @@ Transform:
   m_GameObject: {fileID: 173276661}
   serializedVersion: 2
   m_LocalRotation: {x: -0.004277951, y: 0.00023911711, z: -0.05580761, w: 0.9984324}
-  m_LocalPosition: {x: 51.4426, y: 7.99997, z: 162.4635}
+  m_LocalPosition: {x: 20.68, y: 13, z: 120.85999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6465898108138531954}
-  m_Father: {fileID: 1031805712}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -0.00001380677, y: 0.4698034, z: 0.000005517882}
 --- !u!95 &173276663
 Animator:
@@ -918,6 +918,14 @@ PrefabInstance:
     - target: {fileID: 3631822406488640668, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797757278235246827, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7282174099797349600, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
+    - target: {fileID: 3797757278235246827, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 4431948276210988661, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1532,7 +1540,7 @@ GameObject:
   - component: {fileID: 452388111}
   - component: {fileID: 452388110}
   m_Layer: 11
-  m_Name: Player (1)
+  m_Name: Player tester
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1547,7 +1555,7 @@ Transform:
   m_GameObject: {fileID: 452388108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.0036975765, z: -0, w: 0.9999932}
-  m_LocalPosition: {x: -16.5, y: -0.35628986, z: -4.8}
+  m_LocalPosition: {x: -16.4, y: -0.35628986, z: -75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2761,8 +2769,8 @@ MonoBehaviour:
   doorAnimator: {fileID: 617996666}
   openTriggerName: open
   closeTriggerName: close
-  openSound: {fileID: 0}
-  closeSound: {fileID: 0}
+  openSound: {fileID: 8300000, guid: aaf093572c3e85e4681dcc7c37a7f457, type: 3}
+  closeSound: {fileID: 8300000, guid: aaf093572c3e85e4681dcc7c37a7f457, type: 3}
 --- !u!82 &617996668
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2772,7 +2780,7 @@ AudioSource:
   m_GameObject: {fileID: 617996665}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7282174099797349600, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -2820,7 +2828,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.4
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3015,6 +3023,18 @@ MonoBehaviour:
     - key: KidsRoomDone
       mode: 0
       value: 1
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
 --- !u!114 &637467610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3124,7 +3144,7 @@ AudioSource:
   m_GameObject: {fileID: 659532531}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7282174099797349600, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -3172,7 +3192,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.4
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4390,7 +4410,6 @@ Transform:
   m_Children:
   - {fileID: 731350711}
   - {fileID: 1974974396}
-  - {fileID: 1031805712}
   - {fileID: 560713846}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4961,7 +4980,7 @@ Transform:
   m_GameObject: {fileID: 854881378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000000021157557, y: 2.0099998, z: -0.0000028609447}
+  m_LocalPosition: {x: -29.108606, y: 2.0099998, z: -39.511337}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5407,104 +5426,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6805380220882404277}
   m_LocalEulerAnglesHint: {x: 23.426, y: 0, z: 0}
---- !u!1 &925157879
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 925157880}
-  - component: {fileID: 925157882}
-  - component: {fileID: 925157881}
-  m_Layer: 0
-  m_Name: CinemachineCamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &925157880
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925157879}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.010798189, y: -0.016798623, z: -0.00018134555, w: 0.99980056}
-  m_LocalPosition: {x: 45.05272, y: 5.003386, z: 153.61644}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1031805712}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &925157881
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925157879}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &925157882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925157879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
-  Priority:
-    Enabled: 0
-    m_Value: 0
-  OutputChannel: 1
-  StandbyUpdate: 2
-  m_StreamingVersion: 20241001
-  m_LegacyPriority: 0
-  Target:
-    TrackingTarget: {fileID: 0}
-    LookAtTarget: {fileID: 0}
-    CustomLookAtTarget: 0
-  Lens:
-    FieldOfView: 60.000004
-    OrthographicSize: 5
-    NearClipPlane: 0.3
-    FarClipPlane: 1000
-    Dutch: 0
-    ModeOverride: 0
-    PhysicalProperties:
-      GateFit: 2
-      SensorSize: {x: 21.946, y: 16.002}
-      LensShift: {x: 0, y: 0}
-      FocusDistance: 10
-      Iso: 200
-      ShutterSpeed: 0.005
-      Aperture: 16
-      BladeCount: 5
-      Curvature: {x: 2, y: 11}
-      BarrelClipping: 0.25
-      Anamorphism: 0
-  BlendHint: 0
 --- !u!43 &954085708
 Mesh:
   m_ObjectHideFlags: 0
@@ -5698,41 +5619,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!1 &1031805711
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1031805712}
-  m_Layer: 0
-  m_Name: 'finale '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1031805712
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031805711}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.0061, y: -3.7557998, z: 78.30576}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1535279657}
-  - {fileID: 173276662}
-  - {fileID: 925157880}
-  - {fileID: 2017941676}
-  m_Father: {fileID: 791694139}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073432229
 GameObject:
   m_ObjectHideFlags: 0
@@ -5794,6 +5680,18 @@ MonoBehaviour:
     - key: KidsRoomDone
       mode: 0
       value: 1
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
 --- !u!114 &1073432232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6242,6 +6140,8 @@ PlayableDirector:
     value: {fileID: 780126350}
   - key: {fileID: 7033460846176798174, guid: 90e6ac4ab29c1554a9e26e926dcc6e88, type: 2}
     value: {fileID: 5889954240444346112}
+  - key: {fileID: 9130504602970517775, guid: 90e6ac4ab29c1554a9e26e926dcc6e88, type: 2}
+    value: {fileID: 9033743220748926897}
   m_ExposedReferences:
     m_References:
     - 717f35062aa220b4bb0876cebe5ec945: {fileID: 1934964323}
@@ -6780,6 +6680,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 731350711}
   m_LocalEulerAnglesHint: {x: 7.186, y: 74.641, z: 1.221}
+--- !u!114 &1348284528 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7017372079245381560, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+  m_PrefabInstance: {fileID: 1477804514}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102be2678e8bec54f966188590fb8ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSettings
 --- !u!1 &1401453663
 GameObject:
   m_ObjectHideFlags: 0
@@ -8672,6 +8583,46 @@ PrefabInstance:
       propertyPath: textCanvas
       value: 
       objectReference: {fileID: 738433715224980937}
+    - target: {fileID: 6537380216442392685, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537380216442392685, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537380216442392685, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537380216442392685, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537380216442392685, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1348284528}
+    - target: {fileID: 6537380216442392685, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537380216442392685, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537380216442392685, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VolumeSettings, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537380216442392685, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017372079245381560, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
     - target: {fileID: 7238621230751719085, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
       propertyPath: m_Name
       value: in game ui
@@ -8679,6 +8630,42 @@ PrefabInstance:
     - target: {fileID: 7238621230751719085, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567643772868583828, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567643772868583828, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567643772868583828, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567643772868583828, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567643772868583828, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1348284528}
+    - target: {fileID: 7567643772868583828, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567643772868583828, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567643772868583828, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VolumeSettings, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567643772868583828, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9167767366085469453, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
       propertyPath: m_Pivot.x
@@ -9018,61 +9005,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!1 &1535279656
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1535279657}
-  - component: {fileID: 1535279658}
-  m_Layer: 0
-  m_Name: 'final cutscen '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1535279657
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535279656}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1031805712}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!320 &1535279658
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535279656}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: bf5381a28f90fed4f8df102124facd48, type: 2}
-  m_InitialState: 0
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 3564576718221619369, guid: bf5381a28f90fed4f8df102124facd48, type: 2}
-    value: {fileID: 173276663}
-  - key: {fileID: 1941300653013785933, guid: bf5381a28f90fed4f8df102124facd48, type: 2}
-    value: {fileID: 8966470715951583370}
-  m_ExposedReferences:
-    m_References:
-    - 96e3bf2f98ab7e4429974204e06a10f4: {fileID: 2017941677}
-    - 33e4ebef3e228724c83da65280e81c6d: {fileID: 925157882}
 --- !u!1 &1561888167
 GameObject:
   m_ObjectHideFlags: 0
@@ -10246,6 +10178,142 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1710777246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1710777247}
+  - component: {fileID: 1710777250}
+  - component: {fileID: 1710777249}
+  - component: {fileID: 1710777248}
+  - component: {fileID: 1710777251}
+  m_Layer: 0
+  m_Name: LoopNarrative (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1710777247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710777246}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.899998, y: 2.88, z: -58}
+  m_LocalScale: {x: 14, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6172268528883160279}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1710777248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710777246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0751e5df93ddb4600882d29ce10d0a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarObjectToggle
+  conditions:
+  - variableKey: LoopB21
+    comparison: 0
+    value: 1
+  targets:
+  - {fileID: 1383195212278159862}
+  - {fileID: 4410853526579862521}
+  - {fileID: 1710777246}
+  reEnableWhenFalse: 0
+--- !u!54 &1710777249
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710777246}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1710777250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710777246}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1710777251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710777246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c2536d608364535a646ee839267929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarUpdater
+  updates:
+  - conditions:
+    - variableKey: LoopB21
+      comparison: 0
+      value: 1
+    writes:
+    - key: IdleDisable
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: LoopB2
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopB21
+      mode: 0
+      value: 1
+    - key: LoopB2
+      mode: 0
+      value: 0
 --- !u!43 &1720348099
 Mesh:
   m_ObjectHideFlags: 0
@@ -10894,7 +10962,7 @@ PlayableDirector:
   - key: {fileID: -2444848484563730635, guid: 1c669c07b8e0351488f3f7d9d612807e, type: 2}
     value: {fileID: 8966470715951583370}
   - key: {fileID: 5685321650388409409, guid: 1c669c07b8e0351488f3f7d9d612807e, type: 2}
-    value: {fileID: 7228014905760861640}
+    value: {fileID: 6688099098922886970}
   m_ExposedReferences:
     m_References:
     - 42679fd83646c2345a682f14a87a7bd4: {fileID: 136334842}
@@ -11597,81 +11665,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!1 &2017941675
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2017941676}
-  - component: {fileID: 2017941677}
-  m_Layer: 0
-  m_Name: CinemachineCamera (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2017941676
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017941675}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.009599943, y: -0.001200235, z: 0.000011645403, w: 0.99995327}
-  m_LocalPosition: {x: 45.559, y: 4.9802613, z: 166.59076}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1031805712}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2017941677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017941675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
-  Priority:
-    Enabled: 0
-    m_Value: 0
-  OutputChannel: 1
-  StandbyUpdate: 2
-  m_StreamingVersion: 20241001
-  m_LegacyPriority: 0
-  Target:
-    TrackingTarget: {fileID: 0}
-    LookAtTarget: {fileID: 0}
-    CustomLookAtTarget: 0
-  Lens:
-    FieldOfView: 60.000004
-    OrthographicSize: 5
-    NearClipPlane: 0.3
-    FarClipPlane: 1000
-    Dutch: 0
-    ModeOverride: 0
-    PhysicalProperties:
-      GateFit: 2
-      SensorSize: {x: 21.946, y: 16.002}
-      LensShift: {x: 0, y: 0}
-      FocusDistance: 10
-      Iso: 200
-      ShutterSpeed: 0.005
-      Aperture: 16
-      BladeCount: 5
-      Curvature: {x: 2, y: 11}
-      BarrelClipping: 0.25
-      Anamorphism: 0
-  BlendHint: 0
 --- !u!4 &2078197735 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7999753523335000214, guid: 2e07f6824bced244db3149ef9bec2d04, type: 3}
@@ -14394,8 +14387,8 @@ MonoBehaviour:
     - variableKey: RightJunction8
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -14414,14 +14407,82 @@ MonoBehaviour:
     - variableKey: RightJunction8
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction8
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction8
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction8
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction8
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction8
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction8
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction8
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction8
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!23 &106372565256292037
@@ -19331,8 +19392,8 @@ MonoBehaviour:
       postDelay: 2
     - text: 
       clip: {fileID: 8300000, guid: 5f50d23642cfe47d4ba9d2f47752a2fe, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
+      isImportant: 1
+      destinationIfUnsaid: EmptyRoomNarrative2
       discardOnInterrupt: 0
       mustComplete: 0
       postDelay: 1
@@ -20117,7 +20178,7 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 0
-      postDelay: 1
+      postDelay: 0.25
     - text: That's why you were stuck.
       clip: {fileID: 8300000, guid: c8c3ef496bbb746628a8de2785e20949, type: 3}
       isImportant: 0
@@ -20131,20 +20192,20 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 1
+      postDelay: 0.25
     - text: Just follow the hallway, and you will find room 8.
       clip: {fileID: 8300000, guid: 0362ea69ecd2441659eae91b2a04b49c, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-      mustComplete: 1
-      postDelay: 1
+      mustComplete: 0
+      postDelay: 0.5
     - text: Mr. Marid Washwashni must be very hungry and waiting for his pizza!
       clip: {fileID: 8300000, guid: bf4ce968f31f84656b7bf299f9b28aad, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-      mustComplete: 1
+      mustComplete: 0
       postDelay: 0.5
     returnTransitions: []
     returnLinesCount: 1
@@ -20277,14 +20338,14 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 0.5
+      postDelay: 0.25
     - text: Alright, I'll play it for you again.
       clip: {fileID: 8300000, guid: 5adb52d72648b41e8979388962d5da64, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 0.5
+      postDelay: 0.1
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -20308,7 +20369,7 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 1
+      postDelay: 0.5
     - text: Oh, do you know that Arabic song?
       clip: {fileID: 8300000, guid: 009bad2bb01f1437383303a4c06ffddc, type: 3}
       isImportant: 0
@@ -20328,7 +20389,7 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 7e8c2068657fd4ceda0f8b17745e2100, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
-      discardOnInterrupt: 1
+      discardOnInterrupt: 0
       mustComplete: 0
       postDelay: 0.5
     returnTransitions: []
@@ -20458,6 +20519,13 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
+    - text: 
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 5
     - text: My bad, he probably just wanted to go to the restroom.
       clip: {fileID: 8300000, guid: b652e4a6892c7474ba8345e93596cee3, type: 3}
       isImportant: 0
@@ -20585,13 +20653,49 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: Who told you about the vase? You solved it too quick!
-      clip: {fileID: 0}
+    - text: 'Alright, I''m too busy for this stubbornness about following the rules. '
+      clip: {fileID: 8300000, guid: 81656e6c0e7bc4a74b6c161d1e47dc37, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 0
-      postDelay: 0.5
+      postDelay: 1
+    - text: You don't want my help.
+      clip: {fileID: 8300000, guid: 29b8de8109b964ed689bb93b1e1301ad, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: Find what changed in the hallway.
+      clip: {fileID: 8300000, guid: 101116b2e0d0f4b358488122c8a3fb11, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: Press E when you find it.
+      clip: {fileID: 8300000, guid: b7d4cc156dd404f79ac9182ab13dd274, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: 'And for now... I''m gonna put you on hold. Gotta go prepare dinner for
+        someone special. '
+      clip: {fileID: 8300000, guid: 058ac1a7a91e0469d8ddcfacd98514b1, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: 
+      clip: {fileID: 8300000, guid: 8da2f07893e4946018147a26f8a0a7ec, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0.1
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -20643,6 +20747,192 @@ MonoBehaviour:
       discardOnInterrupt: 0
       mustComplete: 0
       postDelay: 0.1
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 0
+    restartOnActivate: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: HallwayForwardS
+    priority: 6
+    conditions:
+    - variableKey: HallwayForwardS
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Alright!
+      clip: {fileID: 8300000, guid: 0bcc3e83e4f6041589c2b64f00b27596, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 1
+      mustComplete: 0
+      postDelay: 0.5
+    - text: This time, take the right turns.
+      clip: {fileID: 8300000, guid: da40d0b001aff45fa940bbbeeed9716b, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1
+    - text: "\_No shenanigans like last time."
+      clip: {fileID: 8300000, guid: 880945b6392c044b9bf18c8cece91ae3, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 2
+    - text: You must be wondering about the tiny stool, huh?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: Well, I did it to make my wife laugh. She loves when I make things tiny.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: I only see her once a year, you know.
+      clip: {fileID: 8300000, guid: 2c1a41fbe7c1e43d581373998aed729d, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: You must think this is a weird hotel? With a weird bell boy?
+      clip: {fileID: 8300000, guid: 65af264b84b45452b818faec127b6a0d, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1
+    - text: It's only weird if you make it weird, you know.
+      clip: {fileID: 8300000, guid: b91f9fda63cd24640842b554550eaae5, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1.5
+    - text: I think it's a lovely hotel. Some residents are weird though.
+      clip: {fileID: 8300000, guid: 7417d4c1191c84850a93f101fa3d3d0d, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 1
+      mustComplete: 0
+      postDelay: 0.5
+    - text: The weirdest one is the big dude with the tiny magician hat.
+      clip: {fileID: 8300000, guid: 7f4c206b7c44f4d7ca8889e3613c1987, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: DO NOT COME NEAR HIM.
+      clip: {fileID: 8300000, guid: 106502cc0082148aea10c2bf7ebcda78, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 0
+    restartOnActivate: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: HallwayForwardC
+    priority: 6
+    conditions:
+    - variableKey: HallwayForwardC
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Alright!
+      clip: {fileID: 8300000, guid: 0bcc3e83e4f6041589c2b64f00b27596, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 1
+      mustComplete: 0
+      postDelay: 0.5
+    - text: This time, take the right turns.
+      clip: {fileID: 8300000, guid: da40d0b001aff45fa940bbbeeed9716b, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1
+    - text: "\_No shenanigans like last time."
+      clip: {fileID: 8300000, guid: 880945b6392c044b9bf18c8cece91ae3, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 2
+    - text: You must be wondering why I changed the light into a camera in that hallway?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: Well, I did it to see when my wife comes in for our date.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: I only see her once a year, you know.
+      clip: {fileID: 8300000, guid: 2c1a41fbe7c1e43d581373998aed729d, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: You must think this is a weird hotel? With a weird bell boy?
+      clip: {fileID: 8300000, guid: 65af264b84b45452b818faec127b6a0d, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1
+    - text: It's only weird if you make it weird, you know.
+      clip: {fileID: 8300000, guid: b91f9fda63cd24640842b554550eaae5, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1.5
+    - text: I think it's a lovely hotel. Some residents are weird though.
+      clip: {fileID: 8300000, guid: 7417d4c1191c84850a93f101fa3d3d0d, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 1
+      mustComplete: 0
+      postDelay: 0.5
+    - text: The weirdest one is the big dude with the tiny magician hat.
+      clip: {fileID: 8300000, guid: 7f4c206b7c44f4d7ca8889e3613c1987, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: DO NOT COME NEAR HIM.
+      clip: {fileID: 8300000, guid: 106502cc0082148aea10c2bf7ebcda78, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -22404,7 +22694,7 @@ AudioSource:
   m_GameObject: {fileID: 6026965440274792603}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7282174099797349600, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -23068,6 +23358,9 @@ MonoBehaviour:
     - variableKey: ObjectTrigger
       comparison: 0
       value: 0
+    - variableKey: LoopB21
+      comparison: 0
+      value: 0
     writes:
     - key: LoopForward2
       mode: 0
@@ -23086,6 +23379,9 @@ MonoBehaviour:
       comparison: 0
       value: 3
     - variableKey: ObjectTrigger
+      comparison: 0
+      value: 0
+    - variableKey: LoopB21
       comparison: 0
       value: 0
     writes:
@@ -26512,14 +26808,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7d7996586c76b4313a5430bfc03fdd2a, type: 3}
     mustComplete: 1
     postDelay: 0.5
-  - text: Now, why don't you get out?
-    clip: {fileID: 8300000, guid: 8f3dc72361dee47f1936b43f581ce639, type: 3}
-    mustComplete: 1
-    postDelay: 0.5
-  - text: GET OUT
-    clip: {fileID: 8300000, guid: 8697f210f575f46d7bd1a3c55f55422a, type: 3}
-    mustComplete: 1
-    postDelay: 0.5
 --- !u!1 &511858251971885740
 GameObject:
   m_ObjectHideFlags: 0
@@ -27716,8 +28004,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative12
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -27736,14 +28024,82 @@ MonoBehaviour:
     - variableKey: HallwayNarrative12
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative12
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative12
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative12
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative12
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative12
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative12
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative12
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative12
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!1 &542699482324287771
@@ -28059,7 +28415,7 @@ Transform:
   m_GameObject: {fileID: 1962774720178621634}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.01, y: 2.88, z: 73}
+  m_LocalPosition: {x: 2.73, y: 2.88, z: 73}
   m_LocalScale: {x: 14, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32174,8 +32530,8 @@ MonoBehaviour:
     - variableKey: RightJunction3
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -32194,14 +32550,82 @@ MonoBehaviour:
     - variableKey: RightJunction3
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction3
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction3
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction3
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction3
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction3
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction3
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction3
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction3
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!23 &722136791250357079
@@ -35252,6 +35676,7 @@ MonoBehaviour:
   - key: PuzzleSuccess
     mode: 0
     value: 1
+  levelFeedback: {fileID: 3750857421596497518}
 --- !u!33 &815820779444047900
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -44079,8 +44504,8 @@ MonoBehaviour:
     - variableKey: StartHallway
       comparison: 5
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -44096,8 +44521,8 @@ MonoBehaviour:
     - variableKey: StartHallway
       comparison: 6
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -44109,6 +44534,62 @@ MonoBehaviour:
     - key: BackwardCount
       mode: 1
       value: 1
+  - conditions:
+    - variableKey: StartHallway
+      comparison: 6
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: StartHallway
+      comparison: 5
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: StartHallway
+      comparison: 5
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: StartHallway
+      comparison: 6
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
 --- !u!4 &1119520602511211376
 Transform:
   m_ObjectHideFlags: 0
@@ -51172,6 +51653,7 @@ GameObject:
   - component: {fileID: 7256258352408610840}
   - component: {fileID: 6962133005822911442}
   - component: {fileID: 4725530038152701117}
+  - component: {fileID: 8979204695121923135}
   m_Layer: 0
   m_Name: LoopNarrative (1)
   m_TagString: Untagged
@@ -53661,8 +54143,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative4
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -53681,14 +54163,82 @@ MonoBehaviour:
     - variableKey: HallwayNarrative4
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative4
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative4
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative4
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative4
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative4
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative4
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative4
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative4
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!33 &1470343894336075284
@@ -66564,13 +67114,47 @@ MonoBehaviour:
       value: 1
   - conditions:
     - variableKey: RightJunction11
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction11
+      comparison: 1
+      value: 0
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward3
+      mode: 0
+      value: 0
+    - key: HallwayBackward3
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction11
       comparison: 5
       value: 0
     - variableKey: RightJunction11
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward3
+      mode: 0
+      value: 1
+    - key: HallwayBackward3
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction11
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction11
+      comparison: 1
+      value: 0
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
@@ -66592,8 +67176,8 @@ MonoBehaviour:
     - variableKey: RightJunction11
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
@@ -66612,17 +67196,37 @@ MonoBehaviour:
     - variableKey: RightJunction11
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundStool
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 1
+      value: 0
     writes:
-    - key: HallwayForward3
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
       mode: 0
       value: 0
-    - key: HallwayBackward3
+  - conditions:
+    - variableKey: RightJunction11
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction11
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
       mode: 0
       value: 1
   - conditions:
@@ -66632,17 +67236,37 @@ MonoBehaviour:
     - variableKey: RightJunction11
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundCCTV
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 1
+      value: 0
     writes:
-    - key: HallwayForward3
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
       mode: 0
       value: 1
-    - key: HallwayBackward3
+  - conditions:
+    - variableKey: RightJunction11
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction11
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!1 &1964784055943960161
@@ -70176,8 +70800,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative3
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -70191,13 +70815,13 @@ MonoBehaviour:
       value: 1
   - conditions:
     - variableKey: HallwayNarrative3
-      comparison: 5
+      comparison: 6
       value: 0
     - variableKey: HallwayNarrative3
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -70206,6 +70830,74 @@ MonoBehaviour:
     - key: HallwayBackward2
       mode: 0
       value: 0
+  - conditions:
+    - variableKey: HallwayNarrative3
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative3
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative3
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative3
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative3
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative3
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative3
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative3
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
 --- !u!4 &2073902988498406446
 Transform:
   m_ObjectHideFlags: 0
@@ -71716,7 +72408,7 @@ Transform:
   m_GameObject: {fileID: 5297579552190257970}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2, y: 2.88, z: 60.4}
+  m_LocalPosition: {x: 2.3, y: 2.88, z: 60.4}
   m_LocalScale: {x: 14, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89168,6 +89860,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3750857421596497516}
+  - component: {fileID: 3750857421596497517}
+  - component: {fileID: 3750857421596497518}
   m_Layer: 0
   m_Name: xylophoneE
   m_TagString: Untagged
@@ -99234,8 +99928,8 @@ MonoBehaviour:
     - variableKey: RightJunction1
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -99254,14 +99948,82 @@ MonoBehaviour:
     - variableKey: RightJunction1
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction1
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction1
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction1
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction1
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction1
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction1
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction1
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction1
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!1 &3108595272143790861
@@ -180554,8 +181316,8 @@ MonoBehaviour:
   doorAnimator: {fileID: 6810100652463900269}
   openTriggerName: open
   closeTriggerName: close
-  openSound: {fileID: 0}
-  closeSound: {fileID: 0}
+  openSound: {fileID: 8300000, guid: aaf093572c3e85e4681dcc7c37a7f457, type: 3}
+  closeSound: {fileID: 8300000, guid: aaf093572c3e85e4681dcc7c37a7f457, type: 3}
 --- !u!4 &3339140534195882361
 Transform:
   m_ObjectHideFlags: 0
@@ -185715,49 +186477,6 @@ MonoBehaviour:
     - variableKey: RightJunction13
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
-      value: 1
-    - variableKey: KidsRoomDone
-      comparison: 0
-      value: 0
-    writes:
-    - key: HallwayForward2
-      mode: 0
-      value: 0
-    - key: HallwayBackward2
-      mode: 0
-      value: 1
-    - key: BackwardCount
-      mode: 1
-      value: 1
-  - conditions:
-    - variableKey: RightJunction13
-      comparison: 6
-      value: 0
-    - variableKey: RightJunction13
-      comparison: 1
-      value: 0
-    - variableKey: KidsRoomDone
-      comparison: 0
-      value: 0
-    - variableKey: LoopHallway
-      comparison: 0
-      value: 1
-    writes:
-    - key: HallwayForward2
-      mode: 0
-      value: 1
-    - key: HallwayBackward2
-      mode: 0
-      value: 0
-  - conditions:
-    - variableKey: RightJunction13
-      comparison: 5
-      value: 0
-    - variableKey: RightJunction13
-      comparison: 1
-      value: 0
     - variableKey: KidsRoomDone
       comparison: 0
       value: 1
@@ -185792,6 +186511,135 @@ MonoBehaviour:
       mode: 0
       value: 0
     - key: HallwayBackward3
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction13
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction13
+      comparison: 1
+      value: 0
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    - variableKey: FoundFlowers
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 1
+    - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction13
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction13
+      comparison: 1
+      value: 0
+    - variableKey: FoundFlowers
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction13
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction13
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction13
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction13
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction13
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction13
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction13
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction13
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
       mode: 0
       value: 1
 --- !u!4 &3535418259686636850
@@ -192775,6 +193623,123 @@ Transform:
   - {fileID: 649807842737690036}
   m_Father: {fileID: 6841874950385839488}
   m_LocalEulerAnglesHint: {x: 0, y: -201.57, z: 0}
+--- !u!82 &3750857421596497517
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717239017165612574}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1864650585331345768, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &3750857421596497518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717239017165612574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369b6e8e07bd541b79f8f5cbcabae7ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleLevelFeedback
+  feedbackLight: {fileID: 1873358955342906157}
+  successColor: {r: 0, g: 1, b: 0, a: 1}
+  successIntensity: 200
+  fadeDuration: 1.5
+  lightDuration: 3
+  spatialSource: {fileID: 3750857421596497517}
+  levelCompleteClips:
+  - {fileID: 8300000, guid: d7b0ebd4af969448284397fbad235c08, type: 3}
 --- !u!23 &3751126571610569954
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -197823,7 +198788,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4404931400001659806}
   - component: {fileID: 607750305681706682}
-  - component: {fileID: 4404931400001659807}
   m_Layer: 0
   m_Name: Mantis idle
   m_TagString: Untagged
@@ -200417,49 +201381,6 @@ MonoBehaviour:
     - variableKey: RightJunction12
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
-      value: 1
-    - variableKey: KidsRoomDone
-      comparison: 0
-      value: 0
-    writes:
-    - key: HallwayForward2
-      mode: 0
-      value: 0
-    - key: HallwayBackward2
-      mode: 0
-      value: 1
-    - key: BackwardCount
-      mode: 1
-      value: 1
-  - conditions:
-    - variableKey: RightJunction12
-      comparison: 6
-      value: 0
-    - variableKey: RightJunction12
-      comparison: 1
-      value: 0
-    - variableKey: LoopHallway
-      comparison: 3
-      value: 1
-    - variableKey: KidsRoomDone
-      comparison: 0
-      value: 0
-    writes:
-    - key: HallwayForward2
-      mode: 0
-      value: 1
-    - key: HallwayBackward2
-      mode: 0
-      value: 0
-  - conditions:
-    - variableKey: RightJunction12
-      comparison: 5
-      value: 0
-    - variableKey: RightJunction12
-      comparison: 1
-      value: 0
     - variableKey: KidsRoomDone
       comparison: 0
       value: 1
@@ -200496,6 +201417,129 @@ MonoBehaviour:
     - key: HallwayBackward3
       mode: 0
       value: 1
+  - conditions:
+    - variableKey: RightJunction12
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction12
+      comparison: 1
+      value: 0
+    - variableKey: FoundFlowers
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction12
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction12
+      comparison: 1
+      value: 0
+    - variableKey: FoundFlowers
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 1
+    - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction12
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction12
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction12
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction12
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction12
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction12
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction12
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction12
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
 --- !u!23 &4025365663066613967
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -210234,6 +211278,18 @@ MonoBehaviour:
     - key: IdleDisable
       mode: 0
       value: 1
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
 --- !u!1 &4372926398524513425
 GameObject:
   m_ObjectHideFlags: 0
@@ -211133,103 +212189,6 @@ Transform:
   - {fileID: 6300790187071524206}
   m_Father: {fileID: 1401453664}
   m_LocalEulerAnglesHint: {x: 0, y: 88.136, z: 0}
---- !u!82 &4404931400001659807
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3921128298245028132}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &4405315389797339799
 GameObject:
   m_ObjectHideFlags: 0
@@ -211385,6 +212344,7 @@ GameObject:
   - component: {fileID: 4282100272459422866}
   - component: {fileID: 5263973116540781460}
   - component: {fileID: 8698785287939483199}
+  - component: {fileID: 8698785287939483200}
   m_Layer: 0
   m_Name: LoopNarrative (2)
   m_TagString: Untagged
@@ -212865,7 +213825,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 5, z: 12}
+  m_Size: {x: 0.1, y: 5, z: 12}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4467621591289583380
 GameObject:
@@ -217830,6 +218790,15 @@ MonoBehaviour:
     - key: LoopSolved
       mode: 0
       value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 0
+    - key: LoopB21
+      mode: 0
+      value: 0
+    - key: LoopF21
+      mode: 0
+      value: 0
 --- !u!1 &4637133725376016257
 GameObject:
   m_ObjectHideFlags: 0
@@ -220356,18 +221325,6 @@ MonoBehaviour:
       mode: 0
       value: 0
   - conditions:
-    - variableKey: LoopHallway1
-      comparison: 5
-      value: 0
-    - variableKey: LoopHallway1
-      comparison: 1
-      value: 0
-    - variableKey: LoopCounter
-      comparison: 0
-      value: 3
-    - variableKey: ObjectTrigger
-      comparison: 0
-      value: 1
     - variableKey: LoopB21
       comparison: 0
       value: 1
@@ -220378,6 +221335,15 @@ MonoBehaviour:
     - key: LoopB21
       mode: 0
       value: 0
+    - key: LoopF2
+      mode: 0
+      value: 0
+    - key: LoopB2
+      mode: 0
+      value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
 --- !u!33 &4725623936566534413
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -221331,7 +222297,7 @@ Transform:
   m_GameObject: {fileID: 840841886581618615}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.99, y: -3.4, z: -55.16}
+  m_LocalPosition: {x: -31.2, y: -3.4, z: -54.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -225115,6 +226081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 818007243465710631}
   - component: {fileID: 6688099098922886969}
+  - component: {fileID: 6688099098922886970}
   m_Layer: 0
   m_Name: Eyes.003
   m_TagString: Untagged
@@ -242773,8 +243740,8 @@ MonoBehaviour:
     - variableKey: RightJunction5
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -242793,8 +243760,8 @@ MonoBehaviour:
     - variableKey: RightJunction5
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -242806,6 +243773,74 @@ MonoBehaviour:
     - key: BackwardCount
       mode: 1
       value: 1
+  - conditions:
+    - variableKey: RightJunction5
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction5
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction5
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction5
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction5
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction5
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction5
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction5
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
 --- !u!1 &5468919496988487453
 GameObject:
   m_ObjectHideFlags: 0
@@ -248782,6 +249817,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3000347962606278926, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 38.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000347962606278926, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000347962606278926, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3290527392411160409, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -248810,6 +249857,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6932934216467312977, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7282174099797349600, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
     - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
       propertyPath: mantis
       value: 
@@ -248838,6 +249889,262 @@ PrefabInstance:
       propertyPath: anomalyObjects.Array.data[2].anomalyObject
       value: 
       objectReference: {fileID: 780429482}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[0].key
+      value: LoopSolved
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[1].key
+      value: LoopF2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[2].key
+      value: LoopB2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[3].key
+      value: LoopForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[4].key
+      value: LoopBackward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[5].key
+      value: LoopForward1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[6].key
+      value: LoopBackward1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[7].key
+      value: LoopForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[8].key
+      value: LoopBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[9].key
+      value: LoopForward3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[0].key
+      value: LoopSolved
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[1].key
+      value: LoopF2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[2].key
+      value: LoopB2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[3].key
+      value: LoopForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[4].key
+      value: LoopBackward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[5].key
+      value: LoopForward1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[6].key
+      value: LoopBackward1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[7].key
+      value: LoopForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[8].key
+      value: LoopBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[9].key
+      value: LoopForward3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[0].key
+      value: LoopSolved
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[1].key
+      value: LoopF2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[2].key
+      value: LoopB2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[3].key
+      value: LoopForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[4].key
+      value: LoopBackward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[5].key
+      value: LoopForward1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[6].key
+      value: LoopBackward1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[7].key
+      value: LoopForward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[8].key
+      value: LoopBackward2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[9].key
+      value: LoopForward3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[10].key
+      value: LoopBackward3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[11].key
+      value: LoopForward4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[12].key
+      value: LoopBackward4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[13].key
+      value: LoopF21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[14].key
+      value: LoopB21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[15].key
+      value: LoopCounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[16].key
+      value: FoundFlowers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[10].key
+      value: LoopBackward3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[11].key
+      value: LoopForward4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[12].key
+      value: LoopBackward4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[13].key
+      value: LoopF21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[14].key
+      value: LoopB21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[15].key
+      value: LoopCounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[16].key
+      value: FoundCCTV
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[10].key
+      value: LoopBackward3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[11].key
+      value: LoopForward4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[12].key
+      value: LoopBackward4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[13].key
+      value: LoopF21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[14].key
+      value: LoopB21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[15].key
+      value: LoopCounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[16].key
+      value: FoundStool
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[15].value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[16].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[15].value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[16].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[15].value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[16].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8636409397059413533, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -255169,7 +256476,7 @@ AudioSource:
   m_GameObject: {fileID: 5889954240444346111}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7282174099797349600, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -255217,7 +256524,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.4
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -258965,8 +260272,8 @@ MonoBehaviour:
   doorAnimator: {fileID: 2553059408843094901}
   openTriggerName: open
   closeTriggerName: close
-  openSound: {fileID: 0}
-  closeSound: {fileID: 0}
+  openSound: {fileID: 8300000, guid: aaf093572c3e85e4681dcc7c37a7f457, type: 3}
+  closeSound: {fileID: 8300000, guid: aaf093572c3e85e4681dcc7c37a7f457, type: 3}
 --- !u!33 &6036175037658570118
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -261865,8 +263172,8 @@ MonoBehaviour:
     - variableKey: RightJunction2
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -261885,14 +263192,82 @@ MonoBehaviour:
     - variableKey: RightJunction2
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction2
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction2
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction2
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction2
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction2
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction2
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction2
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction2
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!4 &6149527352316708669
@@ -262532,6 +263907,7 @@ Transform:
   - {fileID: 8255579012479901472}
   - {fileID: 8979204695121923134}
   - {fileID: 523662895304594606}
+  - {fileID: 1710777247}
   - {fileID: 3668609772902870093}
   - {fileID: 2757623793272131563}
   - {fileID: 314022072803734878}
@@ -264182,21 +265558,32 @@ MonoBehaviour:
     - variableKey: RightJunction9
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
-      value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 0
+      value: 1
     writes:
-    - key: HallwayForward2
-      mode: 0
-      value: 0
-    - key: HallwayBackward2
+    - key: HallwayForward3
       mode: 0
       value: 1
-    - key: BackwardCount
-      mode: 1
+    - key: HallwayBackward3
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction9
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction9
+      comparison: 1
+      value: 0
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward3
+      mode: 0
+      value: 0
+    - key: HallwayBackward3
+      mode: 0
       value: 1
   - conditions:
     - variableKey: RightJunction9
@@ -264205,8 +265592,8 @@ MonoBehaviour:
     - variableKey: RightJunction9
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
@@ -264225,19 +265612,45 @@ MonoBehaviour:
     - variableKey: RightJunction9
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 1
+      value: 0
     writes:
-    - key: HallwayForward3
-      mode: 0
-      value: 1
-    - key: HallwayBackward3
+    - key: HallwayForward2
       mode: 0
       value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction9
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction9
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
   - conditions:
     - variableKey: RightJunction9
       comparison: 6
@@ -264245,18 +265658,67 @@ MonoBehaviour:
     - variableKey: RightJunction9
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundStool
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 1
+      value: 0
     writes:
-    - key: HallwayForward3
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
       mode: 0
       value: 0
-    - key: HallwayBackward3
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction9
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction9
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
       mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction9
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction9
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
       value: 1
 --- !u!33 &6231322533203158051
 MeshFilter:
@@ -265634,11 +267096,11 @@ AudioSource:
   m_GameObject: {fileID: 738433715224980937}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5907035297917769557, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -270115,8 +271577,8 @@ MonoBehaviour:
     - variableKey: RightJunction4
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -270135,14 +271597,82 @@ MonoBehaviour:
     - variableKey: RightJunction4
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction4
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction4
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction4
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction4
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction4
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction4
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction4
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction4
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!33 &6435655991149344759
@@ -271293,7 +272823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b37bd82a749b940a5f906cf7ab4b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorCutscene
-  director: {fileID: 1535279658}
+  director: {fileID: 0}
   playerController: {fileID: 1750497297157334952}
 --- !u!64 &6465898108138531957
 MeshCollider:
@@ -278064,6 +279594,103 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.018879652, y: 67.823975, z: 9.013101}
     m_Extent: {x: 5.4813547, y: 2.5605087, z: 2.5590992}
   m_DirtyAABB: 0
+--- !u!82 &6688099098922886970
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4898543164654364169}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -1320578912374633211, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!33 &6688668082608635960
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -287717,21 +289344,32 @@ MonoBehaviour:
     - variableKey: RightJunction10
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
-      value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 0
+      value: 1
     writes:
-    - key: HallwayForward2
-      mode: 0
-      value: 0
-    - key: HallwayBackward2
+    - key: HallwayForward3
       mode: 0
       value: 1
-    - key: BackwardCount
-      mode: 1
+    - key: HallwayBackward3
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction10
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction10
+      comparison: 1
+      value: 0
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward3
+      mode: 0
+      value: 0
+    - key: HallwayBackward3
+      mode: 0
       value: 1
   - conditions:
     - variableKey: RightJunction10
@@ -287740,8 +289378,8 @@ MonoBehaviour:
     - variableKey: RightJunction10
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
@@ -287760,19 +289398,45 @@ MonoBehaviour:
     - variableKey: RightJunction10
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 1
+      value: 0
     writes:
-    - key: HallwayForward3
-      mode: 0
-      value: 1
-    - key: HallwayBackward3
+    - key: HallwayForward2
       mode: 0
       value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction10
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction10
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
   - conditions:
     - variableKey: RightJunction10
       comparison: 6
@@ -287780,19 +289444,59 @@ MonoBehaviour:
     - variableKey: RightJunction10
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundStool
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 1
+      value: 0
     writes:
-    - key: HallwayForward3
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
       mode: 0
       value: 0
-    - key: HallwayBackward3
+  - conditions:
+    - variableKey: RightJunction10
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction10
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
       mode: 0
       value: 1
+  - conditions:
+    - variableKey: RightJunction10
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction10
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
 --- !u!33 &7000410953282268275
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -294764,7 +296468,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7135924795459329062}
   - component: {fileID: 7228014905760861639}
-  - component: {fileID: 7228014905760861640}
   m_Layer: 0
   m_Name: bellboy idle 1
   m_TagString: Untagged
@@ -294794,103 +296497,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!82 &7228014905760861640
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7228014905760861638}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!108 &7228268948232817668
 Light:
   m_ObjectHideFlags: 0
@@ -299849,6 +301455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8421338575280534670}
   - component: {fileID: 1917540822793078307}
+  - component: {fileID: 8421338575280534671}
   m_Layer: 0
   m_Name: Eyes
   m_TagString: Untagged
@@ -315937,8 +317544,8 @@ MonoBehaviour:
     - variableKey: RightJunction6
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -315957,14 +317564,82 @@ MonoBehaviour:
     - variableKey: RightJunction6
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction6
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction6
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction6
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction6
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction6
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction6
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction6
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction6
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!33 &8001408559083433172
@@ -321963,8 +323638,8 @@ MonoBehaviour:
     - variableKey: RightJunction7
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -321983,14 +323658,82 @@ MonoBehaviour:
     - variableKey: RightJunction7
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction7
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction7
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction7
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction7
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction7
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction7
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction7
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction7
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!1 &8232497566363964500
@@ -326466,6 +328209,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4404931400001659806}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &8421338575280534671
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7408328004984387555}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -1320578912374633211, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8421757482392416225
 GameObject:
   m_ObjectHideFlags: 0
@@ -334714,7 +336554,7 @@ MonoBehaviour:
       value: 0
     - key: LoopB2
       mode: 0
-      value: 1
+      value: 0
     - key: BackwardCount
       mode: 1
       value: 1
@@ -334744,6 +336584,30 @@ MonoBehaviour:
     - key: LoopF2
       mode: 0
       value: 0
+--- !u!114 &8698785287939483200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410853526579862521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0751e5df93ddb4600882d29ce10d0a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarObjectToggle
+  conditions:
+  - variableKey: LoopB2
+    comparison: 0
+    value: 1
+  targets:
+  - {fileID: 8516553683200514325}
+  - {fileID: 579165068132058490}
+  - {fileID: 5008182802899813880}
+  - {fileID: 6763629021765643403}
+  - {fileID: 2267676081142947990}
+  - {fileID: 8689580557676771344}
+  reEnableWhenFalse: 0
 --- !u!23 &8699501825092595277
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -335227,7 +337091,7 @@ AudioSource:
   m_GameObject: {fileID: 3334925787117223299}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7282174099797349600, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -335275,7 +337139,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.4
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -341144,7 +343008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8908341290928371762
 Transform:
   m_ObjectHideFlags: 0
@@ -343230,6 +345094,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6172268528883160279}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8979204695121923135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383195212278159862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0751e5df93ddb4600882d29ce10d0a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VarObjectToggle
+  conditions:
+  - variableKey: LoopF21
+    comparison: 0
+    value: 1
+  targets:
+  - {fileID: 1383195212278159862}
+  - {fileID: 4410853526579862521}
+  - {fileID: 1383195212278159862}
+  reEnableWhenFalse: 0
 --- !u!1 &8980341030815097825
 GameObject:
   m_ObjectHideFlags: 0
@@ -343472,8 +345357,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative2
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -343492,14 +345377,82 @@ MonoBehaviour:
     - variableKey: HallwayNarrative2
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative2
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative2
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative2
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative2
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative2
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative2
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative2
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative2
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!33 &8989308775950851387
@@ -345089,6 +347042,7 @@ GameObject:
   - component: {fileID: 9033743220748926895}
   - component: {fileID: 9033743220748926894}
   - component: {fileID: 9033743220748926896}
+  - component: {fileID: 9033743220748926897}
   m_Layer: 0
   m_Name: door of r u wininng son room
   m_TagString: Untagged
@@ -345154,6 +347108,103 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &9033743220748926897
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033743220748926893}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 7282174099797349600, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.4
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &9034457375053390288
 GameObject:
   m_ObjectHideFlags: 0
@@ -345973,8 +348024,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative1
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -345993,8 +348044,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative1
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -346006,6 +348057,63 @@ MonoBehaviour:
     - key: BackwardCount
       mode: 1
       value: 1
+  - conditions:
+    - variableKey: HallwayNarrative1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative1
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative1
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative1
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative1
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
 --- !u!23 &9061319288376499500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -346257,8 +348365,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative5
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -346277,14 +348385,82 @@ MonoBehaviour:
     - variableKey: HallwayNarrative5
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative5
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative5
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative5
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative5
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative5
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative5
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative5
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative5
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!33 &9063939899570153468
@@ -347946,6 +350122,12 @@ MonoBehaviour:
   - key: EmptyRoomCount
     value: 0
   - key: SecondRound
+    value: 0
+  - key: FoundFlowers
+    value: 0
+  - key: FoundStool
+    value: 0
+  - key: FoundCCTV
     value: 0
 --- !u!23 &9126274881419095222
 MeshRenderer:
@@ -350759,7 +352941,7 @@ MonoBehaviour:
     - variableKey: EmptyRoomCount
       comparison: 0
       value: 0
-    - variableKey: SecondRound
+    - variableKey: FoundFlowers
       comparison: 0
       value: 1
     writes:
@@ -350782,7 +352964,7 @@ MonoBehaviour:
     - variableKey: EmptyRoomCount
       comparison: 0
       value: 0
-    - variableKey: SecondRound
+    - variableKey: FoundFlowers
       comparison: 0
       value: 1
     writes:
@@ -350805,7 +352987,7 @@ MonoBehaviour:
     - variableKey: EmptyRoomCount
       comparison: 1
       value: 1
-    - variableKey: SecondRound
+    - variableKey: FoundFlowers
       comparison: 0
       value: 1
     writes:
@@ -350828,7 +353010,7 @@ MonoBehaviour:
     - variableKey: EmptyRoomCount
       comparison: 1
       value: 1
-    - variableKey: SecondRound
+    - variableKey: FoundFlowers
       comparison: 0
       value: 1
     writes:
@@ -350836,6 +353018,190 @@ MonoBehaviour:
       mode: 0
       value: 1
     - key: HallwayForward2
+      mode: 0
+      value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayForwardS
+      comparison: 0
+      value: 0
+    - variableKey: EmptyRoomCount
+      comparison: 0
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative1
+      mode: 0
+      value: 0
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 6
+      value: 0
+    - variableKey: HallwayForwardS
+      comparison: 0
+      value: 1
+    - variableKey: EmptyRoomCount
+      comparison: 0
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative1
+      mode: 0
+      value: 1
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayForwardS
+      comparison: 0
+      value: 0
+    - variableKey: EmptyRoomCount
+      comparison: 1
+      value: 1
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative2
+      mode: 0
+      value: 0
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 6
+      value: 0
+    - variableKey: HallwayForwardS
+      comparison: 0
+      value: 1
+    - variableKey: EmptyRoomCount
+      comparison: 1
+      value: 1
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative2
+      mode: 0
+      value: 1
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayForwardC
+      comparison: 0
+      value: 0
+    - variableKey: EmptyRoomCount
+      comparison: 0
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative1
+      mode: 0
+      value: 0
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 6
+      value: 0
+    - variableKey: HallwayForwardC
+      comparison: 0
+      value: 1
+    - variableKey: EmptyRoomCount
+      comparison: 0
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative1
+      mode: 0
+      value: 1
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayForwardC
+      comparison: 0
+      value: 0
+    - variableKey: EmptyRoomCount
+      comparison: 1
+      value: 1
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative2
+      mode: 0
+      value: 0
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 6
+      value: 0
+    - variableKey: HallwayForwardC
+      comparison: 0
+      value: 1
+    - variableKey: EmptyRoomCount
+      comparison: 1
+      value: 1
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative2
+      mode: 0
+      value: 1
+    - key: HallwayForwardC
       mode: 0
       value: 0
     - key: IdleDisable
@@ -351527,6 +353893,7 @@ SceneRoots:
   - {fileID: 3692914888290973947}
   - {fileID: 659532538}
   - {fileID: 780126354}
+  - {fileID: 173276662}
   - {fileID: 33334182}
   - {fileID: 1171319721}
   - {fileID: 1204899249}
