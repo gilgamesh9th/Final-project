@@ -1547,7 +1547,7 @@ Transform:
   m_GameObject: {fileID: 452388108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.0036975765, z: -0, w: 0.9999932}
-  m_LocalPosition: {x: -17, y: -0.35628986, z: -76.5}
+  m_LocalPosition: {x: -49, y: -0.35628986, z: -136.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3015,6 +3015,18 @@ MonoBehaviour:
     - key: KidsRoomDone
       mode: 0
       value: 1
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
 --- !u!114 &637467610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5794,6 +5806,18 @@ MonoBehaviour:
     - key: KidsRoomDone
       mode: 0
       value: 1
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
 --- !u!114 &1073432232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10275,7 +10299,7 @@ Transform:
   m_GameObject: {fileID: 1710777246}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.899998, y: 2.88, z: -73}
+  m_LocalPosition: {x: 20.899998, y: 2.88, z: -58}
   m_LocalScale: {x: 14, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10371,6 +10395,17 @@ MonoBehaviour:
     - key: IdleDisable
       mode: 0
       value: 1
+  - conditions:
+    - variableKey: LoopB2
+      comparison: 0
+      value: 1
+    writes:
+    - key: LoopB21
+      mode: 0
+      value: 1
+    - key: LoopB2
+      mode: 0
+      value: 0
 --- !u!43 &1720348099
 Mesh:
   m_ObjectHideFlags: 0
@@ -14519,8 +14554,8 @@ MonoBehaviour:
     - variableKey: RightJunction8
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -14539,14 +14574,82 @@ MonoBehaviour:
     - variableKey: RightJunction8
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction8
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction8
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction8
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction8
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction8
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction8
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction8
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction8
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!23 &106372565256292037
@@ -20746,7 +20849,7 @@ MonoBehaviour:
       mustComplete: 0
       postDelay: 1
     - text: 'And for now... I''m gonna put you on hold. Gotta go prepare dinner for
-        my wife. '
+        someone special. '
       clip: {fileID: 8300000, guid: 058ac1a7a91e0469d8ddcfacd98514b1, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
@@ -20811,6 +20914,192 @@ MonoBehaviour:
       discardOnInterrupt: 0
       mustComplete: 0
       postDelay: 0.1
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 0
+    restartOnActivate: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: HallwayForwardS
+    priority: 6
+    conditions:
+    - variableKey: HallwayForwardS
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Alright!
+      clip: {fileID: 8300000, guid: 0bcc3e83e4f6041589c2b64f00b27596, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 1
+      mustComplete: 0
+      postDelay: 0.5
+    - text: This time, take the right turns.
+      clip: {fileID: 8300000, guid: da40d0b001aff45fa940bbbeeed9716b, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1
+    - text: "\_No shenanigans like last time."
+      clip: {fileID: 8300000, guid: 880945b6392c044b9bf18c8cece91ae3, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 2
+    - text: You must be wondering about the tiny stool, huh?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: Well, I did it to make my wife laugh. She loves when I make things tiny.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: I only see her once a year, you know.
+      clip: {fileID: 8300000, guid: 2c1a41fbe7c1e43d581373998aed729d, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: You must think this is a weird hotel? With a weird bell boy?
+      clip: {fileID: 8300000, guid: 65af264b84b45452b818faec127b6a0d, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1
+    - text: It's only weird if you make it weird, you know.
+      clip: {fileID: 8300000, guid: b91f9fda63cd24640842b554550eaae5, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1.5
+    - text: I think it's a lovely hotel. Some residents are weird though.
+      clip: {fileID: 8300000, guid: 7417d4c1191c84850a93f101fa3d3d0d, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 1
+      mustComplete: 0
+      postDelay: 0.5
+    - text: The weirdest one is the big dude with the tiny magician hat.
+      clip: {fileID: 8300000, guid: 7f4c206b7c44f4d7ca8889e3613c1987, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: DO NOT COME NEAR HIM.
+      clip: {fileID: 8300000, guid: 106502cc0082148aea10c2bf7ebcda78, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 0
+    restartOnActivate: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
+  - channelName: HallwayForwardC
+    priority: 6
+    conditions:
+    - variableKey: HallwayForwardC
+      comparison: 0
+      value: 1
+    narrations:
+    - text: Alright!
+      clip: {fileID: 8300000, guid: 0bcc3e83e4f6041589c2b64f00b27596, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 1
+      mustComplete: 0
+      postDelay: 0.5
+    - text: This time, take the right turns.
+      clip: {fileID: 8300000, guid: da40d0b001aff45fa940bbbeeed9716b, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1
+    - text: "\_No shenanigans like last time."
+      clip: {fileID: 8300000, guid: 880945b6392c044b9bf18c8cece91ae3, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 2
+    - text: You must be wondering why I changed the light into a camera in that hallway?
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: Well, I did it to see when my wife comes in for our date.
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: I only see her once a year, you know.
+      clip: {fileID: 8300000, guid: 2c1a41fbe7c1e43d581373998aed729d, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: You must think this is a weird hotel? With a weird bell boy?
+      clip: {fileID: 8300000, guid: 65af264b84b45452b818faec127b6a0d, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1
+    - text: It's only weird if you make it weird, you know.
+      clip: {fileID: 8300000, guid: b91f9fda63cd24640842b554550eaae5, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 1.5
+    - text: I think it's a lovely hotel. Some residents are weird though.
+      clip: {fileID: 8300000, guid: 7417d4c1191c84850a93f101fa3d3d0d, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 1
+      mustComplete: 0
+      postDelay: 0.5
+    - text: The weirdest one is the big dude with the tiny magician hat.
+      clip: {fileID: 8300000, guid: 7f4c206b7c44f4d7ca8889e3613c1987, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
+    - text: DO NOT COME NEAR HIM.
+      clip: {fileID: 8300000, guid: 106502cc0082148aea10c2bf7ebcda78, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.5
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -26686,14 +26975,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7d7996586c76b4313a5430bfc03fdd2a, type: 3}
     mustComplete: 1
     postDelay: 0.5
-  - text: Now, why don't you get out?
-    clip: {fileID: 8300000, guid: 8f3dc72361dee47f1936b43f581ce639, type: 3}
-    mustComplete: 0
-    postDelay: 0.5
-  - text: GET OUT
-    clip: {fileID: 8300000, guid: 8697f210f575f46d7bd1a3c55f55422a, type: 3}
-    mustComplete: 0
-    postDelay: 0.5
 --- !u!1 &511858251971885740
 GameObject:
   m_ObjectHideFlags: 0
@@ -27890,8 +28171,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative12
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -27910,14 +28191,82 @@ MonoBehaviour:
     - variableKey: HallwayNarrative12
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative12
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative12
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative12
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative12
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative12
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative12
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative12
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative12
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!1 &542699482324287771
@@ -32348,8 +32697,8 @@ MonoBehaviour:
     - variableKey: RightJunction3
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -32368,14 +32717,82 @@ MonoBehaviour:
     - variableKey: RightJunction3
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction3
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction3
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction3
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction3
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction3
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction3
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction3
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction3
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!23 &722136791250357079
@@ -44254,8 +44671,8 @@ MonoBehaviour:
     - variableKey: StartHallway
       comparison: 5
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -44271,8 +44688,8 @@ MonoBehaviour:
     - variableKey: StartHallway
       comparison: 6
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -44284,6 +44701,62 @@ MonoBehaviour:
     - key: BackwardCount
       mode: 1
       value: 1
+  - conditions:
+    - variableKey: StartHallway
+      comparison: 6
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: StartHallway
+      comparison: 5
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: StartHallway
+      comparison: 5
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: StartHallway
+      comparison: 6
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
 --- !u!4 &1119520602511211376
 Transform:
   m_ObjectHideFlags: 0
@@ -53837,8 +54310,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative4
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -53857,14 +54330,82 @@ MonoBehaviour:
     - variableKey: HallwayNarrative4
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative4
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative4
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative4
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative4
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative4
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative4
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative4
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative4
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!33 &1470343894336075284
@@ -66740,13 +67281,47 @@ MonoBehaviour:
       value: 1
   - conditions:
     - variableKey: RightJunction11
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction11
+      comparison: 1
+      value: 0
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward3
+      mode: 0
+      value: 0
+    - key: HallwayBackward3
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction11
       comparison: 5
       value: 0
     - variableKey: RightJunction11
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward3
+      mode: 0
+      value: 1
+    - key: HallwayBackward3
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction11
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction11
+      comparison: 1
+      value: 0
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
@@ -66768,8 +67343,8 @@ MonoBehaviour:
     - variableKey: RightJunction11
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
@@ -66788,17 +67363,37 @@ MonoBehaviour:
     - variableKey: RightJunction11
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundStool
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 1
+      value: 0
     writes:
-    - key: HallwayForward3
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
       mode: 0
       value: 0
-    - key: HallwayBackward3
+  - conditions:
+    - variableKey: RightJunction11
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction11
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
       mode: 0
       value: 1
   - conditions:
@@ -66808,17 +67403,37 @@ MonoBehaviour:
     - variableKey: RightJunction11
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundCCTV
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 1
+      value: 0
     writes:
-    - key: HallwayForward3
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
       mode: 0
       value: 1
-    - key: HallwayBackward3
+  - conditions:
+    - variableKey: RightJunction11
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction11
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!1 &1964784055943960161
@@ -70352,8 +70967,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative3
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -70367,13 +70982,13 @@ MonoBehaviour:
       value: 1
   - conditions:
     - variableKey: HallwayNarrative3
-      comparison: 5
+      comparison: 6
       value: 0
     - variableKey: HallwayNarrative3
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -70382,6 +70997,74 @@ MonoBehaviour:
     - key: HallwayBackward2
       mode: 0
       value: 0
+  - conditions:
+    - variableKey: HallwayNarrative3
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative3
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative3
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative3
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative3
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative3
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative3
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative3
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
 --- !u!4 &2073902988498406446
 Transform:
   m_ObjectHideFlags: 0
@@ -99412,8 +100095,8 @@ MonoBehaviour:
     - variableKey: RightJunction1
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -99432,14 +100115,82 @@ MonoBehaviour:
     - variableKey: RightJunction1
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction1
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction1
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction1
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction1
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction1
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction1
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction1
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction1
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!1 &3108595272143790861
@@ -185893,49 +186644,6 @@ MonoBehaviour:
     - variableKey: RightJunction13
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
-      value: 1
-    - variableKey: KidsRoomDone
-      comparison: 0
-      value: 0
-    writes:
-    - key: HallwayForward2
-      mode: 0
-      value: 0
-    - key: HallwayBackward2
-      mode: 0
-      value: 1
-    - key: BackwardCount
-      mode: 1
-      value: 1
-  - conditions:
-    - variableKey: RightJunction13
-      comparison: 6
-      value: 0
-    - variableKey: RightJunction13
-      comparison: 1
-      value: 0
-    - variableKey: KidsRoomDone
-      comparison: 0
-      value: 0
-    - variableKey: LoopHallway
-      comparison: 0
-      value: 1
-    writes:
-    - key: HallwayForward2
-      mode: 0
-      value: 1
-    - key: HallwayBackward2
-      mode: 0
-      value: 0
-  - conditions:
-    - variableKey: RightJunction13
-      comparison: 5
-      value: 0
-    - variableKey: RightJunction13
-      comparison: 1
-      value: 0
     - variableKey: KidsRoomDone
       comparison: 0
       value: 1
@@ -185970,6 +186678,135 @@ MonoBehaviour:
       mode: 0
       value: 0
     - key: HallwayBackward3
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction13
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction13
+      comparison: 1
+      value: 0
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    - variableKey: FoundFlowers
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 1
+    - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction13
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction13
+      comparison: 1
+      value: 0
+    - variableKey: FoundFlowers
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction13
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction13
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction13
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction13
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction13
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction13
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction13
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction13
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
       mode: 0
       value: 1
 --- !u!4 &3535418259686636850
@@ -200712,49 +201549,6 @@ MonoBehaviour:
     - variableKey: RightJunction12
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
-      value: 1
-    - variableKey: KidsRoomDone
-      comparison: 0
-      value: 0
-    writes:
-    - key: HallwayForward2
-      mode: 0
-      value: 0
-    - key: HallwayBackward2
-      mode: 0
-      value: 1
-    - key: BackwardCount
-      mode: 1
-      value: 1
-  - conditions:
-    - variableKey: RightJunction12
-      comparison: 6
-      value: 0
-    - variableKey: RightJunction12
-      comparison: 1
-      value: 0
-    - variableKey: LoopHallway
-      comparison: 3
-      value: 1
-    - variableKey: KidsRoomDone
-      comparison: 0
-      value: 0
-    writes:
-    - key: HallwayForward2
-      mode: 0
-      value: 1
-    - key: HallwayBackward2
-      mode: 0
-      value: 0
-  - conditions:
-    - variableKey: RightJunction12
-      comparison: 5
-      value: 0
-    - variableKey: RightJunction12
-      comparison: 1
-      value: 0
     - variableKey: KidsRoomDone
       comparison: 0
       value: 1
@@ -200791,6 +201585,129 @@ MonoBehaviour:
     - key: HallwayBackward3
       mode: 0
       value: 1
+  - conditions:
+    - variableKey: RightJunction12
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction12
+      comparison: 1
+      value: 0
+    - variableKey: FoundFlowers
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction12
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction12
+      comparison: 1
+      value: 0
+    - variableKey: FoundFlowers
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForward2
+      mode: 0
+      value: 1
+    - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction12
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction12
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction12
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction12
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction12
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction12
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction12
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction12
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
 --- !u!23 &4025365663066613967
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -210529,6 +211446,18 @@ MonoBehaviour:
     - key: IdleDisable
       mode: 0
       value: 1
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
 --- !u!1 &4372926398524513425
 GameObject:
   m_ObjectHideFlags: 0
@@ -243075,8 +244004,8 @@ MonoBehaviour:
     - variableKey: RightJunction5
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -243095,8 +244024,8 @@ MonoBehaviour:
     - variableKey: RightJunction5
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -243108,6 +244037,74 @@ MonoBehaviour:
     - key: BackwardCount
       mode: 1
       value: 1
+  - conditions:
+    - variableKey: RightJunction5
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction5
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction5
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction5
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction5
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction5
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction5
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction5
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
 --- !u!1 &5468919496988487453
 GameObject:
   m_ObjectHideFlags: 0
@@ -249326,7 +250323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
       propertyPath: anomalyObjects.Array.data[1].onSolveWrites.Array.data[16].key
-      value: FoundStool
+      value: FoundCCTV
       objectReference: {fileID: 0}
     - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
       propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[10].key
@@ -249354,7 +250351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
       propertyPath: anomalyObjects.Array.data[2].onSolveWrites.Array.data[16].key
-      value: FoundCCTV
+      value: FoundStool
       objectReference: {fileID: 0}
     - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
       propertyPath: anomalyObjects.Array.data[0].onSolveWrites.Array.data[0].value
@@ -262423,8 +263420,8 @@ MonoBehaviour:
     - variableKey: RightJunction2
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -262443,14 +263440,82 @@ MonoBehaviour:
     - variableKey: RightJunction2
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction2
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction2
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction2
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction2
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction2
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction2
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction2
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction2
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!4 &6149527352316708669
@@ -264741,21 +265806,32 @@ MonoBehaviour:
     - variableKey: RightJunction9
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
-      value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 0
+      value: 1
     writes:
-    - key: HallwayForward2
-      mode: 0
-      value: 0
-    - key: HallwayBackward2
+    - key: HallwayForward3
       mode: 0
       value: 1
-    - key: BackwardCount
-      mode: 1
+    - key: HallwayBackward3
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction9
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction9
+      comparison: 1
+      value: 0
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward3
+      mode: 0
+      value: 0
+    - key: HallwayBackward3
+      mode: 0
       value: 1
   - conditions:
     - variableKey: RightJunction9
@@ -264764,8 +265840,8 @@ MonoBehaviour:
     - variableKey: RightJunction9
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
@@ -264784,19 +265860,45 @@ MonoBehaviour:
     - variableKey: RightJunction9
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 1
+      value: 0
     writes:
-    - key: HallwayForward3
-      mode: 0
-      value: 1
-    - key: HallwayBackward3
+    - key: HallwayForward2
       mode: 0
       value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction9
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction9
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
   - conditions:
     - variableKey: RightJunction9
       comparison: 6
@@ -264804,18 +265906,67 @@ MonoBehaviour:
     - variableKey: RightJunction9
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundStool
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 1
+      value: 0
     writes:
-    - key: HallwayForward3
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
       mode: 0
       value: 0
-    - key: HallwayBackward3
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction9
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction9
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
       mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction9
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction9
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
       value: 1
 --- !u!33 &6231322533203158051
 MeshFilter:
@@ -270674,8 +271825,8 @@ MonoBehaviour:
     - variableKey: RightJunction4
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -270694,14 +271845,82 @@ MonoBehaviour:
     - variableKey: RightJunction4
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction4
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction4
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction4
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction4
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction4
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction4
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction4
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction4
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!33 &6435655991149344759
@@ -288276,21 +289495,32 @@ MonoBehaviour:
     - variableKey: RightJunction10
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
-      value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 0
+      value: 1
     writes:
-    - key: HallwayForward2
-      mode: 0
-      value: 0
-    - key: HallwayBackward2
+    - key: HallwayForward3
       mode: 0
       value: 1
-    - key: BackwardCount
-      mode: 1
+    - key: HallwayBackward3
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction10
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction10
+      comparison: 1
+      value: 0
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForward3
+      mode: 0
+      value: 0
+    - key: HallwayBackward3
+      mode: 0
       value: 1
   - conditions:
     - variableKey: RightJunction10
@@ -288299,8 +289529,8 @@ MonoBehaviour:
     - variableKey: RightJunction10
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
@@ -288319,19 +289549,45 @@ MonoBehaviour:
     - variableKey: RightJunction10
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 1
+      value: 0
     writes:
-    - key: HallwayForward3
-      mode: 0
-      value: 1
-    - key: HallwayBackward3
+    - key: HallwayForward2
       mode: 0
       value: 0
+    - key: HallwayBackward2
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: RightJunction10
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction10
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
   - conditions:
     - variableKey: RightJunction10
       comparison: 6
@@ -288339,19 +289595,59 @@ MonoBehaviour:
     - variableKey: RightJunction10
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundStool
+      comparison: 0
       value: 1
     - variableKey: KidsRoomDone
       comparison: 0
-      value: 1
+      value: 0
     writes:
-    - key: HallwayForward3
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
       mode: 0
       value: 0
-    - key: HallwayBackward3
+  - conditions:
+    - variableKey: RightJunction10
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction10
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
       mode: 0
       value: 1
+  - conditions:
+    - variableKey: RightJunction10
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction10
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    - variableKey: KidsRoomDone
+      comparison: 0
+      value: 0
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
 --- !u!33 &7000410953282268275
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -316496,8 +317792,8 @@ MonoBehaviour:
     - variableKey: RightJunction6
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -316516,14 +317812,82 @@ MonoBehaviour:
     - variableKey: RightJunction6
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction6
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction6
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction6
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction6
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction6
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction6
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction6
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction6
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!33 &8001408559083433172
@@ -322522,8 +323886,8 @@ MonoBehaviour:
     - variableKey: RightJunction7
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -322542,14 +323906,82 @@ MonoBehaviour:
     - variableKey: RightJunction7
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction7
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction7
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: RightJunction7
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction7
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction7
+      comparison: 5
+      value: 0
+    - variableKey: RightJunction7
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: RightJunction7
+      comparison: 6
+      value: 0
+    - variableKey: RightJunction7
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!1 &8232497566363964500
@@ -344076,8 +345508,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative2
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -344096,14 +345528,82 @@ MonoBehaviour:
     - variableKey: HallwayNarrative2
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative2
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative2
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative2
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative2
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative2
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative2
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative2
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative2
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!33 &8989308775950851387
@@ -346577,8 +348077,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative1
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -346597,8 +348097,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative1
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -346610,6 +348110,63 @@ MonoBehaviour:
     - key: BackwardCount
       mode: 1
       value: 1
+  - conditions:
+    - variableKey: HallwayNarrative1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative1
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative1
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+    - key: BackwardCount
+      mode: 1
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative1
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative1
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
+      mode: 0
+      value: 0
 --- !u!23 &9061319288376499500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -346861,8 +348418,8 @@ MonoBehaviour:
     - variableKey: HallwayNarrative5
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
@@ -346881,14 +348438,82 @@ MonoBehaviour:
     - variableKey: HallwayNarrative5
       comparison: 1
       value: 0
-    - variableKey: LoopHallway
-      comparison: 3
+    - variableKey: FoundFlowers
+      comparison: 0
       value: 1
     writes:
     - key: HallwayForward2
       mode: 0
       value: 1
     - key: HallwayBackward2
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative5
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative5
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: HallwayBackwardS
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: HallwayNarrative5
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative5
+      comparison: 1
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: HallwayBackwardS
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative5
+      comparison: 5
+      value: 0
+    - variableKey: HallwayNarrative5
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: HallwayBackwardC
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: HallwayNarrative5
+      comparison: 6
+      value: 0
+    - variableKey: HallwayNarrative5
+      comparison: 1
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: HallwayBackwardC
       mode: 0
       value: 0
 --- !u!33 &9063939899570153468
@@ -351369,7 +352994,7 @@ MonoBehaviour:
     - variableKey: EmptyRoomCount
       comparison: 0
       value: 0
-    - variableKey: SecondRound
+    - variableKey: FoundFlowers
       comparison: 0
       value: 1
     writes:
@@ -351392,7 +353017,7 @@ MonoBehaviour:
     - variableKey: EmptyRoomCount
       comparison: 0
       value: 0
-    - variableKey: SecondRound
+    - variableKey: FoundFlowers
       comparison: 0
       value: 1
     writes:
@@ -351415,7 +353040,7 @@ MonoBehaviour:
     - variableKey: EmptyRoomCount
       comparison: 1
       value: 1
-    - variableKey: SecondRound
+    - variableKey: FoundFlowers
       comparison: 0
       value: 1
     writes:
@@ -351438,7 +353063,7 @@ MonoBehaviour:
     - variableKey: EmptyRoomCount
       comparison: 1
       value: 1
-    - variableKey: SecondRound
+    - variableKey: FoundFlowers
       comparison: 0
       value: 1
     writes:
@@ -351446,6 +353071,190 @@ MonoBehaviour:
       mode: 0
       value: 1
     - key: HallwayForward2
+      mode: 0
+      value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayForwardS
+      comparison: 0
+      value: 0
+    - variableKey: EmptyRoomCount
+      comparison: 0
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative1
+      mode: 0
+      value: 0
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 6
+      value: 0
+    - variableKey: HallwayForwardS
+      comparison: 0
+      value: 1
+    - variableKey: EmptyRoomCount
+      comparison: 0
+      value: 0
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative1
+      mode: 0
+      value: 1
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayForwardS
+      comparison: 0
+      value: 0
+    - variableKey: EmptyRoomCount
+      comparison: 1
+      value: 1
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative2
+      mode: 0
+      value: 0
+    - key: HallwayForwardS
+      mode: 0
+      value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 6
+      value: 0
+    - variableKey: HallwayForwardS
+      comparison: 0
+      value: 1
+    - variableKey: EmptyRoomCount
+      comparison: 1
+      value: 1
+    - variableKey: FoundStool
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative2
+      mode: 0
+      value: 1
+    - key: HallwayForwardS
+      mode: 0
+      value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayForwardC
+      comparison: 0
+      value: 0
+    - variableKey: EmptyRoomCount
+      comparison: 0
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative1
+      mode: 0
+      value: 0
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 6
+      value: 0
+    - variableKey: HallwayForwardC
+      comparison: 0
+      value: 1
+    - variableKey: EmptyRoomCount
+      comparison: 0
+      value: 0
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative1
+      mode: 0
+      value: 1
+    - key: HallwayForwardC
+      mode: 0
+      value: 0
+    - key: IdleDisable
+      mode: 0
+      value: 1
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 5
+      value: 0
+    - variableKey: HallwayForwardC
+      comparison: 0
+      value: 0
+    - variableKey: EmptyRoomCount
+      comparison: 1
+      value: 1
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative2
+      mode: 0
+      value: 0
+    - key: HallwayForwardC
+      mode: 0
+      value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 0
+  - conditions:
+    - variableKey: EmptyRoom1
+      comparison: 6
+      value: 0
+    - variableKey: HallwayForwardC
+      comparison: 0
+      value: 1
+    - variableKey: EmptyRoomCount
+      comparison: 1
+      value: 1
+    - variableKey: FoundCCTV
+      comparison: 0
+      value: 1
+    writes:
+    - key: EmptyRoomNarrative2
+      mode: 0
+      value: 1
+    - key: HallwayForwardC
       mode: 0
       value: 0
     - key: IdleDisable
