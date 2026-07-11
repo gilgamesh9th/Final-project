@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &264171739 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 827091870509338452, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+  m_PrefabInstance: {fileID: 7495880636999027988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102be2678e8bec54f966188590fb8ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSettings
 --- !u!224 &587566386 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6136399401264570338, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
@@ -571,6 +582,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 827091870509338452, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
     - target: {fileID: 1677006760814971761, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
       propertyPath: m_Name
       value: main menu ui
@@ -606,6 +621,42 @@ PrefabInstance:
     - target: {fileID: 4070732366324019210, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
       propertyPath: m_LocalScale.z
       value: 2.073326
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477655016901011893, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477655016901011893, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477655016901011893, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477655016901011893, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477655016901011893, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 264171739}
+    - target: {fileID: 4477655016901011893, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477655016901011893, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477655016901011893, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VolumeSettings, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477655016901011893, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4482798215240886197, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
       propertyPath: m_LocalScale.x
@@ -730,6 +781,42 @@ PrefabInstance:
     - target: {fileID: 7957061240119030048, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327044806328562863, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327044806328562863, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327044806328562863, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327044806328562863, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327044806328562863, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 264171739}
+    - target: {fileID: 8327044806328562863, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327044806328562863, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327044806328562863, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VolumeSettings, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327044806328562863, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8569985735126748027, guid: fcae41f78914edc4daab86a6e670b09e, type: 3}
       propertyPath: m_AnchorMax.y
