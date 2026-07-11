@@ -3620,7 +3620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &560713846
 Transform:
   m_ObjectHideFlags: 0
@@ -13887,6 +13887,12 @@ MonoBehaviour:
     - variableKey: LoopB2
       comparison: 0
       value: 1
+    - variableKey: EarlyLoopSolve
+      comparison: 0
+      value: 0
+    - variableKey: LoopSolved
+      comparison: 0
+      value: 0
     writes:
     - key: LoopB21
       mode: 0
@@ -15383,7 +15389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1974974396
 Transform:
   m_ObjectHideFlags: 0
@@ -23700,6 +23706,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DirectedNarrator
   channels:
+  - channelName: LoopB21
+    priority: 9
+    conditions:
+    - variableKey: LoopB21
+      comparison: 0
+      value: 1
+    narrations:
+    - text: 'Alright, I''m too busy for this stubbornness about following the rules. '
+      clip: {fileID: 8300000, guid: 81656e6c0e7bc4a74b6c161d1e47dc37, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: You don't want my help.
+      clip: {fileID: 8300000, guid: 29b8de8109b964ed689bb93b1e1301ad, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: Find what changed in the hallway.
+      clip: {fileID: 8300000, guid: 101116b2e0d0f4b358488122c8a3fb11, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: Press E when you find it.
+      clip: {fileID: 8300000, guid: b7d4cc156dd404f79ac9182ab13dd274, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: 'And for now... I''m gonna put you on hold. Gotta go prepare dinner for
+        someone special. '
+      clip: {fileID: 8300000, guid: 058ac1a7a91e0469d8ddcfacd98514b1, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 1
+    - text: 
+      clip: {fileID: 8300000, guid: 8da2f07893e4946018147a26f8a0a7ec, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0.1
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
+    restartOnActivate: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
   - channelName: HallwayForward
     priority: 6
     conditions:
@@ -24327,7 +24392,7 @@ MonoBehaviour:
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
-    loopLastLine: 1
+    loopLastLine: 0
     restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
@@ -25101,65 +25166,6 @@ MonoBehaviour:
       discardOnInterrupt: 0
       mustComplete: 0
       postDelay: 0.5
-    returnTransitions: []
-    returnLinesCount: 1
-    loopReturnTransitions: 0
-    loopLastLine: 1
-    restartOnActivate: 0
-    disableChannelsOnComplete: []
-    disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
-    disableIdleOnComplete: 0
-  - channelName: LoopB21
-    priority: 9
-    conditions:
-    - variableKey: LoopB21
-      comparison: 0
-      value: 1
-    narrations:
-    - text: 'Alright, I''m too busy for this stubbornness about following the rules. '
-      clip: {fileID: 8300000, guid: 81656e6c0e7bc4a74b6c161d1e47dc37, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-      mustComplete: 0
-      postDelay: 1
-    - text: You don't want my help.
-      clip: {fileID: 8300000, guid: 29b8de8109b964ed689bb93b1e1301ad, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-      mustComplete: 0
-      postDelay: 1
-    - text: Find what changed in the hallway.
-      clip: {fileID: 8300000, guid: 101116b2e0d0f4b358488122c8a3fb11, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-      mustComplete: 0
-      postDelay: 1
-    - text: Press E when you find it.
-      clip: {fileID: 8300000, guid: b7d4cc156dd404f79ac9182ab13dd274, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-      mustComplete: 0
-      postDelay: 1
-    - text: 'And for now... I''m gonna put you on hold. Gotta go prepare dinner for
-        someone special. '
-      clip: {fileID: 8300000, guid: 058ac1a7a91e0469d8ddcfacd98514b1, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-      mustComplete: 0
-      postDelay: 1
-    - text: 
-      clip: {fileID: 8300000, guid: 8da2f07893e4946018147a26f8a0a7ec, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-      mustComplete: 0
-      postDelay: 0.1
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -28947,7 +28953,7 @@ MonoBehaviour:
       comparison: 1
       value: 0
     - variableKey: LoopCounter
-      comparison: 0
+      comparison: 3
       value: 3
     - variableKey: ObjectTrigger
       comparison: 0
@@ -28970,7 +28976,7 @@ MonoBehaviour:
       comparison: 1
       value: 0
     - variableKey: LoopCounter
-      comparison: 0
+      comparison: 3
       value: 3
     - variableKey: ObjectTrigger
       comparison: 0
@@ -201639,6 +201645,7 @@ MonoBehaviour:
   spatialSource: {fileID: 3750857421596497517}
   levelCompleteClips:
   - {fileID: 8300000, guid: d7b0ebd4af969448284397fbad235c08, type: 3}
+  - {fileID: 8300000, guid: d7b0ebd4af969448284397fbad235c08, type: 3}
 --- !u!23 &3751126571610569954
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -221873,7 +221880,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.1, y: 5, z: 12}
+  m_Size: {x: -0.5, y: 10, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4467621591289583380
 GameObject:
@@ -229388,6 +229395,12 @@ MonoBehaviour:
     - variableKey: ObjectTrigger
       comparison: 0
       value: 1
+    - variableKey: EarlyLoopSolve
+      comparison: 0
+      value: 0
+    - variableKey: LoopSolved
+      comparison: 0
+      value: 0
     writes:
     - key: LoopF2
       mode: 0
@@ -230368,7 +230381,7 @@ Transform:
   m_GameObject: {fileID: 840841886581618615}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.2, y: -3.4, z: -54.9}
+  m_LocalPosition: {x: -30.83, y: 0.13, z: -54.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -258087,6 +258100,46 @@ PrefabInstance:
       propertyPath: bellboy
       value: 
       objectReference: {fileID: 7228014905760861638}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: triggers.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: 'triggers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8689580557676771344}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: 'triggers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1383195212278159862}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: 'triggers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 4410853526579862521}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: 'triggers.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1710777246}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: 'triggers.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8516553683200514325}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: 'triggers.Array.data[5]'
+      value: 
+      objectReference: {fileID: 579165068132058490}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: 'triggers.Array.data[6]'
+      value: 
+      objectReference: {fileID: 5008182802899813880}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: 'triggers.Array.data[7]'
+      value: 
+      objectReference: {fileID: 6763629021765643403}
+    - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
+      propertyPath: 'triggers.Array.data[8]'
+      value: 
+      objectReference: {fileID: 2267676081142947990}
     - target: {fileID: 7656299378577240031, guid: 3f4488cdb07214a4fb2f2f222477f56e, type: 3}
       propertyPath: anomalyObjects.Array.size
       value: 3
@@ -345377,9 +345430,15 @@ MonoBehaviour:
       comparison: 1
       value: 0
     - variableKey: LoopCounter
-      comparison: 0
+      comparison: 3
       value: 3
     - variableKey: ObjectTrigger
+      comparison: 0
+      value: 0
+    - variableKey: EarlyLoopSolve
+      comparison: 0
+      value: 0
+    - variableKey: LoopSolved
       comparison: 0
       value: 0
     writes:
@@ -345403,18 +345462,24 @@ MonoBehaviour:
       comparison: 1
       value: 0
     - variableKey: LoopCounter
-      comparison: 0
+      comparison: 3
       value: 3
     - variableKey: ObjectTrigger
       comparison: 0
       value: 1
+    - variableKey: EarlyLoopSolve
+      comparison: 0
+      value: 0
+    - variableKey: LoopSolved
+      comparison: 0
+      value: 0
     writes:
     - key: LoopF2
       mode: 0
       value: 0
     - key: LoopB2
       mode: 0
-      value: 0
+      value: 1
     - key: BackwardCount
       mode: 1
       value: 1
@@ -345426,7 +345491,7 @@ MonoBehaviour:
       comparison: 1
       value: 0
     - variableKey: LoopCounter
-      comparison: 0
+      comparison: 3
       value: 3
     - variableKey: ObjectTrigger
       comparison: 0
@@ -345434,6 +345499,12 @@ MonoBehaviour:
     - variableKey: LoopF2
       comparison: 0
       value: 1
+    - variableKey: EarlyLoopSolve
+      comparison: 0
+      value: 0
+    - variableKey: LoopSolved
+      comparison: 0
+      value: 0
     writes:
     - key: LoopF21
       mode: 0
@@ -362009,7 +362080,7 @@ MonoBehaviour:
       value: 0
     - variableKey: EmptyRoomCount
       comparison: 0
-      value: 0
+      value: 2
     - variableKey: FoundFlowers
       comparison: 0
       value: 1
@@ -362032,7 +362103,7 @@ MonoBehaviour:
       value: 1
     - variableKey: EmptyRoomCount
       comparison: 0
-      value: 0
+      value: 1
     - variableKey: FoundFlowers
       comparison: 0
       value: 1
@@ -362055,7 +362126,7 @@ MonoBehaviour:
       value: 0
     - variableKey: EmptyRoomCount
       comparison: 1
-      value: 1
+      value: 2
     - variableKey: FoundFlowers
       comparison: 0
       value: 1
@@ -362078,7 +362149,7 @@ MonoBehaviour:
       value: 1
     - variableKey: EmptyRoomCount
       comparison: 1
-      value: 1
+      value: 2
     - variableKey: FoundFlowers
       comparison: 0
       value: 1
@@ -362101,7 +362172,7 @@ MonoBehaviour:
       value: 0
     - variableKey: EmptyRoomCount
       comparison: 0
-      value: 0
+      value: 2
     - variableKey: FoundStool
       comparison: 0
       value: 1
@@ -362124,7 +362195,7 @@ MonoBehaviour:
       value: 1
     - variableKey: EmptyRoomCount
       comparison: 0
-      value: 0
+      value: 1
     - variableKey: FoundStool
       comparison: 0
       value: 1
@@ -362147,7 +362218,7 @@ MonoBehaviour:
       value: 0
     - variableKey: EmptyRoomCount
       comparison: 1
-      value: 1
+      value: 2
     - variableKey: FoundStool
       comparison: 0
       value: 1
@@ -362170,7 +362241,7 @@ MonoBehaviour:
       value: 1
     - variableKey: EmptyRoomCount
       comparison: 1
-      value: 1
+      value: 2
     - variableKey: FoundStool
       comparison: 0
       value: 1
@@ -362193,7 +362264,7 @@ MonoBehaviour:
       value: 0
     - variableKey: EmptyRoomCount
       comparison: 0
-      value: 0
+      value: 2
     - variableKey: FoundCCTV
       comparison: 0
       value: 1
@@ -362216,7 +362287,7 @@ MonoBehaviour:
       value: 1
     - variableKey: EmptyRoomCount
       comparison: 0
-      value: 0
+      value: 1
     - variableKey: FoundCCTV
       comparison: 0
       value: 1
@@ -362239,7 +362310,7 @@ MonoBehaviour:
       value: 0
     - variableKey: EmptyRoomCount
       comparison: 1
-      value: 1
+      value: 2
     - variableKey: FoundCCTV
       comparison: 0
       value: 1
@@ -362262,7 +362333,7 @@ MonoBehaviour:
       value: 1
     - variableKey: EmptyRoomCount
       comparison: 1
-      value: 1
+      value: 2
     - variableKey: FoundCCTV
       comparison: 0
       value: 1
@@ -362325,7 +362396,7 @@ MonoBehaviour:
       value: 0
     - variableKey: EmptyRoomCount
       comparison: 0
-      value: 0
+      value: 2
     - variableKey: FoundFlowers
       comparison: 0
       value: 1
@@ -362348,7 +362419,7 @@ MonoBehaviour:
       value: 1
     - variableKey: EmptyRoomCount
       comparison: 0
-      value: 0
+      value: 1
     - variableKey: FoundFlowers
       comparison: 0
       value: 1
@@ -362371,7 +362442,7 @@ MonoBehaviour:
       value: 0
     - variableKey: EmptyRoomCount
       comparison: 1
-      value: 1
+      value: 2
     - variableKey: FoundFlowers
       comparison: 0
       value: 1
@@ -362394,7 +362465,7 @@ MonoBehaviour:
       value: 1
     - variableKey: EmptyRoomCount
       comparison: 1
-      value: 1
+      value: 2
     - variableKey: FoundFlowers
       comparison: 0
       value: 1
@@ -362414,10 +362485,10 @@ MonoBehaviour:
       value: 0
     - variableKey: HallwayBackwardS
       comparison: 0
-      value: 0
+      value: 1
     - variableKey: EmptyRoomCount
       comparison: 0
-      value: 0
+      value: 2
     - variableKey: FoundStool
       comparison: 0
       value: 1
@@ -362440,7 +362511,7 @@ MonoBehaviour:
       value: 1
     - variableKey: EmptyRoomCount
       comparison: 0
-      value: 0
+      value: 1
     - variableKey: FoundStool
       comparison: 0
       value: 1
@@ -362463,7 +362534,7 @@ MonoBehaviour:
       value: 0
     - variableKey: EmptyRoomCount
       comparison: 1
-      value: 1
+      value: 2
     - variableKey: FoundStool
       comparison: 0
       value: 1
@@ -362486,7 +362557,7 @@ MonoBehaviour:
       value: 1
     - variableKey: EmptyRoomCount
       comparison: 1
-      value: 1
+      value: 2
     - variableKey: FoundStool
       comparison: 0
       value: 1
@@ -362509,7 +362580,7 @@ MonoBehaviour:
       value: 0
     - variableKey: EmptyRoomCount
       comparison: 0
-      value: 0
+      value: 2
     - variableKey: FoundCCTV
       comparison: 0
       value: 1
@@ -362532,7 +362603,7 @@ MonoBehaviour:
       value: 1
     - variableKey: EmptyRoomCount
       comparison: 0
-      value: 0
+      value: 1
     - variableKey: FoundCCTV
       comparison: 0
       value: 1
@@ -362555,7 +362626,7 @@ MonoBehaviour:
       value: 0
     - variableKey: EmptyRoomCount
       comparison: 1
-      value: 1
+      value: 2
     - variableKey: FoundCCTV
       comparison: 0
       value: 1
@@ -362578,7 +362649,7 @@ MonoBehaviour:
       value: 1
     - variableKey: EmptyRoomCount
       comparison: 1
-      value: 1
+      value: 2
     - variableKey: FoundCCTV
       comparison: 0
       value: 1
