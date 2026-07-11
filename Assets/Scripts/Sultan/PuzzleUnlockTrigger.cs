@@ -6,6 +6,8 @@ public class PuzzleUnlockTrigger : MonoBehaviour
     [SerializeField] private SequenceLight sequenceLight2;
     [SerializeField] private ColorPuzzleManager puzzleManager;
     [SerializeField] private DoorInteractable door;
+    [SerializeField] private GameObject trigger1;
+    [SerializeField] private GameObject trigger2;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,5 +26,7 @@ public class PuzzleUnlockTrigger : MonoBehaviour
             sequenceLight2.Activate();
 
         gameObject.SetActive(false);
+        trigger1.SetActive(false);
+        trigger2.SetActive(false);
     }
 }

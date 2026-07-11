@@ -7,12 +7,15 @@ public class CutsceneTrigger : MonoBehaviour
     public PlayableDirector director;
     public GameObject player;
     public CinemachineCamera cutsceneCam;
+   
 
     public PlayerController playerController;
 
     void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
+
+      
 
         playerController.enabled = false;
       

@@ -9,6 +9,7 @@ public class VoicedLine
     [TextArea] public string text;
     public AudioClip clip;
     public bool mustComplete;
+    public float postDelay = 0.5f;
 }
 
 public class NarratorManager : MonoBehaviour

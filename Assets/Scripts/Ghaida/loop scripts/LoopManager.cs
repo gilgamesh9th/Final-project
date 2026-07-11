@@ -10,13 +10,13 @@ public class LoopManager : MonoBehaviour
     {
         public GameObject normalObject;
         public GameObject anomalyObject;
+        public VarWrite[] onSolveWrites;
     }
 
     public AnomalyPair[] anomalyObjects; // assign pairs in inspector
     public AudioClip flickerSound;
     public PlayerTeleporter forwardTrigger; // assign end trigger to disable on solve
 
-    [SerializeField] private VarWrite[] onSolveWrites;
     private int loopCount = 0;
     private int guessesRemaining = 3;
     private int currentAnomalyIndex = 0;
@@ -28,6 +28,10 @@ public class LoopManager : MonoBehaviour
     public static event System.Action OnWrongGuess;
     public static event System.Action OnGuessesExhausted;
     public static event System.Action OnLoopBreak;
+
+    // mantis n boy switch
+    [SerializeField] private GameObject mantis;
+    [SerializeField] private GameObject bellboy;
 
 
     void Awake() => Instance = this;
@@ -82,7 +86,8 @@ public class LoopManager : MonoBehaviour
 
         if (GameVarStore.Instance != null)
         {
-            foreach (var w in onSolveWrites)
+            var writes = anomalyObjects[currentAnomalyIndex].onSolveWrites;
+            foreach (var w in writes)
             {
                 if (w.mode == UpdateMode.Increment)
                     GameVarStore.Instance.Add(w.key, w.value);
@@ -149,5 +154,9 @@ public class LoopManager : MonoBehaviour
             forwardTrigger.enabled = false;
             forwardTrigger.GetComponent<Collider>().enabled = false;
         }
+
+        mantis.SetActive(true);
+        bellboy.SetActive(false);
+
     }
 }

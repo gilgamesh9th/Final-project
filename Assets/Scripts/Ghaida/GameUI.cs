@@ -67,7 +67,7 @@ public class GameUI : MonoBehaviour
     public void LoadGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Game Scene");
-        Debug.Log("ppppew");
+        SceneManager.LoadScene("MainGame");
+       
     }
 }
