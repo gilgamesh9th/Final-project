@@ -25697,16 +25697,8 @@ MonoBehaviour:
     fromChannel: EmptyRoomNarrative2
     toChannel: HallwayBackward
     narrations:
-    - text: There you are. As I was saying...
-      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
-      mustComplete: 1
-      postDelay: 0.1
     - text: Alright, back to it!
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
-      mustComplete: 1
-      postDelay: 0.1
-    - text: Good. Where were we? Ah, yes!
-      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
       mustComplete: 1
       postDelay: 0.1
     - text: Can we focus? Back to it.
@@ -25715,10 +25707,6 @@ MonoBehaviour:
       postDelay: 0.1
     - text: There we go. Now...
       clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
-      mustComplete: 1
-      postDelay: 0.1
-    - text: Anyway...
-      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
       mustComplete: 1
       postDelay: 0.1
     - text: Moving on.
@@ -25735,10 +25723,6 @@ MonoBehaviour:
       postDelay: 0.1
     - text: Proceeding.
       clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
-      mustComplete: 1
-      postDelay: 0.1
-    - text: Okay... Before you so rudely interrupted me... I was saying...
-      clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
       mustComplete: 1
       postDelay: 0.1
     linesPerSwitch: 1
@@ -25763,10 +25747,6 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
       mustComplete: 1
       postDelay: 0.1
-    - text: There you are. As I was saying...
-      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
-      mustComplete: 1
-      postDelay: 0.1
     - text: There we go. Now...
       clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
       mustComplete: 1
@@ -25775,20 +25755,8 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
       mustComplete: 1
       postDelay: 0.1
-    - text: Okay... Before you so rudely interrupted me... I was saying...
-      clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
-      mustComplete: 1
-      postDelay: 0.1
-    - text: Moving on.
-      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
-      mustComplete: 1
-      postDelay: 0.1
     - text: Let's continue.
       clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
-      mustComplete: 1
-      postDelay: 0.1
-    - text: Good. Where were we? Ah, yes!
-      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
       mustComplete: 1
       postDelay: 0.1
     linesPerSwitch: 1
@@ -26151,6 +26119,510 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: f850ff7ca2e83401f87610c2603204a7, type: 3}
       mustComplete: 0
       postDelay: 0
+    linesPerSwitch: 1
+    loop: 1
+  - label: ER-HF2
+    fromChannel: EmptyRoom1
+    toChannel: HallwayForward2
+    narrations:
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Good. Where were we? Ah, yes!
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There you are. As I was saying...
+      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Okay... Before you so rudely interrupted me... I was saying...
+      clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    linesPerSwitch: 1
+    loop: 1
+  - label: ER-HB2
+    fromChannel: EmptyRoom1
+    toChannel: HallwayBackward2
+    narrations:
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There you are. As I was saying...
+      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Okay... Before you so rudely interrupted me... I was saying...
+      clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Good. Where were we? Ah, yes!
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    linesPerSwitch: 1
+    loop: 1
+  - label: ER2-HB2
+    fromChannel: EmptyRoomNarrative2
+    toChannel: HallwayBackward2
+    narrations:
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    linesPerSwitch: 1
+    loop: 1
+  - label: ER2-HF2
+    fromChannel: EmptyRoomNarrative2
+    toChannel: HallwayForward2
+    narrations:
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    linesPerSwitch: 1
+    loop: 1
+  - label: ER-HFC
+    fromChannel: EmptyRoom1
+    toChannel: HallwayForwardC
+    narrations:
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Good. Where were we? Ah, yes!
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There you are. As I was saying...
+      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Okay... Before you so rudely interrupted me... I was saying...
+      clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    linesPerSwitch: 1
+    loop: 1
+  - label: ER-HBC
+    fromChannel: EmptyRoom1
+    toChannel: HallwayBackwardC
+    narrations:
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There you are. As I was saying...
+      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Okay... Before you so rudely interrupted me... I was saying...
+      clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Good. Where were we? Ah, yes!
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    linesPerSwitch: 1
+    loop: 1
+  - label: ER2-HBC2
+    fromChannel: EmptyRoomNarrative2
+    toChannel: HallwayBackwardC
+    narrations:
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    linesPerSwitch: 1
+    loop: 1
+  - label: ER2-HFC2
+    fromChannel: EmptyRoomNarrative2
+    toChannel: HallwayForwardC
+    narrations:
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    linesPerSwitch: 1
+    loop: 1
+  - label: ER-HFS
+    fromChannel: EmptyRoom1
+    toChannel: HallwayForwardS
+    narrations:
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Good. Where were we? Ah, yes!
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There you are. As I was saying...
+      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Okay... Before you so rudely interrupted me... I was saying...
+      clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    linesPerSwitch: 1
+    loop: 1
+  - label: ER-HBS
+    fromChannel: EmptyRoom1
+    toChannel: HallwayBackwardS
+    narrations:
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There you are. As I was saying...
+      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Okay... Before you so rudely interrupted me... I was saying...
+      clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Good. Where were we? Ah, yes!
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    linesPerSwitch: 1
+    loop: 1
+  - label: ER2-HBS2
+    fromChannel: EmptyRoomNarrative2
+    toChannel: HallwayBackwardS
+    narrations:
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    linesPerSwitch: 1
+    loop: 1
+  - label: ER2-HFS2
+    fromChannel: EmptyRoomNarrative2
+    toChannel: HallwayForwardS
+    narrations:
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
     linesPerSwitch: 1
     loop: 1
   idleNarrations:
