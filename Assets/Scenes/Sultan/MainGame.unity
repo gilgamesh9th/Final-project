@@ -1553,7 +1553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &357461309
 Transform:
   m_ObjectHideFlags: 0
@@ -2247,7 +2247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &452388109
 Transform:
   m_ObjectHideFlags: 0
@@ -2534,7 +2534,7 @@ GameObject:
   - component: {fileID: 507901196}
   - component: {fileID: 507901195}
   m_Layer: 0
-  m_Name: 0 (2)
+  m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3381,7 +3381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &560713846
 Transform:
   m_ObjectHideFlags: 0
@@ -8672,7 +8672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1322584923}
   m_Layer: 0
-  m_Name: Room9 (1)
+  m_Name: LoopRoom9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8839,7 +8839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1400250308}
   m_Layer: 0
-  m_Name: Room7 (1)
+  m_Name: LoopRoom7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14679,7 +14679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1878838897}
   m_Layer: 0
-  m_Name: Room10 (1)
+  m_Name: LoopRoom10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14868,7 +14868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1974974396
 Transform:
   m_ObjectHideFlags: 0
@@ -25324,7 +25324,7 @@ MonoBehaviour:
   - variableKey: IdleDisable
     comparison: 0
     value: 1
-  playerTransform: {fileID: 452388109}
+  playerTransform: {fileID: 2769938731014895791}
 --- !u!33 &298957782922974251
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -304644,7 +304644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &7257695592245446993
 MeshRenderer:
   m_ObjectHideFlags: 0
