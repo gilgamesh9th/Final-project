@@ -209,6 +209,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8069377}
   m_Mesh: {fileID: -8406400118328708448, guid: 3be11d07ce345c841ad618ad160bf931, type: 3}
+--- !u!1 &9365437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9365438}
+  m_Layer: 0
+  m_Name: Room15 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9365438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9365437}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30.15, y: 0, z: -55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 501231986}
+  - {fileID: 896959461}
+  m_Father: {fileID: 419890793}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &33334181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1050,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.02
       objectReference: {fileID: 0}
+    - target: {fileID: 1907322923908994767, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1970813711869266624, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
       propertyPath: m_Size.x
       value: 6.4910064
@@ -1028,6 +1065,18 @@ PrefabInstance:
     - target: {fileID: 1970813711869266624, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
       propertyPath: m_Center.z
       value: -0.024514945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063513997478552995, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063513997478552995, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 2427551760156033610, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2638504699620725487, guid: 87ec2cdc183f80348a2c45c9783584ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1410,7 +1459,7 @@ Transform:
   m_GameObject: {fileID: 237817438}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.05, y: 0, z: -0.009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2201,6 +2250,7 @@ Transform:
   - {fileID: 2100094267}
   - {fileID: 1322584923}
   - {fileID: 1570776845}
+  - {fileID: 9365438}
   - {fileID: 1878838897}
   - {fileID: 1267005473}
   - {fileID: 1548850545}
@@ -2346,7 +2396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &452388109
 Transform:
   m_ObjectHideFlags: 0
@@ -2621,6 +2671,96 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!1 &501231985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 501231986}
+  - component: {fileID: 501231988}
+  - component: {fileID: 501231987}
+  m_Layer: 0
+  m_Name: 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &501231986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501231985}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -30.3, y: 12.5, z: -68.28}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9365438}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!23 &501231987
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501231985}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e9f1f1c2785a5dd4da70398a12fc4526, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &501231988
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501231985}
+  m_Mesh: {fileID: -7074007238773475336, guid: d7526b983c02a5143954387199c18c75, type: 3}
 --- !u!1 &507901194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3678,6 +3818,96 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &571346883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 571346884}
+  - component: {fileID: 571346886}
+  - component: {fileID: 571346885}
+  m_Layer: 0
+  m_Name: 3 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &571346884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571346883}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -100, y: 12.5, z: 82.46467}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1570776845}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!23 &571346885
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571346883}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e9f1f1c2785a5dd4da70398a12fc4526, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &571346886
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571346883}
+  m_Mesh: {fileID: -7074007238773475336, guid: d7526b983c02a5143954387199c18c75, type: 3}
 --- !u!1 &617996665
 GameObject:
   m_ObjectHideFlags: 0
@@ -6204,7 +6434,7 @@ Transform:
   m_GameObject: {fileID: 854881378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.01, z: 0}
+  m_LocalPosition: {x: -30.004883, y: 1.3537099, z: -40.017982}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6650,6 +6880,96 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6805380220882404277}
   m_LocalEulerAnglesHint: {x: 23.426, y: 0, z: 0}
+--- !u!1 &896959460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 896959461}
+  - component: {fileID: 896959463}
+  - component: {fileID: 896959462}
+  m_Layer: 0
+  m_Name: 3 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &896959461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896959460}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -30.3, y: 12.5, z: -67.405334}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9365438}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!23 &896959462
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896959460}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e9f1f1c2785a5dd4da70398a12fc4526, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &896959463
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896959460}
+  m_Mesh: {fileID: -7074007238773475336, guid: d7526b983c02a5143954387199c18c75, type: 3}
 --- !u!43 &954085708
 Mesh:
   m_ObjectHideFlags: 0
@@ -7174,7 +7494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1070658022
 Transform:
   m_ObjectHideFlags: 0
@@ -7376,7 +7696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1086422069
 Transform:
   m_ObjectHideFlags: 0
@@ -11736,10 +12056,12 @@ Transform:
   m_GameObject: {fileID: 1570776844}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.13, y: -0, z: 0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1958506488}
+  - {fileID: 571346884}
   - {fileID: 543450651582383906}
   - {fileID: 543450653319424993}
   - {fileID: 543450653280105108}
@@ -12633,7 +12955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1612078113
 Transform:
   m_ObjectHideFlags: 0
@@ -14787,7 +15109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1878838897
 Transform:
   m_ObjectHideFlags: 0
@@ -14956,6 +15278,96 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!1 &1958506487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1958506488}
+  - component: {fileID: 1958506490}
+  - component: {fileID: 1958506489}
+  m_Layer: 0
+  m_Name: 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1958506488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958506487}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -100, y: 12.5, z: 81.59}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1570776845}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!23 &1958506489
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958506487}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e9f1f1c2785a5dd4da70398a12fc4526, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1958506490
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958506487}
+  m_Mesh: {fileID: -7074007238773475336, guid: d7526b983c02a5143954387199c18c75, type: 3}
 --- !u!1 &1974974395
 GameObject:
   m_ObjectHideFlags: 0
@@ -23664,8 +24076,8 @@ MonoBehaviour:
       discardOnInterrupt: 1
       mustComplete: 0
       postDelay: 0.5
-    - text: This time, take the right turns.
-      clip: {fileID: 8300000, guid: da40d0b001aff45fa940bbbeeed9716b, type: 3}
+    - text: This time, follow the hallway. Room 8 will be at the end on your left.
+      clip: {fileID: 8300000, guid: 46ae50d2ca8e24890b90790bfbe97837, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -23683,7 +24095,7 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-      mustComplete: 1
+      mustComplete: 0
       postDelay: 0.5
     - text: Well, I took them for my wife. She loves when I bring flowers on our
         dates.
@@ -23691,7 +24103,7 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-      mustComplete: 1
+      mustComplete: 0
       postDelay: 0.5
     - text: I only see her once a year, you know.
       clip: {fileID: 8300000, guid: 2c1a41fbe7c1e43d581373998aed729d, type: 3}
@@ -23705,7 +24117,7 @@ MonoBehaviour:
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-      mustComplete: 1
+      mustComplete: 0
       postDelay: 1
     - text: It's only weird if you make it weird, you know.
       clip: {fileID: 8300000, guid: b91f9fda63cd24640842b554550eaae5, type: 3}
@@ -24194,14 +24606,14 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 0
-      postDelay: 2
+      postDelay: 1
     - text: One more.
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 5bf86990ab0e74d8bbd7cefb4968fa74, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 0
-      postDelay: 2
+      postDelay: 1
     returnTransitions: []
     returnLinesCount: 1
     loopReturnTransitions: 0
@@ -24384,7 +24796,7 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 0.25
+      postDelay: 0.1
     - text: Alright, I'll play it for you again.
       clip: {fileID: 8300000, guid: 5adb52d72648b41e8979388962d5da64, type: 3}
       isImportant: 0
@@ -24408,6 +24820,13 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
+    - text: Sorry, this is actually not room 8!
+      clip: {fileID: 8300000, guid: 933260e6bb3214970a8ffa0816b21eb0, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0.1
     - text: "Do you see the look on your face? You\u2019re probably thinking, \"Why
         are we here?\""
       clip: {fileID: 8300000, guid: e3984906952cf4621a0112cf8246d6ce, type: 3}
@@ -24415,14 +24834,14 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 0.5
+      postDelay: 0.1
     - text: Oh, do you know that Arabic song?
       clip: {fileID: 8300000, guid: 009bad2bb01f1437383303a4c06ffddc, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 0.5
+      postDelay: 0.1
     - text: "Well, it\u2019s the only one we have recorded anyway. Let me play it
         for you...\n"
       clip: {fileID: 8300000, guid: aab267e6148164a60b7b0291c00ed6ff, type: 3}
@@ -24430,7 +24849,7 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 0.5
+      postDelay: 0.1
     - text: 
       clip: {fileID: 8300000, guid: 7e8c2068657fd4ceda0f8b17745e2100, type: 3}
       isImportant: 0
@@ -24460,7 +24879,7 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 1.5
+      postDelay: 1
     - text: Alright, what do you say we hang out together?
       clip: {fileID: 8300000, guid: 4d8780c8e78d3419a9572138033682cc, type: 3}
       isImportant: 0
@@ -24514,8 +24933,8 @@ MonoBehaviour:
       comparison: 0
       value: 1
     narrations:
-    - text: Who told you about the vase? You solved it too quick!
-      clip: {fileID: 8300000, guid: c96017adce75c4108b8bc6409b59a434, type: 3}
+    - text: Who told you about this? You solved it too quick!
+      clip: {fileID: 8300000, guid: 8b89ad89c73a4432a870c48ca7afd23a, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
@@ -24571,21 +24990,21 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 0
-      postDelay: 5
+      postDelay: 3.5
     - text: My bad, he probably just wanted to go to the restroom.
       clip: {fileID: 8300000, guid: b652e4a6892c7474ba8345e93596cee3, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 0
-      postDelay: 1
+      postDelay: 0.1
     - text: His bladder is as tiny as his hat.
       clip: {fileID: 8300000, guid: 6f8a2b99fd26646398e3c6dfc46b51c6, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 0
-      postDelay: 1
+      postDelay: 0.1
     - text: You are safe. For now...
       clip: {fileID: 8300000, guid: a8bb95ec8b4f24c08bb7e89d2f59afde, type: 3}
       isImportant: 0
@@ -24593,28 +25012,27 @@ MonoBehaviour:
       discardOnInterrupt: 0
       mustComplete: 0
       postDelay: 1
-    - text: Oh, go to the artist room. He never goes there.
-      clip: {fileID: 8300000, guid: d4cdf5cbd623444ca91d1feeefcb9194, type: 3}
+    - text: Go to room 8. He never goes there.
+      clip: {fileID: 8300000, guid: e1d553a7076594fc5a679497e1afb7df, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 0
       postDelay: 0.5
-    - text: Go! The room on the left of the hallway.
-      clip: {fileID: 8300000, guid: d55256fb47f714732b2d20b4e7a74718, type: 3}
+    - text: 'Go! And don''t go to room 464. '
+      clip: {fileID: 8300000, guid: 755004d815cc04123a337d2ca0ccba99, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0.1
+    - text: The one who stays there is one weird dude.
+      clip: {fileID: 8300000, guid: e953f43a0c9d74273b5a2c882fc563e5, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 0
       postDelay: 1
-    - text: You might want to check the room on the right first. Interesting dude
-        living there.
-      clip: {fileID: 8300000, guid: c1be2245a25734285b70ddfd85e7acb5, type: 3}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-      mustComplete: 0
-      postDelay: 0.5
     - text: Tick tick. He might be back any second now.
       clip: {fileID: 8300000, guid: 9a80c508540d34335aad6fb94cbf6a6e, type: 3}
       isImportant: 0
@@ -24815,14 +25233,14 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 1
       mustComplete: 0
-      postDelay: 0.5
+      postDelay: 0.1
     - text: This time, take the right turns.
       clip: {fileID: 8300000, guid: da40d0b001aff45fa940bbbeeed9716b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 1
+      postDelay: 0.1
     - text: "\_No shenanigans like last time."
       clip: {fileID: 8300000, guid: 880945b6392c044b9bf18c8cece91ae3, type: 3}
       isImportant: 0
@@ -24831,32 +25249,32 @@ MonoBehaviour:
       mustComplete: 1
       postDelay: 2
     - text: You must be wondering about the tiny stool, huh?
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 6b4697221ad77446f8f4d7f255aae80e, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-      mustComplete: 1
-      postDelay: 0.5
-    - text: Well, I did it to make my wife laugh. She loves when I make things tiny.
-      clip: {fileID: 0}
+      mustComplete: 0
+      postDelay: 0.25
+    - text: Well, I did it to make my wife laugh. She loves when I make chairs tiny.
+      clip: {fileID: 8300000, guid: 83fca12ca3025436faebf9066c10088c, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-      mustComplete: 1
-      postDelay: 0.5
+      mustComplete: 0
+      postDelay: 0.25
     - text: I only see her once a year, you know.
       clip: {fileID: 8300000, guid: 2c1a41fbe7c1e43d581373998aed729d, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 0.5
+      postDelay: 0.25
     - text: You must think this is a weird hotel? With a weird bell boy?
       clip: {fileID: 8300000, guid: 65af264b84b45452b818faec127b6a0d, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
-      mustComplete: 1
+      mustComplete: 0
       postDelay: 1
     - text: It's only weird if you make it weird, you know.
       clip: {fileID: 8300000, guid: b91f9fda63cd24640842b554550eaae5, type: 3}
@@ -24893,7 +25311,8 @@ MonoBehaviour:
     restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
+    disableTransitionsOnComplete:
+    - HBS-HFS
     disableIdleOnComplete: 0
   - channelName: HallwayForwardC
     priority: 6
@@ -24908,14 +25327,14 @@ MonoBehaviour:
       destinationIfUnsaid: 
       discardOnInterrupt: 1
       mustComplete: 0
-      postDelay: 0.5
+      postDelay: 0.1
     - text: This time, take the right turns.
       clip: {fileID: 8300000, guid: da40d0b001aff45fa940bbbeeed9716b, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 1
+      postDelay: 0.1
     - text: "\_No shenanigans like last time."
       clip: {fileID: 8300000, guid: 880945b6392c044b9bf18c8cece91ae3, type: 3}
       isImportant: 0
@@ -24924,26 +25343,33 @@ MonoBehaviour:
       mustComplete: 1
       postDelay: 2
     - text: You must be wondering why I changed the light into a camera in that hallway?
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 242dade1808c342d8941b07d065a2170, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0.25
+    - text: Well, I did it to see my wife when she comes in for our date.
+      clip: {fileID: 8300000, guid: 2c9b977e521464c108cb71ad7ade27bb, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 0.5
-    - text: Well, I did it to see when my wife comes in for our date.
-      clip: {fileID: 0}
-      isImportant: 0
-      destinationIfUnsaid: 
-      discardOnInterrupt: 0
-      mustComplete: 1
-      postDelay: 0.5
+      postDelay: 0.25
     - text: I only see her once a year, you know.
       clip: {fileID: 8300000, guid: 2c1a41fbe7c1e43d581373998aed729d, type: 3}
       isImportant: 0
       destinationIfUnsaid: 
       discardOnInterrupt: 0
       mustComplete: 1
-      postDelay: 0.5
+      postDelay: 0.1
+    - text: I want to see as much of her as possible.
+      clip: {fileID: 8300000, guid: 3508ed6581bc84cb4a30739eba17f189, type: 3}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 1
+      postDelay: 0.25
     - text: You must think this is a weird hotel? With a weird bell boy?
       clip: {fileID: 8300000, guid: 65af264b84b45452b818faec127b6a0d, type: 3}
       isImportant: 0
@@ -24986,7 +25412,8 @@ MonoBehaviour:
     restartOnActivate: 0
     disableChannelsOnComplete: []
     disableAllTransitionsOnComplete: 0
-    disableTransitionsOnComplete: []
+    disableTransitionsOnComplete:
+    - HBC-HFC
     disableIdleOnComplete: 0
   - channelName: HallwayBackwardS
     priority: 6
@@ -25132,8 +25559,36 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
       mustComplete: 1
       postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
     - text: Okay... Before you so rudely interrupted me... I was saying...
       clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
       mustComplete: 1
       postDelay: 0.1
     linesPerSwitch: 1
@@ -25142,20 +25597,48 @@ MonoBehaviour:
     fromChannel: EmptyRoom1
     toChannel: HallwayForward
     narrations:
-    - text: There you are. As I was saying...
-      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
-      mustComplete: 1
-      postDelay: 0.1
-    - text: Good. Where were we? Ah, yes!
-      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
       mustComplete: 1
       postDelay: 0.1
     - text: Alright, back to it!
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
       mustComplete: 1
       postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Good. Where were we? Ah, yes!
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There you are. As I was saying...
+      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
     - text: Okay... Before you so rudely interrupted me... I was saying...
       clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
       mustComplete: 1
       postDelay: 0.1
     linesPerSwitch: 1
@@ -25164,20 +25647,48 @@ MonoBehaviour:
     fromChannel: EmptyRoom1
     toChannel: HallwayBackward
     narrations:
-    - text: Good. Where were we? Ah, yes!
-      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
-      mustComplete: 1
-      postDelay: 0.1
-    - text: There you are. As I was saying...
-      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
       mustComplete: 1
       postDelay: 0.1
     - text: Alright, back to it!
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
       mustComplete: 1
       postDelay: 0.1
+    - text: There you are. As I was saying...
+      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
     - text: Okay... Before you so rudely interrupted me... I was saying...
       clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Good. Where were we? Ah, yes!
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
       mustComplete: 1
       postDelay: 0.1
     linesPerSwitch: 1
@@ -25186,16 +25697,44 @@ MonoBehaviour:
     fromChannel: EmptyRoomNarrative2
     toChannel: HallwayBackward
     narrations:
-    - text: Good. Where were we? Ah, yes!
-      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
-      mustComplete: 1
-      postDelay: 0.1
     - text: There you are. As I was saying...
       clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
       mustComplete: 1
       postDelay: 0.1
     - text: Alright, back to it!
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Good. Where were we? Ah, yes!
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
       mustComplete: 1
       postDelay: 0.1
     - text: Okay... Before you so rudely interrupted me... I was saying...
@@ -25208,20 +25747,48 @@ MonoBehaviour:
     fromChannel: EmptyRoomNarrative2
     toChannel: HallwayForward
     narrations:
-    - text: Good. Where were we? Ah, yes!
-      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
       mustComplete: 1
       postDelay: 0.1
-    - text: There you are. As I was saying...
-      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
       mustComplete: 1
       postDelay: 0.1
     - text: Alright, back to it!
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
       mustComplete: 1
       postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There you are. As I was saying...
+      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
     - text: Okay... Before you so rudely interrupted me... I was saying...
       clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Good. Where were we? Ah, yes!
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
       mustComplete: 1
       postDelay: 0.1
     linesPerSwitch: 1
@@ -25230,6 +25797,10 @@ MonoBehaviour:
     fromChannel: LoopBackward
     toChannel: LoopForward
     narrations:
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
     - text: Alright, back to it!
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
       mustComplete: 0
@@ -25238,13 +25809,37 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
       mustComplete: 0
       postDelay: 0.1
+    - text: Okay... Before you so rudely interrupted me... I was saying...
+      clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 0
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
     - text: Good. Where were we? Ah, yes!
       clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
       mustComplete: 0
       postDelay: 0.1
-    - text: Okay... Before you so rudely interrupted me... I was saying...
-      clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
-      mustComplete: 0
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
       postDelay: 0.1
     linesPerSwitch: 1
     loop: 1
@@ -25252,12 +25847,20 @@ MonoBehaviour:
     fromChannel: LoopBackward1
     toChannel: LoopForward1
     narrations:
-    - text: Alright, back to it!
-      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
-      mustComplete: 0
-      postDelay: 0.1
     - text: There you are. As I was saying...
       clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 0
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Alright, back to it!
+      clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
       mustComplete: 0
       postDelay: 0.1
     - text: Good. Where were we? Ah, yes!
@@ -25268,14 +25871,42 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
       mustComplete: 0
       postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
     linesPerSwitch: 1
     loop: 1
   - label: HB2-HF2
     fromChannel: HallwayBackward2
     toChannel: HallwayForward2
     narrations:
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
     - text: Good. Where were we? Ah, yes!
       clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
       mustComplete: 1
       postDelay: 0.1
     - text: There you are. As I was saying...
@@ -25284,6 +25915,26 @@ MonoBehaviour:
       postDelay: 0.1
     - text: Alright, back to it!
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
       mustComplete: 1
       postDelay: 0.1
     - text: Okay... Before you so rudely interrupted me... I was saying...
@@ -25296,8 +25947,8 @@ MonoBehaviour:
     fromChannel: HallwayBackwardS
     toChannel: HallwayForwardS
     narrations:
-    - text: Good. Where were we? Ah, yes!
-      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
       mustComplete: 1
       postDelay: 0.1
     - text: There you are. As I was saying...
@@ -25308,8 +25959,36 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
       mustComplete: 1
       postDelay: 0.1
+    - text: Good. Where were we? Ah, yes!
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
     - text: Okay... Before you so rudely interrupted me... I was saying...
       clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
       mustComplete: 1
       postDelay: 0.1
     linesPerSwitch: 1
@@ -25318,27 +25997,55 @@ MonoBehaviour:
     fromChannel: HallwayBackwardC
     toChannel: HallwayForwardC
     narrations:
-    - text: Good. Where were we? Ah, yes!
-      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
       mustComplete: 1
       postDelay: 0.1
-    - text: There you are. As I was saying...
-      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+    - text: Good. Where were we? Ah, yes!
+      clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
       mustComplete: 1
       postDelay: 0.1
     - text: Alright, back to it!
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
       mustComplete: 1
       postDelay: 0.1
+    - text: There you are. As I was saying...
+      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
     - text: Okay... Before you so rudely interrupted me... I was saying...
       clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
       mustComplete: 1
       postDelay: 0.1
     linesPerSwitch: 1
     loop: 1
   - label: LF-LB
-    fromChannel: LoopForward
-    toChannel: LoopBackward
+    fromChannel: LoopBackward
+    toChannel: LoopForward
     narrations:
     - text: Good. Where were we? Ah, yes!
       clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
@@ -25354,28 +26061,84 @@ MonoBehaviour:
       postDelay: 0.1
     - text: Okay... Before you so rudely interrupted me... I was saying...
       clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
       mustComplete: 1
       postDelay: 0.1
     linesPerSwitch: 1
     loop: 1
   - label: LF1-LB1
-    fromChannel: LoopForward1
-    toChannel: LoopBackward1
+    fromChannel: LoopBackward1
+    toChannel: LoopForward1
     narrations:
     - text: Good. Where were we? Ah, yes!
       clip: {fileID: 8300000, guid: 7900182c1b1c048c383c87951d339a91, type: 3}
-      mustComplete: 1
-      postDelay: 0.1
-    - text: There you are. As I was saying...
-      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
       mustComplete: 1
       postDelay: 0.1
     - text: Alright, back to it!
       clip: {fileID: 8300000, guid: df1ccb77ff59247e7afcce7386db40a0, type: 3}
       mustComplete: 1
       postDelay: 0.1
+    - text: Anyway...
+      clip: {fileID: 8300000, guid: 26daf23c086ff4c7e8f14c4a845ab968, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There you are. As I was saying...
+      clip: {fileID: 8300000, guid: 06cc10e3e58bc49c2adef913bbd9feae, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's continue.
+      clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Moving on.
+      clip: {fileID: 8300000, guid: 91aadc0c37ec04b51a6ffa5f32671358, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Let's try this again.
+      clip: {fileID: 8300000, guid: baf9cfd83f0ae41d99d021a369afbb5b, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
     - text: Okay... Before you so rudely interrupted me... I was saying...
       clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Proceeding.
+      clip: {fileID: 8300000, guid: cece87f14008146c986c317fc579c1e1, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: Can we focus? Back to it.
+      clip: {fileID: 8300000, guid: cb56e789d2fe84eedbb7b32cc05165f9, type: 3}
+      mustComplete: 1
+      postDelay: 0.1
+    - text: There we go. Now...
+      clip: {fileID: 8300000, guid: f2e8683b00a814555bf1c5f3c0b58105, type: 3}
       mustComplete: 1
       postDelay: 0.1
     linesPerSwitch: 1
@@ -25385,7 +26148,7 @@ MonoBehaviour:
     toChannel: HallwayForward4
     narrations:
     - text: What a weird guy... anyway!
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: f850ff7ca2e83401f87610c2603204a7, type: 3}
       mustComplete: 0
       postDelay: 0
     linesPerSwitch: 1
@@ -43316,7 +44079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &919132147935329279
 GameObject:
   m_ObjectHideFlags: 0
@@ -43586,7 +44349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &919132149534398674
 GameObject:
   m_ObjectHideFlags: 0
@@ -43640,7 +44403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &920361968303255555
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70879,7 +71642,7 @@ Transform:
   m_GameObject: {fileID: 68129005448732548}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.727816, y: 2.6662898, z: 36.915848}
+  m_LocalPosition: {x: 0, y: 2.0099998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -304749,7 +305512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &7257695592245446993
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -305997,7 +306760,7 @@ Transform:
   m_GameObject: {fileID: 6609186253085856449}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0000014350514, y: 0.0526528, z: 0.0000012094387, w: -0.9986129}
-  m_LocalPosition: {x: 1.919, y: -1.8, z: -21.816}
+  m_LocalPosition: {x: 1.921, y: -1.8, z: -21.841}
   m_LocalScale: {x: 0.20561261, y: 0.20561236, z: 0.20561261}
   m_ConstrainProportionsScale: 0
   m_Children: []
