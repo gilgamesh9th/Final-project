@@ -3620,7 +3620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &560713846
 Transform:
   m_ObjectHideFlags: 0
@@ -15389,7 +15389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1974974396
 Transform:
   m_ObjectHideFlags: 0
@@ -19775,6 +19775,7 @@ MonoBehaviour:
   barColor: 3
   emissionColor: {r: 0.035866853, g: 0.24528301, b: 0.04683389, a: 1}
   emissionIntensity: 2
+  glowBaseMaterial: {fileID: 2100000, guid: 1fb437d3f98d041e19300bf9b01a2443, type: 2}
 --- !u!4 &134607333707389375
 Transform:
   m_ObjectHideFlags: 0
@@ -30088,6 +30089,7 @@ MonoBehaviour:
   barColor: 0
   emissionColor: {r: 0.6792453, g: 0, b: 0, a: 1}
   emissionIntensity: 2
+  glowBaseMaterial: {fileID: 2100000, guid: 1fb437d3f98d041e19300bf9b01a2443, type: 2}
 --- !u!33 &411396861607789520
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32047,6 +32049,7 @@ MonoBehaviour:
   barColor: 1
   emissionColor: {r: 0.6698113, g: 0.28631154, b: 0, a: 1}
   emissionIntensity: 2
+  glowBaseMaterial: {fileID: 2100000, guid: 1fb437d3f98d041e19300bf9b01a2443, type: 2}
 --- !u!23 &496778815354129338
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58405,6 +58408,7 @@ MonoBehaviour:
   barColor: 3
   emissionColor: {r: 0.13329703, g: 0.21698111, b: 0.007164475, a: 1}
   emissionIntensity: 2
+  glowBaseMaterial: {fileID: 0}
 --- !u!4 &1397671017750485480
 Transform:
   m_ObjectHideFlags: 0
@@ -71278,6 +71282,7 @@ MonoBehaviour:
   barColor: 0
   emissionColor: {r: 0.8679245, g: 0, b: 0, a: 1}
   emissionIntensity: 3
+  glowBaseMaterial: {fileID: 0}
 --- !u!4 &1862775222636863164
 Transform:
   m_ObjectHideFlags: 0
@@ -226707,6 +226712,7 @@ MonoBehaviour:
   barColor: 1
   emissionColor: {r: 0.5471698, g: 0.20337784, b: 0.03355288, a: 1}
   emissionIntensity: 3
+  glowBaseMaterial: {fileID: 0}
 --- !u!23 &4632773880561690327
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -238632,6 +238638,7 @@ MonoBehaviour:
   barColor: 6
   emissionColor: {r: 0, g: 0.0328864, b: 0.6886792, a: 1}
   emissionIntensity: 2
+  glowBaseMaterial: {fileID: 2100000, guid: 1fb437d3f98d041e19300bf9b01a2443, type: 2}
 --- !u!4 &5030200326775025349
 Transform:
   m_ObjectHideFlags: 0
@@ -244754,6 +244761,7 @@ MonoBehaviour:
   barColor: 2
   emissionColor: {r: 1, g: 0.8835707, b: 0, a: 1}
   emissionIntensity: 2
+  glowBaseMaterial: {fileID: 2100000, guid: 1fb437d3f98d041e19300bf9b01a2443, type: 2}
 --- !u!1 &5231701689737618067
 GameObject:
   m_ObjectHideFlags: 0
@@ -262371,6 +262379,7 @@ MonoBehaviour:
   barColor: 7
   emissionColor: {r: 0.45523146, g: 0, b: 0.8207547, a: 1}
   emissionIntensity: 3
+  glowBaseMaterial: {fileID: 0}
 --- !u!4 &5791639865723656506
 Transform:
   m_ObjectHideFlags: 0
@@ -297185,6 +297194,7 @@ MonoBehaviour:
   barColor: 6
   emissionColor: {r: 0, g: 0.115900464, b: 0.9339623, a: 1}
   emissionIntensity: 3
+  glowBaseMaterial: {fileID: 0}
 --- !u!23 &6979950963333611256
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -320710,6 +320720,7 @@ MonoBehaviour:
   barColor: 2
   emissionColor: {r: 1, g: 0.83413935, b: 0, a: 1}
   emissionIntensity: 3
+  glowBaseMaterial: {fileID: 0}
 --- !u!1 &7800970949882793563
 GameObject:
   m_ObjectHideFlags: 0
@@ -361796,6 +361807,7 @@ MonoBehaviour:
   barColor: 7
   emissionColor: {r: 0.2685902, g: 0, b: 0.4716981, a: 1}
   emissionIntensity: 2
+  glowBaseMaterial: {fileID: 2100000, guid: 1fb437d3f98d041e19300bf9b01a2443, type: 2}
 --- !u!23 &9206651037175071687
 MeshRenderer:
   m_ObjectHideFlags: 0
