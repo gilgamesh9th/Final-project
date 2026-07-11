@@ -21106,6 +21106,29 @@ MonoBehaviour:
     disableAllTransitionsOnComplete: 0
     disableTransitionsOnComplete: []
     disableIdleOnComplete: 0
+  - channelName: WeirdoRoom
+    priority: 6
+    conditions:
+    - variableKey: WeirdoRoom
+      comparison: 0
+      value: 1
+    narrations:
+    - text: 
+      clip: {fileID: 0}
+      isImportant: 0
+      destinationIfUnsaid: 
+      discardOnInterrupt: 0
+      mustComplete: 0
+      postDelay: 0
+    returnTransitions: []
+    returnLinesCount: 1
+    loopReturnTransitions: 0
+    loopLastLine: 1
+    restartOnActivate: 0
+    disableChannelsOnComplete: []
+    disableAllTransitionsOnComplete: 0
+    disableTransitionsOnComplete: []
+    disableIdleOnComplete: 0
   transitions:
   - label: HB-HF
     fromChannel: HallwayBackward
@@ -21369,6 +21392,16 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 12daea20196054e0d9acd6b0b71206ef, type: 3}
       mustComplete: 1
       postDelay: 0.1
+    linesPerSwitch: 1
+    loop: 1
+  - label: WR-HF4
+    fromChannel: WeirdoRoom
+    toChannel: HallwayForward4
+    narrations:
+    - text: What a weird guy... anyway!
+      clip: {fileID: 0}
+      mustComplete: 0
+      postDelay: 0
     linesPerSwitch: 1
     loop: 1
   idleNarrations:
@@ -273165,6 +273198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorCutscene
   director: {fileID: 0}
   playerController: {fileID: 1750497297157334952}
+  enableWrites: []
+  disableWrites: []
 --- !u!64 &6465898108138531957
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -347404,6 +347439,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorCutscene
   director: {fileID: 1123007629}
   playerController: {fileID: 1750497297157334952}
+  enableWrites:
+  - key: HallwayForward4
+    mode: 0
+    value: 1
+  - key: WeirdoRoom
+    mode: 0
+    value: 0
+  disableWrites:
+  - key: HallwayForward4
+    mode: 0
+    value: 0
+  - key: WeirdoRoom
+    mode: 0
+    value: 1
 --- !u!64 &9033743220748926895
 MeshCollider:
   m_ObjectHideFlags: 0
