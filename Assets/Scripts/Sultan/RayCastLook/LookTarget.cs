@@ -6,6 +6,7 @@ public class LookTarget : MonoBehaviour
     [SerializeField] private int priority = 5;
     [SerializeField] private bool disableWhenDone = false;
     [SerializeField] private float defaultLineDuration = 5f;
+    [SerializeField] private float lookDelay = 0f;
 
     [SerializeField] private VoicedLine[] lookNarrations;
 
@@ -38,6 +39,16 @@ public class LookTarget : MonoBehaviour
 
     private IEnumerator NarrationLoop()
     {
+        if (lookDelay > 0f)
+        {
+            float elapsed = 0f;
+            while (elapsed < lookDelay)
+            {
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+        }
+
         bool hasConditional = TryGetComponent<ConditionalNarrator>(out var conditional);
 
         while (!_exhausted)
