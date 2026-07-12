@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RoomLockTrigger : MonoBehaviour
 {
-    public GameObject doorBlocker;
+    public DoorInteractable door;
     private bool hasLocked = false;
 
     private void OnTriggerEnter(Collider other)
@@ -13,8 +13,8 @@ public class RoomLockTrigger : MonoBehaviour
         {
             hasLocked = true;
 
-            if (doorBlocker != null)
-                doorBlocker.SetActive(true);
+            if (door != null)
+                door.CloseAndLock();
         }
     }
 }
