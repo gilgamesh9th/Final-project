@@ -32,6 +32,7 @@ public class LoopManager : MonoBehaviour
     // mantis n boy switch
     [SerializeField] private GameObject mantis;
     [SerializeField] private GameObject bellboy;
+    [SerializeField] private GameObject[] triggers;
 
 
     void Awake() => Instance = this;
@@ -118,6 +119,11 @@ public class LoopManager : MonoBehaviour
                     }
                 }
             }
+
+                    foreach (var go in triggers)
+                {
+                    if (go != null) go.SetActive(false);
+                }
         }
         
         StartCoroutine(FlickerAndBreak());

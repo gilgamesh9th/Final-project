@@ -7,6 +7,7 @@ public class XylophoneBar : MonoBehaviour
     public Color emissionColor = Color.white;
     [Range(0.5f, 5f)]
     public float emissionIntensity = 2f;
+    [SerializeField] private Material glowBaseMaterial;
 
     private GameObject glowOverlay;
     private Material glowMat;
@@ -25,14 +26,7 @@ public class XylophoneBar : MonoBehaviour
         mr.shadowCastingMode = ShadowCastingMode.Off;
         mr.receiveShadows = false;
 
-        Shader shader = Shader.Find("Universal Render Pipeline/Unlit");
-        glowMat = new Material(shader);
-        glowMat.SetFloat("_Surface", 1f);
-        glowMat.SetInt("_SrcBlend", (int)BlendMode.One);
-        glowMat.SetInt("_DstBlend", (int)BlendMode.One);
-        glowMat.SetInt("_ZWrite", 0);
-        glowMat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
-        glowMat.renderQueue = (int)RenderQueue.Transparent;
+        glowMat = new Material(glowBaseMaterial);
         glowMat.SetColor("_BaseColor", emissionColor * emissionIntensity);
 
         mr.material = glowMat;

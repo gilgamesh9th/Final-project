@@ -349,13 +349,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 2748267521419450383}
   m_HandleRect: {fileID: 3231801000274914412}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7017372079245381560}
+        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
+        m_MethodName: SetMusicVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2469328008125809436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,7 +1537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2, y: 0}
+  m_AnchoredPosition: {x: -1.999939, y: 0}
   m_SizeDelta: {x: -141.19995, y: -69.15979}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2283291759753653257
@@ -1578,7 +1590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102be2678e8bec54f966188590fb8ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSettings
-  mixer: {fileID: 0}
+  mixer: {fileID: 24100000, guid: ae1ed6eb918828f40a96714113b5f3f7, type: 2}
   musicSlider: {fileID: 7567643772868583828}
   sfxSlider: {fileID: 6537380216442392685}
 --- !u!1 &6911308705668469173
@@ -2040,13 +2052,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 5300376207637921923}
   m_HandleRect: {fileID: 9156901082034578586}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7017372079245381560}
+        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
+        m_MethodName: SetSFXVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7533307857101104448
 GameObject:
   m_ObjectHideFlags: 0

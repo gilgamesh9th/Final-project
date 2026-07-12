@@ -34,12 +34,15 @@ public class PlayerInteractionII : MonoBehaviour
     {
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
-        bool hitInteractable = Physics.Raycast(ray, out RaycastHit hit, interactDistance)
-                                && hit.collider.TryGetComponent(out IInteractable _);
-       
-        if (hitInteractable != isLookingAtInteractable)
+        bool hitSomething = Physics.Raycast(ray, out RaycastHit hit, interactDistance);
+
+        bool showDot = hitSomething &&
+            (hit.collider.TryGetComponent(out IInteractable _) ||
+             hit.collider.TryGetComponent(out InteractionDotMarker _));
+
+        if (showDot != isLookingAtInteractable)
         {
-            isLookingAtInteractable = hitInteractable;
+            isLookingAtInteractable = showDot;
             interactionDot.SetActive(isLookingAtInteractable);
         }
     }

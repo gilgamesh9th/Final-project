@@ -45,6 +45,8 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     [SerializeField] private Animator doorAnimator;
     [SerializeField] private string openTriggerName = "Open";
     [SerializeField] private string closeTriggerName = "Close";
+    [SerializeField] private GameObject number;
+    [SerializeField] private GameObject finalRoomnumber;
 
     [Header("Sound")]
     [SerializeField] private AudioClip openSound;
@@ -84,5 +86,8 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     public void Unlock()
     {
         _locked = false;
+        number.SetActive(true);
+        if (finalRoomnumber != null)
+            finalRoomnumber.SetActive(false);
     }
 }
