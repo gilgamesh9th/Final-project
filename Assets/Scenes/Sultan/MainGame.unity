@@ -230480,6 +230480,9 @@ MonoBehaviour:
     - key: LoopHallway1
       mode: 1
       value: 1
+    - key: IdleDisable
+      mode: 0
+      value: 1
   - conditions:
     - variableKey: LoopHallway1
       comparison: 6
