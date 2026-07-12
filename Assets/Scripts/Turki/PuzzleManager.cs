@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class PuzzleManager : MonoBehaviour
     private bool puzzleSolved = false;
     private bool isResetting = false;
 
+    public UnityEvent onPuzzleSolved;
 
     public void SelectButton(PuzzleButton button)
     {
@@ -85,6 +87,8 @@ public class PuzzleManager : MonoBehaviour
 
         if (doorBlocker != null)
             doorBlocker.SetActive(false);
+        
+        onPuzzleSolved?.Invoke();
 
         if (door != null)
             door.Unlock();
