@@ -866,7 +866,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 317bc5cf0c97fdb40a3fd17021103bf0, type: 2}
   m_InitialState: 0
-  m_WrapMode: 0
+  m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -12320,7 +12320,7 @@ PrefabInstance:
       objectReference: {fileID: 738433715224980937}
     - target: {fileID: 2435589204950044812, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.9998779
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6537380216442392685, guid: 0c9ceea8e9ec9a64a9944c58436c5f40, type: 3}
       propertyPath: m_Value
@@ -33752,13 +33752,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookTarget
   priority: 7
-  disableWhenDone: 0
+  disableWhenDone: 1
   defaultLineDuration: 5
+  lookDelay: 0.5
   lookNarrations:
   - text: Congrats! You found the only thing in the room.
     clip: {fileID: 8300000, guid: 7d7996586c76b4313a5430bfc03fdd2a, type: 3}
     mustComplete: 1
     postDelay: 0.5
+  exitTransitions: []
+  loopExitTransitions: 1
 --- !u!1 &511858251971885740
 GameObject:
   m_ObjectHideFlags: 0
@@ -344015,6 +344018,8 @@ GameObject:
   - component: {fileID: 2000934351817543784}
   - component: {fileID: 3171695991883870270}
   - component: {fileID: 4104886889113943728}
+  - component: {fileID: 8616096901481516949}
+  - component: {fileID: 8616096901481516950}
   m_Layer: 0
   m_Name: painting 2 (4)
   m_TagString: Untagged
@@ -344022,6 +344027,66 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8616096901481516949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616096901481516948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7402d6b957e84dfd8814e8357d875fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LookTarget
+  priority: 10
+  disableWhenDone: 0
+  defaultLineDuration: 5
+  lookDelay: 2
+  lookNarrations:
+  - text: Ah, this is my favorite painting.
+    clip: {fileID: 8300000, guid: 3dd49c6d20055465ab6753408fb9a75e, type: 3}
+    mustComplete: 1
+    postDelay: 0.1
+  - text: Starry Night by Van Gogh.
+    clip: {fileID: 8300000, guid: 2a4a2049f4412408f96707003db35ba4, type: 3}
+    mustComplete: 1
+    postDelay: 0.25
+  - text: You don't know Van Gogh, do you?
+    clip: {fileID: 8300000, guid: d54c9a4bdf4674a9fb7061e0bfc958dd, type: 3}
+    mustComplete: 1
+    postDelay: 0.75
+  - text: It's ok, I don't expect a lowly delivery guy to know about art anyway.
+    clip: {fileID: 8300000, guid: a82c8578dbf8d4f7d8ccb669ca6af867, type: 3}
+    mustComplete: 1
+    postDelay: 0.5
+  exitTransitions:
+  - text: Let's continue.
+    clip: {fileID: 8300000, guid: 3f26d11e15c7e4c189999852e21928be, type: 3}
+    mustComplete: 1
+    postDelay: 0.1
+  loopExitTransitions: 1
+--- !u!65 &8616096901481516950
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616096901481516948}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1609975, y: 1.6090769, z: 1.0000004}
+  m_Center: {x: -0.014056097, y: -0.024528325, z: 1.1251034e-13}
 --- !u!4 &8617682953669147624
 Transform:
   m_ObjectHideFlags: 0

@@ -11,6 +11,19 @@ public class CutsceneTrigger : MonoBehaviour
 
     public PlayerController playerController;
 
+    private bool _hasPlayed;
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        if (_hasPlayed) return;
+        _hasPlayed = true;
+
+        playerController.enabled = false;
+        director.Play();
+        director.stopped += OnCutsceneEnd;
+    }
+    
     void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
