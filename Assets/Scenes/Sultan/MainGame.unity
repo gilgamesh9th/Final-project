@@ -344047,15 +344047,15 @@ MonoBehaviour:
   - text: Ah, this is my favorite painting.
     clip: {fileID: 8300000, guid: 3dd49c6d20055465ab6753408fb9a75e, type: 3}
     mustComplete: 1
-    postDelay: 0.1
+    postDelay: 0.5
   - text: Starry Night by Van Gogh.
     clip: {fileID: 8300000, guid: 2a4a2049f4412408f96707003db35ba4, type: 3}
     mustComplete: 1
-    postDelay: 0.25
+    postDelay: 1
   - text: You don't know Van Gogh, do you?
     clip: {fileID: 8300000, guid: d54c9a4bdf4674a9fb7061e0bfc958dd, type: 3}
     mustComplete: 1
-    postDelay: 0.75
+    postDelay: 1.5
   - text: It's ok, I don't expect a lowly delivery guy to know about art anyway.
     clip: {fileID: 8300000, guid: a82c8578dbf8d4f7d8ccb669ca6af867, type: 3}
     mustComplete: 1
